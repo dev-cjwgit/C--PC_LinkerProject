@@ -1,0 +1,27 @@
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\PC Linker.exe.config
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\PC Linker.exe
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\PC Linker.pdb
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\MetroFramework.Design.dll
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\MetroFramework.dll
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\MetroFramework.Fonts.dll
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC_Linker.MainFrm.resources
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC_Linker.Properties.Resources.resources
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC Linker.csproj.GenerateResource.cache
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC Linker.csproj.CoreCompileInputs.cache
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC Linker.csproj.CopyComplete
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC Linker.exe
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC Linker.pdb
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\PC Linker.exe.config
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\PC Linker.exe
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\PC Linker.pdb
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.Design.dll
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.dll
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.Fonts.dll
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC Linker.csprojAssemblyReference.cache
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.MainFrm.resources
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.Properties.Resources.resources
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC Linker.csproj.GenerateResource.cache
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC Linker.csproj.CoreCompileInputs.cache
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC Linker.csproj.CopyComplete
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC Linker.exe
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC Linker.pdb

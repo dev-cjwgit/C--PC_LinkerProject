@@ -1,0 +1,67 @@
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\PC_Linker.exe.config
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\PC_Linker.exe
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\PC_Linker.pdb
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC_Linker.MainFrm.resources
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC_Linker.Properties.Resources.resources
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC_Linker.csproj.GenerateResource.cache
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC_Linker.csproj.CoreCompileInputs.cache
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC_Linker.exe
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC_Linker.pdb
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\MetroFramework.Design.dll
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\MetroFramework.dll
+E:\Private\VS\VC#\PC_Linker\PC_Linker\bin\Debug\MetroFramework.Fonts.dll
+E:\Private\VS\VC#\PC_Linker\PC_Linker\obj\Debug\PC_Linker.csproj.CopyComplete
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\PC_Linker.exe.config
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\PC_Linker.exe
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\PC_Linker.pdb
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.Design.dll
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.dll
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.Fonts.dll
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.MainFrm.resources
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.Properties.Resources.resources
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.csproj.GenerateResource.cache
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.csproj.CopyComplete
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.exe
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.pdb
+F:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\PC_Linker.exe.config
+F:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\PC_Linker.exe
+F:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\PC_Linker.pdb
+F:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.Design.dll
+F:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.dll
+F:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.Fonts.dll
+F:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.MainFrm.resources
+F:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.Properties.Resources.resources
+F:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.csproj.GenerateResource.cache
+F:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.csproj.CoreCompileInputs.cache
+F:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.csproj.CopyComplete
+F:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.exe
+F:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.pdb
+F:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.SearchFrm.resources
+F:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.csprojAssemblyReference.cache
+E:\Private\VS\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.SearchFrm.resources
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\Aga.Controls.dll
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\OpenHardwareMonitorLib.dll
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\OxyPlot.dll
+E:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\OxyPlot.WindowsForms.dll
+F:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\Aga.Controls.dll
+F:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\OpenHardwareMonitorLib.dll
+F:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\OxyPlot.dll
+F:\Private\VS\VC#\PC Linker\PC_Linker\bin\Debug\OxyPlot.WindowsForms.dll
+E:\Private\Programming\VC#\PC Linker\PC_Linker\bin\Debug\PC_Linker.exe.config
+E:\Private\Programming\VC#\PC Linker\PC_Linker\bin\Debug\PC_Linker.exe
+E:\Private\Programming\VC#\PC Linker\PC_Linker\bin\Debug\PC_Linker.pdb
+E:\Private\Programming\VC#\PC Linker\PC_Linker\bin\Debug\Aga.Controls.dll
+E:\Private\Programming\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.Design.dll
+E:\Private\Programming\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.dll
+E:\Private\Programming\VC#\PC Linker\PC_Linker\bin\Debug\MetroFramework.Fonts.dll
+E:\Private\Programming\VC#\PC Linker\PC_Linker\bin\Debug\OpenHardwareMonitorLib.dll
+E:\Private\Programming\VC#\PC Linker\PC_Linker\bin\Debug\OxyPlot.dll
+E:\Private\Programming\VC#\PC Linker\PC_Linker\bin\Debug\OxyPlot.WindowsForms.dll
+E:\Private\Programming\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.MainFrm.resources
+E:\Private\Programming\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.Properties.Resources.resources
+E:\Private\Programming\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.SearchFrm.resources
+E:\Private\Programming\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.csproj.GenerateResource.cache
+E:\Private\Programming\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.csproj.CoreCompileInputs.cache
+E:\Private\Programming\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.csproj.CopyComplete
+E:\Private\Programming\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.exe
+E:\Private\Programming\VC#\PC Linker\PC_Linker\obj\Debug\PC_Linker.pdb
