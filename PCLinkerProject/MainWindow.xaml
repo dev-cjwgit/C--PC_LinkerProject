@@ -10,8 +10,8 @@
         ResizeMode="CanResizeWithGrip"
         Loaded="Window_Loaded" Closing="Window_Closing"
         mc:Ignorable="d"
-        MinHeight="500" MinWidth="700"
-        Title="MainWindow" Height="500" Width="700">
+        MinHeight="500" MinWidth="770"
+        Title="MainWindow" Height="500" Width="770">
     <Window.Resources>
         <Color x:Key="SkyBlueColor">#3399FF</Color>
         <SolidColorBrush x:Key="SkyBlueBrush"   Color="{StaticResource SkyBlueColor}"/>
@@ -178,8 +178,9 @@
         </Border.Effect>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="32"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="64"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <ContentControl MouseDoubleClick="WindowsMaximizeButton_Click">
@@ -188,17 +189,19 @@
                 </ContentControl>
                 <!-- System Menu Button Bar -->
                 <Button x:Name="WindowsMinimizeButton" HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
                                     Style="{StaticResource BasedMainButtonStyle}"
                                     Click="WindowsMinimizeButton_Click"
-                                    Width="20" Height="20" Margin="0,0,45,0"
+                                    Width="24" Height="24" Margin="0,0,45,0"
                                     ToolTip="최소화" Cursor="Hand">
                     <materialDesign:PackIcon Kind="WindowMinimize"/>
                 </Button>
 
                 <Button x:Name="WindowsMaximizeButton" HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
                                     Style="{StaticResource BasedMainButtonStyle}"
                                     Click="WindowsMaximizeButton_Click"
-                                    Width="20" Height="20" Margin="0,0,25,0"
+                                    Width="24" Height="24" Margin="0,0,25,0"
                                     ToolTip="최대화">
                     <materialDesign:PackIcon Kind="WindowMaximize"/>
                 </Button>
@@ -206,7 +209,8 @@
                 <Button x:Name="WindowsCloseButton"
                                     Style="{StaticResource BasedMainButtonStyle}"
                                     Click="WindowsCloseButton_Click" HorizontalAlignment="Right"
-                                    Width="20" Height="20" Margin="0,0,5,0"
+                                    VerticalAlignment="Center"
+                                    Width="24" Height="24" Margin="0,0,5,0"
                                     ToolTip="프로그램 종료">
                     <materialDesign:PackIcon Kind="Close"/>
                 </Button>
@@ -272,9 +276,10 @@
                                                 </Grid.RowDefinitions>
                                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" 
                                                 Source="{Binding ContentIcon}"/>
-                                                <TextBlock TextTrimming="CharacterEllipsis"
-                                                VerticalAlignment="Center" HorizontalAlignment="Center" Width="140"
-                                                Grid.Row="1" Text="{Binding ContentText}" />
+
+                                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                           TextTrimming="CharacterEllipsis"
+                                                 Grid.Row="1" Text="{Binding ContentText}" />
                                             </Grid>
                                         </Border>
                                     </DataTemplate>
@@ -286,8 +291,28 @@
                     </TabControl.ContentTemplate>
                 </TabControl>
             </Grid>
-            
-            
+
+            <TextBlock Grid.Row="2"
+                       MouseDown="Temp_onClick"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Margin="8"
+                Text="cjw.git@gmail.com"/>
+
+            <TextBlock Grid.Row="2"
+                       MouseDown="Temp_onClick1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Margin="8"
+                       Text="Temp Func"
+                       />
+
+            <TextBox x:Name="textbox1"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Center"
+                     Margin="8"
+                     Width="300"
+                     Grid.Row="2" Cursor="Arrow"/>
         </Grid>
     </Border>
 </Window>

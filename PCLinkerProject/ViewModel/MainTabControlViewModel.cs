@@ -27,26 +27,48 @@ namespace PCLinkerProject.ViewModel
         public ObservableCollection<TabItem> Tabs { get; set; }
         public MainTabControlViewModel()
         {
+            Tabs = new ObservableCollection<TabItem>();
             contentInstance = new List<ObservableCollection<TabContentViewModel>>();
 
             for (int i = 0; i < 2; i++)
             {
                 var temp = new ObservableCollection<TabContentViewModel>();
 
-                for (int j = 0; j < 150; j++) {
+                for (int j = 0; j < 3; j++) {
                     temp.Add(new TabContentViewModel()
                     {
                         ContentIcon = Environment.CurrentDirectory + @"\ICO\content\kakaotalk.ico",
-                        ContentText = "VMWare WorkStation" + i + "-" + j
+                        ContentText = "비주얼스튜디오" + i + "-" + j
                     }
                     );
                 }
                 contentInstance.Add(temp);
             }
 
-            Tabs = new ObservableCollection<TabItem>();
             Tabs.Add(new TabItem { HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\Computer.ico", HeaderText = "게임", Content = contentInstance[0] });
             Tabs.Add(new TabItem { HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\Editor.ico", HeaderText = "유틸리티", Content = contentInstance[1] });
+        }
+
+        public void addTab(string headerIcon, string headerText)
+        {
+            var temp = new ObservableCollection<TabContentViewModel>();
+            Tabs.Add(new TabItem
+            {
+                HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\" + headerIcon,
+                HeaderText = headerText,
+                Content = temp,
+            });
+
+            contentInstance.Add(temp);
+        }
+
+        public void addContent(int tab_idx, string headerIcon, string headerText)
+        {
+            contentInstance[tab_idx].Add(new TabContentViewModel()
+            {
+                ContentIcon = Environment.CurrentDirectory + @"\ICO\content\" + headerIcon,
+                ContentText = headerText
+            });
         }
     }
 

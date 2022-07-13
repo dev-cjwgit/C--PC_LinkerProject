@@ -23,8 +23,8 @@ namespace PCLinkerProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int selected_index = -1;
-        private int selected_item_index = -1;
+        private int selected_index = -1; // selected tab idx
+        private int selected_item_index = -1; // selected listbox idx
         private WindowState PrevWindowState = WindowState.Normal;
 
         public MainWindow()
@@ -123,6 +123,17 @@ namespace PCLinkerProject
         {
             var temp = MainTabControlViewModel.getInstance(selected_index);
             Console.WriteLine("D : " + temp[selected_item_index].ContentText);
+        }
+
+        private void Temp_onClick(object sender, MouseButtonEventArgs e)
+        {
+            //Tabs.Add(new TabItem { HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\Computer.ico", HeaderText = "게임", Content = contentInstance[0] });
+            MainTabControlViewModel.getInstance().addTab("chrome.ico", textbox1.Text.ToString());
+        }
+
+        private void Temp_onClick1(object sender, MouseButtonEventArgs e)
+        {
+            MainTabControlViewModel.getInstance().addContent(selected_index, "PyCharm.ico", textbox1.Text.ToString());
         }
     }
 }
