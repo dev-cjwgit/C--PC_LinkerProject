@@ -127,13 +127,19 @@ namespace PCLinkerProject
 
         private void Temp_onClick(object sender, MouseButtonEventArgs e)
         {
-            //Tabs.Add(new TabItem { HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\Computer.ico", HeaderText = "게임", Content = contentInstance[0] });
             MainTabControlViewModel.getInstance().addTab("chrome.ico", textbox1.Text.ToString());
         }
 
         private void Temp_onClick1(object sender, MouseButtonEventArgs e)
         {
             MainTabControlViewModel.getInstance().addContent(selected_index, "PyCharm.ico", textbox1.Text.ToString());
+        }
+
+        private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            ScrollViewer scv = (ScrollViewer)sender;
+            scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta);
+            e.Handled = true;
         }
     }
 }
