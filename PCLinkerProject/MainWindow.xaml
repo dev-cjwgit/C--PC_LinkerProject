@@ -318,18 +318,18 @@
                     <TabControl.ContentTemplate>
                         <!-- this is the body of the TabItem template-->
                         <DataTemplate>
-                            <ListBox x:Name="ListBox1"
-                                     SelectionChanged="ListBox1_Selected"
-                                     MouseDoubleClick="ListBox1_StartProgram" 
+                                <ListBox x:Name="ContentListBox1"
+                                     SelectionChanged="Content_Selected"
+                                     MouseDoubleClick="Content_StartProgram" 
                                      ScrollViewer.CanContentScroll="True"
                                      ScrollViewer.VerticalScrollBarVisibility="Visible"
                                      ItemsSource="{Binding Content}">
                                 
                                 <ListBox.ContextMenu>
                                     <ContextMenu>
-                                        <MenuItem Header="추가" Click="ListBox1_Append"/>
-                                        <MenuItem Header="수정" Click="ListBox1_Update"/>
-                                        <MenuItem Header="삭제" Click="ListBox1_Delete"/>
+                                        <MenuItem Header="추가" Click="Content_Append"/>
+                                        <MenuItem Header="수정" Click="Content_Update"/>
+                                        <MenuItem Header="삭제" Click="Content_Delete"/>
                                     </ContextMenu>
                                 </ListBox.ContextMenu>
                                 

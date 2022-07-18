@@ -64,14 +64,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="controls\EditWindow.xaml.cs">
+    <Compile Include="Controls\EditWindow.xaml.cs">
       <DependentUpon>EditWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="PresentStatusEnum.cs" />
-    <Compile Include="ViewModel\MainTabControlViewModel.cs" />
-    <Compile Include="ViewModel\NotifyPropertyChanged.cs" />
-    <Compile Include="ViewModel\TabContentViewModel.cs" />
-    <Page Include="controls\EditWindow.xaml">
+    <Compile Include="VMs\MainTabControlViewModel.cs" />
+    <Compile Include="VMs\NotifyPropertyChanged.cs" />
+    <Compile Include="VMs\TabContentViewModel.cs" />
+    <Page Include="Controls\EditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

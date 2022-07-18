@@ -96,7 +96,7 @@ namespace PCLinkerProject
 
         #endregion
 
-        private void ListBox1_StartProgram(object sender, MouseButtonEventArgs e)
+        private void Content_StartProgram(object sender, MouseButtonEventArgs e)
         {
             dynamic meta_data = sender as dynamic;
             var temp = MainTabControlViewModel.getInstance(selected_tab);
@@ -112,20 +112,20 @@ namespace PCLinkerProject
             selected_tab = (sender as System.Windows.Controls.TabControl).SelectedIndex;
         }
 
-        private void ListBox1_Selected(object sender, SelectionChangedEventArgs e)
+        private void Content_Selected(object sender, SelectionChangedEventArgs e)
         {
             dynamic meta_data = sender as dynamic;
             selected_content = meta_data.SelectedIndex;
 
         }
 
-        private void ListBox1_Append(object sender, RoutedEventArgs e)
+        private void Content_Append(object sender, RoutedEventArgs e)
         {
             presentStatus = PresentStatusEnum.AddContent;
             EditWindow.Visibility = Visibility.Visible;
         }
 
-        private void ListBox1_Update(object sender, RoutedEventArgs e)
+        private void Content_Update(object sender, RoutedEventArgs e)
         {
             presentStatus = PresentStatusEnum.UpdateContent;
             EditWindow.Visibility = Visibility.Visible;
@@ -133,7 +133,7 @@ namespace PCLinkerProject
             //Console.WriteLine("U : " + temp[selected_item_index].ContentText);
         }
 
-        private void ListBox1_Delete(object sender, RoutedEventArgs e)
+        private void Content_Delete(object sender, RoutedEventArgs e)
         {
             // MainTabControlViewModel.getInstance().addContent(selected_index, "PyCharm.ico", textbox1.Text.ToString());
             // MainTabControlViewModel.getInstance().addTab("chrome.ico", textbox1.Text.ToString());
