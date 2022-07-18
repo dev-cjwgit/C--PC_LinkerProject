@@ -1,6 +1,7 @@
 ﻿using PCLinkerProject.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,7 +100,10 @@ namespace PCLinkerProject
         {
             dynamic meta_data = sender as dynamic;
             var temp = MainTabControlViewModel.getInstance(selected_tab);
-            Console.WriteLine(" " + temp[meta_data.SelectedIndex].ContentText);
+            //temp[selected_content].ProgramPath;
+            Process myProcess = new Process();
+            myProcess.StartInfo.FileName = temp[selected_content].ProgramPath;
+            myProcess.Start();
         }
 
         private void TabControl1_SelectionChanged(object sender, SelectionChangedEventArgs e)
