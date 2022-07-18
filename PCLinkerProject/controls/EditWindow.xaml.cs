@@ -50,7 +50,7 @@ namespace PCLinkerProject.controls
                     }
                 case PresentStatusEnum.UpdateTab:
                     {
-                        
+                        MainTabControlViewModel.getInstance().updateTab(MainWindow.selected_tab, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
                         break;
                     }
 
@@ -62,6 +62,7 @@ namespace PCLinkerProject.controls
 
                 case PresentStatusEnum.UpdateContent:
                     {
+                        MainTabControlViewModel.getInstance().updateContent(MainWindow.selected_tab, MainWindow.selected_content, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString(), ShellTextbox.Text.ToString());
                         break;
                     }
             }

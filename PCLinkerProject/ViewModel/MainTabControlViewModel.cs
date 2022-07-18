@@ -69,6 +69,19 @@ namespace PCLinkerProject.ViewModel
             
         }
 
+        public void updateTab(int tab_idx, string headerIcon, string headerText)
+        {
+
+            Tabs[tab_idx].HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\" + headerIcon;
+            Tabs[tab_idx].HeaderText = headerText;
+
+        }
+        public void deleteTab(int tab_idx)
+        {
+            contentInstance.RemoveAt(tab_idx);
+            Tabs.RemoveAt(tab_idx);
+        }
+
         public void addContent(int tab_idx, string headerIcon, string headerText, string programPath)
         {
             contentInstance[tab_idx].Add(new TabContentViewModel()
@@ -79,10 +92,12 @@ namespace PCLinkerProject.ViewModel
             });
         }
 
-        public void deleteTab(int tab_idx)
+        public void updateContent(int tab_idx, int content_idx, string headerIcon, string headerText, string programPath)
         {
-            contentInstance.RemoveAt(tab_idx);
-            Tabs.RemoveAt(tab_idx);
+            contentInstance[tab_idx][content_idx].ContentIcon = Environment.CurrentDirectory + @"\ICO\content\" + headerIcon;
+            contentInstance[tab_idx][content_idx].ContentText = headerText;
+            contentInstance[tab_idx][content_idx].ProgramPath = programPath;
+
         }
 
         public void deleteContent(int tab_idx, int content_idx)
@@ -92,10 +107,36 @@ namespace PCLinkerProject.ViewModel
         }
     }
 
-    public sealed class TabItem
+    public sealed class TabItem : NotifyPropertyChanged
     {
-        public string HeaderIcon { get; set; }
-        public string HeaderText { get; set; }
+        private string _headerIcon;
+
+        private string _headerText;
+        public string HeaderIcon
+        {
+            get
+            {
+                return _headerIcon;
+            }
+
+            set
+            {
+                _headerIcon = value;
+                OnPropertyChanged("HeaderIcon");
+            }
+        }
+        public string HeaderText
+        {
+            get
+            {
+                return _headerText;
+            }
+            set
+            {
+                _headerText = value;
+                OnPropertyChanged("HeaderText");
+            }
+        }
 
         public ObservableCollection<TabContentViewModel> Content { get; set; }
         //public ObservableCollection<TabContentViewModel> Content { get; set; }

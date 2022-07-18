@@ -7,22 +7,49 @@ using System.Threading.Tasks;
 
 namespace PCLinkerProject.ViewModel
 {
-    public class TabContentViewModel
+    public class TabContentViewModel : NotifyPropertyChanged
     {
+        private string _contentIcon;
+        private string _contentText;
+        private string _programPath;
 
         public string ContentIcon
         {
-            get; set;
+            get
+            {
+                return _contentIcon;
+            }
+            set
+            {
+                _contentIcon = value;
+                OnPropertyChanged("ContentIcon");
+            }
         }
 
         public string ContentText
         {
-            get; set;
+            get
+            {
+                return _contentText;
+            }
+            set
+            {
+                _contentText = value;
+                OnPropertyChanged("ContentText");
+            }
         }
 
         public string ProgramPath
         {
-            get; set;
+            get
+            {
+                return _programPath;
+            }
+            set
+            {
+                _programPath = value;
+                OnPropertyChanged("ProgramPath");
+            }
         }
 
 

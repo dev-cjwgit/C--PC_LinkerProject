@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="PresentStatusEnum.cs" />
     <Compile Include="ViewModel\MainTabControlViewModel.cs" />
+    <Compile Include="ViewModel\NotifyPropertyChanged.cs" />
     <Compile Include="ViewModel\TabContentViewModel.cs" />
     <Page Include="controls\EditWindow.xaml">
       <SubType>Designer</SubType>
