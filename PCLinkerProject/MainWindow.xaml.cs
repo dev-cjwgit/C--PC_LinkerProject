@@ -23,10 +23,10 @@ namespace PCLinkerProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int selected_index = -1; // selected tab idx
-        private int selected_item_index = -1; // selected listbox idx
+        public static int selected_tab = -1; // selected tab idx
+        public static int selected_content = -1; // selected listbox idx
         private WindowState PrevWindowState = WindowState.Normal;
-
+        public static PresentStatusEnum presentStatus = PresentStatusEnum.None;
         public MainWindow()
         {
             InitializeComponent();
@@ -98,36 +98,45 @@ namespace PCLinkerProject
         private void ListBox1_StartProgram(object sender, MouseButtonEventArgs e)
         {
             dynamic meta_data = sender as dynamic;
-            var temp = MainTabControlViewModel.getInstance(selected_index);
+            var temp = MainTabControlViewModel.getInstance(selected_tab);
             Console.WriteLine(" " + temp[meta_data.SelectedIndex].ContentText);
         }
 
         private void TabControl1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Console.WriteLine("Console");
-            selected_index = (sender as System.Windows.Controls.TabControl).SelectedIndex;
+            selected_tab = (sender as System.Windows.Controls.TabControl).SelectedIndex;
         }
 
         private void ListBox1_Selected(object sender, SelectionChangedEventArgs e)
         {
             dynamic meta_data = sender as dynamic;
-            selected_item_index = meta_data.SelectedIndex;
+            selected_content = meta_data.SelectedIndex;
+
+        }
+
+        private void ListBox1_Append(object sender, RoutedEventArgs e)
+        {
+            presentStatus = PresentStatusEnum.AddContent;
+            EditWindow.Visibility = Visibility.Visible;
         }
 
         private void ListBox1_Update(object sender, RoutedEventArgs e)
         {
-            var temp = MainTabControlViewModel.getInstance(selected_index);
-            Console.WriteLine("U : " + temp[selected_item_index].ContentText);
+            presentStatus = PresentStatusEnum.UpdateContent;
+            EditWindow.Visibility = Visibility.Visible;
+            //var temp = MainTabControlViewModel.getInstance(selected_index);
+            //Console.WriteLine("U : " + temp[selected_item_index].ContentText);
         }
 
         private void ListBox1_Delete(object sender, RoutedEventArgs e)
         {
             // MainTabControlViewModel.getInstance().addContent(selected_index, "PyCharm.ico", textbox1.Text.ToString());
             // MainTabControlViewModel.getInstance().addTab("chrome.ico", textbox1.Text.ToString());
-            var temp = MainTabControlViewModel.getInstance(selected_index);
-            Console.WriteLine("D : " + temp[selected_item_index].ContentText);
+            var temp = MainTabControlViewModel.getInstance(selected_tab);
+            Console.WriteLine("D : " + temp[selected_content].ContentText);
 
-            MainTabControlViewModel.getInstance().deleteContent(selected_index, selected_item_index);
+            MainTabControlViewModel.getInstance().deleteContent(selected_tab, selected_content);
 
         }
         private void WindowsConfigButton_Click(object sender, RoutedEventArgs e)
@@ -137,27 +146,27 @@ namespace PCLinkerProject
 
         private void Temp_onClick(object sender, MouseButtonEventArgs e)
         {
-            MainTabControlViewModel.getInstance().addTab("computer.ico", "임시1");
+            //MainTabControlViewModel.getInstance().addTab("back.jpg", "임시1");
+
+            EditWindow.Visibility = Visibility.Visible;
         }
 
-        private void ListBox1_Append(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void Header_Append(object sender, RoutedEventArgs e)
         {
-
+            presentStatus = PresentStatusEnum.AddTab;
+            EditWindow.Visibility = Visibility.Visible;
         }
 
         private void Header_Update(object sender, RoutedEventArgs e)
         {
-
+            presentStatus = PresentStatusEnum.UpdateTab;
+            EditWindow.Visibility = Visibility.Visible;
         }
 
         private void Header_Delete(object sender, RoutedEventArgs e)
         {
-            MainTabControlViewModel.getInstance().deleteTab(selected_index);
+            MainTabControlViewModel.getInstance().deleteTab(selected_tab);
         }
 
     }

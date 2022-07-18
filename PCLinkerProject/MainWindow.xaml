@@ -10,6 +10,7 @@
         ResizeMode="CanResizeWithGrip"
         Loaded="Window_Loaded" Closing="Window_Closing"
         mc:Ignorable="d"
+        xmlns:Ct="clr-namespace:PCLinkerProject.controls"
         MinHeight="500" MinWidth="700"
         Title="MainWindow" Height="500" Width="700">
     <Window.Resources>
@@ -223,8 +224,9 @@
             </Setter>
         </Style>
     </Window.Resources>
-    
-    <Border CornerRadius="2.5" Background="WhiteSmoke" BorderBrush="Black" BorderThickness="1.0" Margin="5">
+    <Grid>
+        <Ct:EditWindow x:Name="EditWindow" Grid.RowSpan="2" Panel.ZIndex="1" Visibility="Collapsed"/>
+        <Border CornerRadius="2.5" Background="WhiteSmoke" BorderBrush="Black" BorderThickness="1.0" Margin="5">
         <Border.Effect>
             <DropShadowEffect ShadowDepth="0" BlurRadius="5" Color="Gray" />
         </Border.Effect>
@@ -378,4 +380,6 @@
                 Text="cjw.git@gmail.com"/>
         </Grid>
     </Border>
+    </Grid>
+    
 </Window>

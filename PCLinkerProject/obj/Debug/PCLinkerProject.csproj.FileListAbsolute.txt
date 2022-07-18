@@ -44,3 +44,6 @@ C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\PCLinkerProjec
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\PCLinkerProject.csproj.CopyComplete
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\PCLinkerProject.exe
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\PCLinkerProject.pdb
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\controls\EditWindow.g.cs
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\controls\EditWindow.baml

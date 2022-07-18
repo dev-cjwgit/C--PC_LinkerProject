@@ -11,6 +11,7 @@ namespace PCLinkerProject.ViewModel
     {
         private static MainTabControlViewModel instance;
         private static ObservableCollection<ObservableCollection<TabContentViewModel>> contentInstance;
+        public ObservableCollection<TabItem> Tabs { get; set; }
 
 
         public static ObservableCollection<TabContentViewModel> getInstance(int index)
@@ -24,34 +25,33 @@ namespace PCLinkerProject.ViewModel
                 instance = new MainTabControlViewModel();
             return instance;
         }
-        public ObservableCollection<TabItem> Tabs { get; set; }
         public MainTabControlViewModel()
         {
             Tabs = new ObservableCollection<TabItem>();
             contentInstance = new ObservableCollection<ObservableCollection<TabContentViewModel>>();
 
-            for (int i = 0; i < 20; i++)
-            {
-                var temp = new ObservableCollection<TabContentViewModel>();
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    var temp = new ObservableCollection<TabContentViewModel>();
 
-                for (int j = 0; j < 50; j++)
-                {
-                    temp.Add(new TabContentViewModel()
-                    {
-                        ContentIcon = Environment.CurrentDirectory + @"\ICO\content\kakaotalk.ico",
-                        ContentText = "비주얼" + i + "-" + j
-                    }
-                    );
-                }
-                contentInstance.Add(temp);
-            }
+            //    for (int j = 0; j < 50; j++)
+            //    {
+            //        temp.Add(new TabContentViewModel()
+            //        {
+            //            ContentIcon = Environment.CurrentDirectory + @"\ICO\content\kakaotalk.ico",
+            //            ContentText = "비주얼" + i + "-" + j
+            //        }
+            //        );
+            //    }
+            //    contentInstance.Add(temp);
+            //}
 
-            for (int i = 0; i < 5; i++)
-            {
-                Tabs.Add(new TabItem { HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\Computer.ico", HeaderText = "게임" + i, Content = contentInstance[i] });
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Tabs.Add(new TabItem { HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\Computer.ico", HeaderText = "게임" + i, Content = contentInstance[i] });
 
-            }
-            //addTab("Computer.ico", "게임");
+            //}
+            addTab("Computer.ico", "게임");
             //addTab("Computer.ico", "유틸리티");
         }
 
@@ -69,12 +69,13 @@ namespace PCLinkerProject.ViewModel
             
         }
 
-        public void addContent(int tab_idx, string headerIcon, string headerText)
+        public void addContent(int tab_idx, string headerIcon, string headerText, string programPath)
         {
             contentInstance[tab_idx].Add(new TabContentViewModel()
             {
                 ContentIcon = Environment.CurrentDirectory + @"\ICO\content\" + headerIcon,
-                ContentText = headerText
+                ContentText = headerText,
+                ProgramPath = programPath
             });
         }
 

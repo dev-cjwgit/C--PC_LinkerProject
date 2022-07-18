@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\CJW\source\repos\PCLinkerProject\PCLinkerProject\obj\Debug\
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\
 PCLinkerProject
 none
 false
 DEBUG;TRACE
-C:\Users\CJW\source\repos\PCLinkerProject\PCLinkerProject\App.xaml
-1219584333
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\App.xaml
+21129074761
 
-8-1817300182
-16-1999160886
-MainWindow.xaml;
+10762245052
+16127990264
+controls\EditWindow.xaml;MainWindow.xaml;
 
-True
+False
 
