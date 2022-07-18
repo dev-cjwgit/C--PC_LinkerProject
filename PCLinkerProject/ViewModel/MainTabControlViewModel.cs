@@ -10,7 +10,7 @@ namespace PCLinkerProject.ViewModel
     public sealed class MainTabControlViewModel
     {
         private static MainTabControlViewModel instance;
-        private static List<ObservableCollection<TabContentViewModel>> contentInstance;
+        private static ObservableCollection<ObservableCollection<TabContentViewModel>> contentInstance;
 
 
         public static ObservableCollection<TabContentViewModel> getInstance(int index)
@@ -28,7 +28,7 @@ namespace PCLinkerProject.ViewModel
         public MainTabControlViewModel()
         {
             Tabs = new ObservableCollection<TabItem>();
-            contentInstance = new List<ObservableCollection<TabContentViewModel>>();
+            contentInstance = new ObservableCollection<ObservableCollection<TabContentViewModel>>();
 
             for (int i = 0; i < 20; i++)
             {
@@ -39,18 +39,20 @@ namespace PCLinkerProject.ViewModel
                     temp.Add(new TabContentViewModel()
                     {
                         ContentIcon = Environment.CurrentDirectory + @"\ICO\content\kakaotalk.ico",
-                        ContentText = "비주얼스튜디오" + i + "-" + j
+                        ContentText = "비주얼" + i + "-" + j
                     }
                     );
                 }
                 contentInstance.Add(temp);
             }
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Tabs.Add(new TabItem { HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\Computer.ico", HeaderText = "게임" + i, Content = contentInstance[i] });
 
             }
+            //addTab("Computer.ico", "게임");
+            //addTab("Computer.ico", "유틸리티");
         }
 
         public void addTab(string headerIcon, string headerText)
@@ -74,6 +76,18 @@ namespace PCLinkerProject.ViewModel
                 ContentIcon = Environment.CurrentDirectory + @"\ICO\content\" + headerIcon,
                 ContentText = headerText
             });
+        }
+
+        public void deleteTab(int tab_idx)
+        {
+            contentInstance.RemoveAt(tab_idx);
+            Tabs.RemoveAt(tab_idx);
+        }
+
+        public void deleteContent(int tab_idx, int content_idx)
+        {
+            contentInstance[tab_idx].RemoveAt(content_idx);
+            
         }
     }
 

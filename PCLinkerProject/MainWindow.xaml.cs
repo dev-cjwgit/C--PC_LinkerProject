@@ -104,6 +104,7 @@ namespace PCLinkerProject
 
         private void TabControl1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Console.WriteLine("Console");
             selected_index = (sender as System.Windows.Controls.TabControl).SelectedIndex;
         }
 
@@ -121,25 +122,43 @@ namespace PCLinkerProject
 
         private void ListBox1_Delete(object sender, RoutedEventArgs e)
         {
+            // MainTabControlViewModel.getInstance().addContent(selected_index, "PyCharm.ico", textbox1.Text.ToString());
+            // MainTabControlViewModel.getInstance().addTab("chrome.ico", textbox1.Text.ToString());
             var temp = MainTabControlViewModel.getInstance(selected_index);
             Console.WriteLine("D : " + temp[selected_item_index].ContentText);
+
+            MainTabControlViewModel.getInstance().deleteContent(selected_index, selected_item_index);
+
+        }
+        private void WindowsConfigButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Temp_onClick(object sender, MouseButtonEventArgs e)
         {
-            MainTabControlViewModel.getInstance().addTab("chrome.ico", textbox1.Text.ToString());
+            MainTabControlViewModel.getInstance().addTab("computer.ico", "임시1");
         }
 
-        private void Temp_onClick1(object sender, MouseButtonEventArgs e)
+        private void ListBox1_Append(object sender, RoutedEventArgs e)
         {
-            MainTabControlViewModel.getInstance().addContent(selected_index, "PyCharm.ico", textbox1.Text.ToString());
+
         }
 
-        private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        private void Header_Append(object sender, RoutedEventArgs e)
         {
-            ScrollViewer scv = (ScrollViewer)sender;
-            scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta);
-            e.Handled = true;
+
         }
+
+        private void Header_Update(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Header_Delete(object sender, RoutedEventArgs e)
+        {
+            MainTabControlViewModel.getInstance().deleteTab(selected_index);
+        }
+
     }
 }
