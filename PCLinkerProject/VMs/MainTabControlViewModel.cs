@@ -10,13 +10,12 @@ namespace PCLinkerProject.ViewModel
     public sealed class MainTabControlViewModel
     {
         private static MainTabControlViewModel instance;
-        private static ObservableCollection<ObservableCollection<TabContentViewModel>> contentInstance;
         public ObservableCollection<TabItem> Tabs { get; set; }
 
 
-        public static ObservableCollection<TabContentViewModel> getInstance(int index)
+        public ObservableCollection<TabContentViewModel> getInstance(int index)
         {
-            return contentInstance[index];
+            return Tabs[index].Content;
         }
 
         public static MainTabControlViewModel getInstance()
@@ -28,7 +27,6 @@ namespace PCLinkerProject.ViewModel
         public MainTabControlViewModel()
         {
             Tabs = new ObservableCollection<TabItem>();
-            contentInstance = new ObservableCollection<ObservableCollection<TabContentViewModel>>();
 
             //for (int i = 0; i < 20; i++)
             //{
@@ -65,7 +63,6 @@ namespace PCLinkerProject.ViewModel
                 Content = temp,
             });
 
-            contentInstance.Add(temp);
             
         }
 
@@ -78,13 +75,12 @@ namespace PCLinkerProject.ViewModel
         }
         public void deleteTab(int tab_idx)
         {
-            contentInstance.RemoveAt(tab_idx);
             Tabs.RemoveAt(tab_idx);
         }
 
         public void addContent(int tab_idx, string headerIcon, string headerText, string programPath)
         {
-            contentInstance[tab_idx].Add(new TabContentViewModel()
+            getInstance(tab_idx).Add(new TabContentViewModel()
             {
                 ContentIcon = Environment.CurrentDirectory + @"\ICO\content\" + headerIcon,
                 ContentText = headerText,
@@ -94,15 +90,15 @@ namespace PCLinkerProject.ViewModel
 
         public void updateContent(int tab_idx, int content_idx, string headerIcon, string headerText, string programPath)
         {
-            contentInstance[tab_idx][content_idx].ContentIcon = Environment.CurrentDirectory + @"\ICO\content\" + headerIcon;
-            contentInstance[tab_idx][content_idx].ContentText = headerText;
-            contentInstance[tab_idx][content_idx].ProgramPath = programPath;
+            getInstance(tab_idx)[content_idx].ContentIcon = Environment.CurrentDirectory + @"\ICO\content\" + headerIcon;
+            getInstance(tab_idx)[content_idx].ContentText = headerText;
+            getInstance(tab_idx)[content_idx].ProgramPath = programPath;
 
         }
 
         public void deleteContent(int tab_idx, int content_idx)
         {
-            contentInstance[tab_idx].RemoveAt(content_idx);
+            getInstance(tab_idx).RemoveAt(content_idx);
             
         }
     }

@@ -99,7 +99,7 @@ namespace PCLinkerProject
         private void Content_StartProgram(object sender, MouseButtonEventArgs e)
         {
             dynamic meta_data = sender as dynamic;
-            var temp = MainTabControlViewModel.getInstance(selected_tab);
+            var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
             //temp[selected_content].ProgramPath;
             Process myProcess = new Process();
             myProcess.StartInfo.FileName = temp[selected_content].ProgramPath;
@@ -137,7 +137,7 @@ namespace PCLinkerProject
         {
             // MainTabControlViewModel.getInstance().addContent(selected_index, "PyCharm.ico", textbox1.Text.ToString());
             // MainTabControlViewModel.getInstance().addTab("chrome.ico", textbox1.Text.ToString());
-            var temp = MainTabControlViewModel.getInstance(selected_tab);
+            var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
             Console.WriteLine("D : " + temp[selected_content].ContentText);
 
             MainTabControlViewModel.getInstance().deleteContent(selected_tab, selected_content);

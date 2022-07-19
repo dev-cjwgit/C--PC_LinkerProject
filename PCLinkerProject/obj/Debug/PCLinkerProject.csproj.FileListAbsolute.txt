@@ -47,3 +47,5 @@ C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\PCLinkerProjec
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\controls\EditWindow.g.cs
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\controls\EditWindow.baml
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\GongSolutions.WPF.DragDrop.dll
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\GongSolutions.WPF.DragDrop.xml
