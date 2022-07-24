@@ -14,15 +14,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PCLinkerProject.controls
+namespace PCLinkerProject.Controls
 {
     /// <summary>
     /// EditWindow.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class EditWindow : UserControl
+    public partial class ContentEditWindow : UserControl
     {
 
-        public EditWindow()
+        public ContentEditWindow()
         {
             InitializeComponent();
         }

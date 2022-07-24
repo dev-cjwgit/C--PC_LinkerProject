@@ -122,13 +122,13 @@ namespace PCLinkerProject
         private void Content_Append(object sender, RoutedEventArgs e)
         {
             presentStatus = PresentStatusEnum.AddContent;
-            EditWindow.Visibility = Visibility.Visible;
+            ContentEditWindow.Visibility = Visibility.Visible;
         }
 
         private void Content_Update(object sender, RoutedEventArgs e)
         {
             presentStatus = PresentStatusEnum.UpdateContent;
-            EditWindow.Visibility = Visibility.Visible;
+            ContentEditWindow.Visibility = Visibility.Visible;
             //var temp = MainTabControlViewModel.getInstance(selected_index);
             //Console.WriteLine("U : " + temp[selected_item_index].ContentText);
         }
@@ -152,20 +152,20 @@ namespace PCLinkerProject
         {
             //MainTabControlViewModel.getInstance().addTab("back.jpg", "임시1");
 
-            EditWindow.Visibility = Visibility.Visible;
+            //EditWindow.Visibility = Visibility.Visible;
         }
 
 
         private void Header_Append(object sender, RoutedEventArgs e)
         {
             presentStatus = PresentStatusEnum.AddTab;
-            EditWindow.Visibility = Visibility.Visible;
+            HeaderEditWindow.Visibility = Visibility.Visible;
         }
 
         private void Header_Update(object sender, RoutedEventArgs e)
         {
             presentStatus = PresentStatusEnum.UpdateTab;
-            EditWindow.Visibility = Visibility.Visible;
+            HeaderEditWindow.Visibility = Visibility.Visible;
         }
 
         private void Header_Delete(object sender, RoutedEventArgs e)

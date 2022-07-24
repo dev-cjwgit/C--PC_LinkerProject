@@ -11,7 +11,7 @@
         ResizeMode="CanResizeWithGrip"
         Loaded="Window_Loaded" Closing="Window_Closing"
         mc:Ignorable="d"
-        xmlns:Ct="clr-namespace:PCLinkerProject.controls"
+        xmlns:Ct="clr-namespace:PCLinkerProject.Controls"
         MinHeight="500" MinWidth="700"
         Title="MainWindow" Height="500" Width="700">
     <Window.Resources>
@@ -226,7 +226,9 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Ct:EditWindow x:Name="EditWindow" Grid.RowSpan="2" Panel.ZIndex="1" Visibility="Collapsed"/>
+        <Ct:HeaderEditWindow x:Name="HeaderEditWindow" Grid.RowSpan="2" Panel.ZIndex="1" Visibility="Collapsed"/>
+        <Ct:ContentEditWindow x:Name="ContentEditWindow" Grid.RowSpan="2" Panel.ZIndex="1" Visibility="Collapsed"/>
+        
         <Border CornerRadius="2.5" Background="WhiteSmoke" BorderBrush="Black" BorderThickness="1.0" Margin="5">
         <Border.Effect>
             <DropShadowEffect ShadowDepth="0" BlurRadius="5" Color="Gray" />
