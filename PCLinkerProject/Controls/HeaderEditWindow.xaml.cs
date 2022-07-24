@@ -17,7 +17,7 @@ namespace PCLinkerProject.Controls
 {
     /// <summary>
     /// HeaderEditWindow.xaml에 대한 상호 작용 논리
-    /// </summary>
+    /// </summary> test
     public partial class HeaderEditWindow : UserControl
     {
         public HeaderEditWindow()
