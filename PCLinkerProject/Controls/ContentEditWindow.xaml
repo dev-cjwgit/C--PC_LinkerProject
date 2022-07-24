@@ -25,7 +25,7 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-      
+
                     <TextBox Grid.Row="0" x:Name="IconTextbox" Margin="8,0,8,0"
                           materialDesign:HintAssist.Hint="Icon Name"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}"

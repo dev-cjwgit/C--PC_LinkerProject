@@ -43,17 +43,6 @@ namespace PCLinkerProject.Controls
                         break;
                     }
 
-                case PresentStatusEnum.AddTab:
-                    {
-                        MainTabControlViewModel.getInstance().addTab(IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
-                        break;
-                    }
-                case PresentStatusEnum.UpdateTab:
-                    {
-                        MainTabControlViewModel.getInstance().updateTab(MainWindow.selected_tab, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
-                        break;
-                    }
-
                 case PresentStatusEnum.AddContent:
                     {
                         MainTabControlViewModel.getInstance().addContent(MainWindow.selected_tab, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString(), ShellTextbox.Text.ToString());
