@@ -24,5 +24,10 @@ namespace PCLinkerProject.Controls
         {
             InitializeComponent();
         }
+
+        private void ProgressBar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
     }
 }

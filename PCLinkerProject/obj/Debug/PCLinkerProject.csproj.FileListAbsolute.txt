@@ -51,3 +51,5 @@ C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\Conte
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\HeaderEditWindow.g.cs
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\ContentEditWindow.baml
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\HeaderEditWindow.baml
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\IconEditWindow.g.cs
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\IconEditWindow.baml

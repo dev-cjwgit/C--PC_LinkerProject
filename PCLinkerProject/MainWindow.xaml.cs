@@ -1,4 +1,5 @@
 ﻿using PCLinkerProject.ViewModel;
+using SQLiteComponent;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -31,6 +32,29 @@ namespace PCLinkerProject
         public MainWindow()
         {
             InitializeComponent();
+
+            ISQLite sql = new SQLite(Environment.CurrentDirectory, "default");
+            while (!sql.OpenDataBase())
+            {
+                while (!sql.CreateDataBase()) ;
+                if (sql.OpenDataBase())
+                {
+                    /****************************************************************************/
+                    if (sql.ExecuteSQL("CREATE TABLE 'PROGRAM' ('age' int,'name' VARCHAR(50));"))
+                    {
+                        Console.WriteLine("SQL Execute  Success");
+                    }
+                    else
+                    {
+                        Console.WriteLine("SQL Execute Failed");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("SQL Open Failed");
+                }
+            }
+
             TabControl1.DataContext = MainTabControlViewModel.getInstance();
 
         }
@@ -145,7 +169,8 @@ namespace PCLinkerProject
         }
         private void WindowsConfigButton_Click(object sender, RoutedEventArgs e)
         {
-
+            //
+            IconEditWindow.Visibility = Visibility.Visible;
         }
 
         private void Temp_onClick(object sender, MouseButtonEventArgs e)
