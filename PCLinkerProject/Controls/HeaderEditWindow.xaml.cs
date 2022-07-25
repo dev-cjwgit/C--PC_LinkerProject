@@ -1,6 +1,7 @@
 ﻿using PCLinkerProject.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,7 @@ namespace PCLinkerProject.Controls
                 case PresentStatusEnum.AddTab:
                     {
                         String[] path = IconTextbox.Text.ToString().Split('\\');
-
+                        File.Copy(IconTextbox.Text, Environment.CurrentDirectory + @"\ICO\" + path[path.Length - 1]);
                         MainTabControlViewModel.getInstance().addTab(IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
                         break;
                     }

@@ -58,7 +58,7 @@ namespace PCLinkerProject.ViewModel
             var temp = new ObservableCollection<TabContentViewModel>();
             Tabs.Add(new TabItem
             {
-                HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\" + headerIcon,
+                HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon,
                 HeaderText = headerText,
                 Content = temp,
             });
@@ -69,7 +69,7 @@ namespace PCLinkerProject.ViewModel
         public void updateTab(int tab_idx, string headerIcon, string headerText)
         {
 
-            Tabs[tab_idx].HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\" + headerIcon;
+            Tabs[tab_idx].HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon;
             Tabs[tab_idx].HeaderText = headerText;
 
         }
@@ -82,7 +82,7 @@ namespace PCLinkerProject.ViewModel
         {
             getInstance(tab_idx).Add(new TabContentViewModel()
             {
-                ContentIcon = Environment.CurrentDirectory + @"\ICO\content\" + headerIcon,
+                ContentIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon,
                 ContentText = headerText,
                 ProgramPath = programPath
             });
@@ -90,7 +90,7 @@ namespace PCLinkerProject.ViewModel
 
         public void updateContent(int tab_idx, int content_idx, string headerIcon, string headerText, string programPath)
         {
-            getInstance(tab_idx)[content_idx].ContentIcon = Environment.CurrentDirectory + @"\ICO\content\" + headerIcon;
+            getInstance(tab_idx)[content_idx].ContentIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon;
             getInstance(tab_idx)[content_idx].ContentText = headerText;
             getInstance(tab_idx)[content_idx].ProgramPath = programPath;
 

@@ -24,24 +24,59 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBox Grid.Row="0" x:Name="IconTextbox" Margin="8,0,8,0"
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="96"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox 
+                            Grid.Column="0" x:Name="IconTextbox" Margin="8,0,8,0"
+                              IsReadOnly="True"
                           materialDesign:HintAssist.Hint="Icon Name"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                          VerticalAlignment="Center" />
+                          VerticalAlignment="Center" Cursor="Arrow" />
+                        <Button Grid.Column="1"
+                          Style="{StaticResource MaterialDesignIconButton}"
+                                Click="IconSelectButton_onClick"
+                          ToolTip="MaterialDesignIconButton">
+                            <materialDesign:PackIcon Kind="DotsHorizontal" />
+                        </Button>
+                    </Grid>
 
                     <TextBox Grid.Row="1" x:Name="TitleTextbox"  Margin="8,0,8,0"
                           materialDesign:HintAssist.Hint="Title"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                           VerticalAlignment="Center" />
 
-                    <TextBox Grid.Row="2" x:Name="ShellTextbox"  Margin="8,0,8,0"
-                          materialDesign:HintAssist.Hint="Shell Path"
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="96"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox 
+                            Grid.Column="0" x:Name="ShellTextbox" Margin="8,0,8,0"
+                              IsReadOnly="True"
+                          materialDesign:HintAssist.Hint="shell path"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                          VerticalAlignment="Center" />
+                          VerticalAlignment="Center" Cursor="Arrow" />
+                        <Button Grid.Column="1"
+                          Style="{StaticResource MaterialDesignIconButton}"
+                                Click="ShellPathSelectButton_onClick"
+                          ToolTip="MaterialDesignIconButton" Cursor="Hand">
+                            <materialDesign:PackIcon Kind="DotsHorizontal" />
+                        </Button>
+                    </Grid>
 
-                    <Grid Grid.Row="3">
+                    <TextBox 
+                            Grid.Row="3" x:Name="CommandTextbox" Margin="8,0,8,0"
+                          materialDesign:HintAssist.Hint="Command"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          VerticalAlignment="Center" Cursor="Arrow" />
+                    
+                    <Grid Grid.Row="4">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>

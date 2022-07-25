@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -19,7 +20,7 @@ namespace PCLinkerProject.Controls
     /// <summary>
     /// EditWindow.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class ContentEditWindow : UserControl
+    public partial class ContentEditWindow : System.Windows.Controls.UserControl
     {
 
         public ContentEditWindow()
@@ -30,7 +31,7 @@ namespace PCLinkerProject.Controls
         private void ProgressBar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
-            
+
         }
 
         private void AcceptButton_onClick(object sender, RoutedEventArgs e)
@@ -61,6 +62,35 @@ namespace PCLinkerProject.Controls
         private void CancelButton_onClick(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
+        }
+
+        private void IconSelectButton_onClick(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlgOpenFile = new OpenFileDialog();
+
+            dlgOpenFile.Filter = "Icon File (*.ico) | *.ico;";
+
+
+            if (dlgOpenFile.ShowDialog().ToString() == "OK")
+            {
+                IconTextbox.Text = dlgOpenFile.FileName;
+
+            }
+        }
+
+
+        private void ShellPathSelectButton_onClick(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlgOpenFile = new OpenFileDialog();
+
+            dlgOpenFile.Filter = "응용 프로그램 (*.exe) | *.exe;";
+
+
+            if (dlgOpenFile.ShowDialog().ToString() == "OK")
+            {
+                ShellTextbox.Text = dlgOpenFile.FileName;
+
+            }
         }
     }
 }
