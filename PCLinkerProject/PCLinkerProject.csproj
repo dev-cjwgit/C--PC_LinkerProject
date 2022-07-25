@@ -73,6 +73,9 @@
     <Compile Include="Controls\HeaderEditWindow.xaml.cs">
       <DependentUpon>HeaderEditWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\IconEditWindow.xaml.cs">
+      <DependentUpon>IconEditWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PresentStatusEnum.cs" />
     <Compile Include="VMs\MainTabControlViewModel.cs" />
     <Compile Include="VMs\NotifyPropertyChanged.cs" />
@@ -82,6 +85,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\HeaderEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\IconEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

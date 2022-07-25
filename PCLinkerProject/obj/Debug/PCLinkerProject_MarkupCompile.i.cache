@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\App.xaml
-3137330353
+4-677347366
 
-12-484542638
+13-325497331
 17-525836532
-Controls\ContentEditWindow.xaml;Controls\HeaderEditWindow.xaml;MainWindow.xaml;
+Controls\ContentEditWindow.xaml;Controls\HeaderEditWindow.xaml;Controls\IconEditWindow.xaml;MainWindow.xaml;
 
-False
+True
 
