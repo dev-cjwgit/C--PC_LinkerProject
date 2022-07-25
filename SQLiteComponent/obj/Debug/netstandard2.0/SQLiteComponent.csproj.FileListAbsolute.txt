@@ -25,3 +25,13 @@ C:\Users\user\Desktop\src\SQLite_C#\SQLiteComponent\obj\Debug\netstandard2.0\SQL
 C:\Users\user\Desktop\src\SQLite_C#\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.csproj.CoreCompileInputs.cache
 C:\Users\user\Desktop\src\SQLite_C#\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.dll
 C:\Users\user\Desktop\src\SQLite_C#\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.pdb
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\bin\Debug\netstandard2.0\SQLiteComponent.deps.json
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\bin\Debug\netstandard2.0\SQLiteComponent.dll
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\bin\Debug\netstandard2.0\SQLiteComponent.pdb
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.csproj.AssemblyReference.cache
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.AssemblyInfoInputs.cache
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.AssemblyInfo.cs
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.csproj.CoreCompileInputs.cache
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.dll
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.pdb

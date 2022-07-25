@@ -53,3 +53,6 @@ C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\Conte
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\HeaderEditWindow.baml
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\IconEditWindow.g.cs
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\IconEditWindow.baml
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\SQLiteComponent.dll
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\System.Data.SQLite.dll
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\SQLiteComponent.pdb
