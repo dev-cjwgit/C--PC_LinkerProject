@@ -28,31 +28,39 @@ namespace PCLinkerProject.ViewModel
         public MainTabControlViewModel()
         {
             Tabs = new ObservableCollection<TabItem>();
-            
-            addTab(1, "Computer.ico", "게임");
+
+            var data = PCLinkerDB.GetInstance().GetHeaderList();
+
+            Console.WriteLine();
 
 
         }
 
-        public void addTab(long uid, string headerIcon, string headerText)
+        public void addTab(string headerIcon, string headerText)
         {
-            var temp = new ObservableCollection<TabContentViewModel>();
-            Tabs.Add(new TabItem
+            if (PCLinkerDB.GetInstance().AddHeader(headerText, headerIcon))
             {
-                Uid = uid,
-                HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon,
-                HeaderText = headerText,
-                Content = temp,
-            });
+                var temp = new ObservableCollection<TabContentViewModel>();
+                int uid = PCLinkerDB.GetInstance().getHeaderUidByTitle(headerText);
+                Tabs.Add(new TabItem
+                {
+                    Uid = uid,
+                    HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon,
+                    HeaderText = headerText,
+                    Content = temp,
+                });
+            }
 
-            
         }
 
         public void updateTab(int tab_idx, string headerIcon, string headerText)
         {
-
-            Tabs[tab_idx].HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon;
-            Tabs[tab_idx].HeaderText = headerText;
+            long tab_uid = Tabs[tab_idx].Uid;
+            if (PCLinkerDB.GetInstance().UpdateHeader(tab_uid, headerText, headerIcon))
+            {
+                Tabs[tab_idx].HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon;
+                Tabs[tab_idx].HeaderText = headerText;
+            }
 
         }
         public void deleteTab(int tab_idx)
@@ -61,14 +69,14 @@ namespace PCLinkerProject.ViewModel
             try
             {
                 PCLinkerDB.GetInstance().DeleteHeader(tab_uid);
-
-                // Tabs.RemoveAt(tab_idx); // TODO: 주석제거
-            }catch(Exception e)
+                Tabs.RemoveAt(tab_idx);
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
 
-            
+
         }
 
         public void addContent(int tab_idx, string headerIcon, string headerText, string programPath)
@@ -92,7 +100,7 @@ namespace PCLinkerProject.ViewModel
         public void deleteContent(int tab_idx, int content_idx)
         {
             getInstance(tab_idx).RemoveAt(content_idx);
-            
+
         }
     }
 
@@ -106,7 +114,11 @@ namespace PCLinkerProject.ViewModel
 
         public long Uid
         {
-            get;set;
+            get
+            {
+                return uid;
+            }
+            set { uid = value; }
         }
         public string HeaderIcon
         {

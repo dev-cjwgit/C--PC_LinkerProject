@@ -60,19 +60,36 @@ namespace SQLiteComponent
             }
         }
 
-
-        public void AddHeader(string title, string icon_path)
+        public List<Dictionary<string, object>> GetHeaderList()
         {
-            sql.ExecuteSQL("INSERT INTO header(title, icon_path) VALUES (\"" + title + "\", \"" + icon_path + "\")");
+            sql.ExecuteSQL("SELECT * FROM header;");
+            return sql.GetData();
         }
 
-        public void DeleteHeader(long uid)
+        public int getHeaderUidByTitle(string title)
+        {
+            sql.ExecuteSQL("SELECT uid FROM header WHERE title = \"" + title + "\"");
+            var data = sql.GetData();
+            return int.Parse(data[0]["uid"].ToString());
+        }
+
+        public bool AddHeader(string title, string icon_path)
+        {
+            return sql.ExecuteSQL("INSERT INTO header(title, icon_path) VALUES (\"" + title + "\", \"" + icon_path + "\")");
+        }
+
+        public bool UpdateHeader(long uid, string title, string icon_path)
+        {
+            return sql.ExecuteSQL("UPDATE header SET title = \"" + title + "\", icon_path = \"" + icon_path + "\" WHERE uid = " + uid);
+        }
+
+        public bool DeleteHeader(long uid)
         {
             sql.ExecuteSQL("SELECT count(*) FROM header");
             var data = sql.GetData();
             int header_cnt = int.Parse(data[0]["count(*)"].ToString());
             if (header_cnt > 1)
-                sql.ExecuteSQL("DELETE FROM header WHERE uid = " + uid);
+                return sql.ExecuteSQL("DELETE FROM header WHERE uid = " + uid);
             else
                 throw new Exception("삭제할 수 없습니다.");
         }
