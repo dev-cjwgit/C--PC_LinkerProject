@@ -21,6 +21,7 @@
                 </Grid.RowDefinitions>
                 <ListBox x:Name="IconEditListbox"
                          Grid.Row="0"
+                         SelectionChanged="IconEdit_Selected"
                                      ScrollViewer.CanContentScroll="True"
                                      dd:DragDrop.IsDragSource="True"
                                      dd:DragDrop.IsDropTarget="True"
@@ -59,15 +60,51 @@
 
 
                 </ListBox>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="48"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox  Grid.Column="0" x:Name="IconTextbox" Margin="8,0,8,0"
+                              IsReadOnly="True"
+                              materialDesign:HintAssist.Hint="Icon Path"
+                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                              VerticalAlignment="Center" Cursor="Arrow" />
 
-                <TextBox  Grid.Row="1" x:Name="IconTextbox" Margin="8,0,8,0"
-                          IsReadOnly="True"
-                          materialDesign:HintAssist.Hint="Icon Path"
-                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                          VerticalAlignment="Center" Cursor="Arrow" />
-
+                    <Button Grid.Column="1"
+                          Style="{StaticResource MaterialDesignIconButton}"
+                                Click="IconSelectButton_onClick"
+                          ToolTip="MaterialDesignIconButton">
+                        <materialDesign:PackIcon Kind="DotsHorizontal" />
+                    </Button>
+                </Grid>
                 <Grid Grid.Row="2">
-                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            Click="AddButton_onClick"
+                            ToolTip="MaterialDesignFlatButton">
+                        추가
+                    </Button>
+
+                    <Button Grid.Column="1"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            Click="DeleteButton_onClick"
+                            ToolTip="MaterialDesignFlatButton">
+                        삭제
+                    </Button>
+
+                    <Button Grid.Column="2"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            Click="CancelButton_onClick"
+                            ToolTip="MaterialDesignFlatButton">
+                        취소
+                    </Button>
+
                 </Grid>
             </Grid>
         </Border>

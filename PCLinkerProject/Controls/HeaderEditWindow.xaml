@@ -38,7 +38,7 @@
                         <Button Grid.Column="1"
                           Style="{StaticResource MaterialDesignIconButton}"
                                 Click="IconSelectButton_onClick"
-                          ToolTip="MaterialDesignIconButton">
+                          ToolTip="MaterialDesignIconButton" Cursor="Hand">
                             <materialDesign:PackIcon Kind="DotsHorizontal" />
                         </Button>
                     </Grid>
@@ -59,7 +59,7 @@
                         <Button Grid.Column="0"
                             Style="{StaticResource MaterialDesignFlatButton}"
                             Click="AcceptButton_onClick"
-                            ToolTip="MaterialDesignFlatButton">
+                            ToolTip="MaterialDesignFlatButton" Cursor="Hand">
                             확인
                         </Button>
 
