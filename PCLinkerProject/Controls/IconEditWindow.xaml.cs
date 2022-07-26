@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PCLinkerProject.VMs;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,20 @@ namespace PCLinkerProject.Controls
         public IconEditWindow()
         {
             InitializeComponent();
+            IconEditListbox.ItemsSource = IconEditViewModel.GetInstance().Tabs;
+
+
+            string[] files = Directory.GetFiles(@"C:\File", "*.txt");
+            foreach (var file in files)
+            {
+                Console.WriteLine(file);
+            }
+
+            //IconEditViewModel.GetInstance().Tabs.Add(new HeaderItem()
+            //{
+            //    HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + "computer.ico",
+            //    HeaderText = "컴퓨터"
+            //});
         }
 
         private void ProgressBar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

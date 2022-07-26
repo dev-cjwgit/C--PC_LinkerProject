@@ -148,7 +148,6 @@ namespace SQLiteComponent
                             dict.Add(rdr.GetName(idx), rdr.GetValue(idx));
 
                         list.Add(new Dictionary<string, object>(dict));
-
                     }
                     rdr.Close();
                     return list;

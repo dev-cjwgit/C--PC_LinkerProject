@@ -30,7 +30,10 @@ namespace PCLinkerProject.ViewModel
             Tabs = new ObservableCollection<TabItem>();
 
             var data = PCLinkerDB.GetInstance().GetHeaderList();
-
+            foreach (var item in data)
+            {
+                addTab(item["icon_path"].ToString(), item["title"].ToString());
+            }
             Console.WriteLine();
 
 
@@ -38,45 +41,26 @@ namespace PCLinkerProject.ViewModel
 
         public void addTab(string headerIcon, string headerText)
         {
-            if (PCLinkerDB.GetInstance().AddHeader(headerText, headerIcon))
+
+            var temp = new ObservableCollection<TabContentViewModel>();
+            Tabs.Add(new TabItem
             {
-                var temp = new ObservableCollection<TabContentViewModel>();
-                int uid = PCLinkerDB.GetInstance().getHeaderUidByTitle(headerText);
-                Tabs.Add(new TabItem
-                {
-                    Uid = uid,
-                    HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon,
-                    HeaderText = headerText,
-                    Content = temp,
-                });
-            }
+                HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon,
+                HeaderText = headerText,
+                Content = temp,
+            });
+
 
         }
 
         public void updateTab(int tab_idx, string headerIcon, string headerText)
         {
-            long tab_uid = Tabs[tab_idx].Uid;
-            if (PCLinkerDB.GetInstance().UpdateHeader(tab_uid, headerText, headerIcon))
-            {
-                Tabs[tab_idx].HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon;
-                Tabs[tab_idx].HeaderText = headerText;
-            }
-
+            Tabs[tab_idx].HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon;
+            Tabs[tab_idx].HeaderText = headerText;
         }
         public void deleteTab(int tab_idx)
         {
-            long tab_uid = Tabs[tab_idx].Uid;
-            try
-            {
-                PCLinkerDB.GetInstance().DeleteHeader(tab_uid);
-                Tabs.RemoveAt(tab_idx);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-
+            Tabs.RemoveAt(tab_idx);
         }
 
         public void addContent(int tab_idx, string headerIcon, string headerText, string programPath)
@@ -112,14 +96,6 @@ namespace PCLinkerProject.ViewModel
 
         private string _headerText;
 
-        public long Uid
-        {
-            get
-            {
-                return uid;
-            }
-            set { uid = value; }
-        }
         public string HeaderIcon
         {
             get

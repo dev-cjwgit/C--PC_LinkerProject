@@ -77,6 +77,7 @@
       <DependentUpon>IconEditWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="PresentStatusEnum.cs" />
+    <Compile Include="VMs\IconEditViewModel.cs" />
     <Compile Include="VMs\MainTabControlViewModel.cs" />
     <Compile Include="VMs\NotifyPropertyChanged.cs" />
     <Compile Include="VMs\TabContentViewModel.cs" />

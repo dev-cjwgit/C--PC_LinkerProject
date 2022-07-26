@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PCLinkerProject.Controls"
+             xmlns:dd="urn:gong-wpf-dragdrop"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
@@ -13,7 +14,61 @@
         </Border>
         <Border Width="550" Height="450" Background="White" BorderBrush="Black" BorderThickness="1" Panel.ZIndex="1" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid>
-                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <ListBox x:Name="IconEditListbox"
+                         Grid.Row="0"
+                                     ScrollViewer.CanContentScroll="True"
+                                     dd:DragDrop.IsDragSource="True"
+                                     dd:DragDrop.IsDropTarget="True"
+                                     ScrollViewer.VerticalScrollBarVisibility="Visible">
+
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+                                            ItemWidth="{Binding (ListView.View).ItemWidth, 
+                                            RelativeSource={RelativeSource AncestorType=ListView}}"
+                                            MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
+                                            ItemHeight="{Binding (ListView.View).ItemHeight, 
+                                            RelativeSource={RelativeSource AncestorType=ListView}}" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border x:Name="Border" Padding="8"  BorderThickness="0 0 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}">
+                                <Grid Height="64" Width="96">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="32"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                Source="{Binding HeaderIcon}"/>
+
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                           TextTrimming="CharacterEllipsis"
+                                                 Grid.Row="1" Text="{Binding HeaderText}" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+
+                </ListBox>
+
+                <TextBox  Grid.Row="1" x:Name="IconTextbox" Margin="8,0,8,0"
+                          IsReadOnly="True"
+                          materialDesign:HintAssist.Hint="Icon Path"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          VerticalAlignment="Center" Cursor="Arrow" />
+
+                <Grid Grid.Row="2">
+                    
+                </Grid>
             </Grid>
         </Border>
     </Grid>
