@@ -51,7 +51,5 @@ namespace PCLinkerProject.ViewModel
                 OnPropertyChanged("ProgramPath");
             }
         }
-
-
     }
 }
