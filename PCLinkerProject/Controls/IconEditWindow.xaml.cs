@@ -26,7 +26,8 @@ namespace PCLinkerProject.Controls
 
     public partial class IconEditWindow : System.Windows.Controls.UserControl
     {
-        public static Selection send;
+        public static Selection send1;
+        public static Selection send2;
         private int selected_index;
         public IconEditWindow()
         {
@@ -108,7 +109,8 @@ namespace PCLinkerProject.Controls
             dynamic meta_data = sender as dynamic;
             var temp = IconEditViewModel.GetInstance().Tabs[selected_index];
             String[] dir = temp.HeaderIcon.ToString().Split('\\');
-            send(dir[dir.Length -1]);
+            send1(dir[dir.Length - 1]);
+            send2(dir[dir.Length - 1]);
             this.Visibility = Visibility.Collapsed;
         }
     }

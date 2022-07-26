@@ -26,8 +26,12 @@ namespace PCLinkerProject.Controls
         public ContentEditWindow()
         {
             InitializeComponent();
+            IconEditWindow.send2 = recv;
         }
-
+        public void recv(String fileName)
+        {
+            IconTextbox.Text = fileName;
+        }
         private void ProgressBar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
@@ -68,16 +72,17 @@ namespace PCLinkerProject.Controls
 
         private void IconSelectButton_onClick(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog dlgOpenFile = new OpenFileDialog();
+            IconEditWindow.Visibility = Visibility.Visible;
+            //OpenFileDialog dlgOpenFile = new OpenFileDialog();
 
-            dlgOpenFile.Filter = "Icon File (*.ico) | *.ico;";
+            //dlgOpenFile.Filter = "Icon File (*.ico) | *.ico;";
 
 
-            if (dlgOpenFile.ShowDialog().ToString() == "OK")
-            {
-                IconTextbox.Text = dlgOpenFile.FileName;
+            //if (dlgOpenFile.ShowDialog().ToString() == "OK")
+            //{
+            //    IconTextbox.Text = dlgOpenFile.FileName;
 
-            }
+            //}
         }
 
 
