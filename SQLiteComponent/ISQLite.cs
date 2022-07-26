@@ -15,5 +15,7 @@ namespace SQLiteComponent
         bool ExecuteSQL(string sql);
 
         bool ExecuteSQL(string[] sql);
+
+        List<Dictionary<string, object>> GetData();
     }
 }

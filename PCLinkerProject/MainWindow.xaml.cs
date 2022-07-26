@@ -25,7 +25,7 @@ namespace PCLinkerProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static ISQLite sql;
+        public static PCLinkerDB db;
         public static int selected_tab = -1; // selected tab idx
         public static int selected_content = -1; // selected listbox idx
         private WindowState PrevWindowState = WindowState.Normal;
@@ -34,43 +34,7 @@ namespace PCLinkerProject
         {
             InitializeComponent();
 
-            sql = new SQLite(Environment.CurrentDirectory, "default");
-            while (!sql.OpenDataBase())
-            {
-                while (!sql.CreateDataBase()) ;
-                if (sql.OpenDataBase())
-                {
-                    sql.ExecuteSQL("PRAGMA foreign_keys = 1;");
-                    /****************************************************************************/
-                    if (sql.ExecuteSQL("CREATE TABLE header (" +
-                        "uid INTEGER PRIMARY KEY NOT NULL ," +
-                        "title TEXT NULL DEFAULT NULL," +
-                        "icon_path TEXT NULL DEFAULT NULL" +
-                        ");" +
-                        "" +
-                        "CREATE TABLE content (" +
-                        "uid INTERGER PRIMARY KEY NOT NULL ," +
-                        "header_uid INTEGER NOT NULL," +
-                        "title TEXT NULL DEFAULT NULL," +
-                        "icon_path TEXT NULL DEFAULT NULL," +
-                        "shell_path TEXT NULL DEFAULT NULL," +
-                        "command TEXt NULL DEFAULT NULL," +
-                        "CONSTRAINT header_uid_FK FOREIGN KEY(header_uid) REFERENCES header(uid) ON UPDATE CASCADE ON DELETE CASCADE" +
-                        ");"))
-                    {
-                        sql.ExecuteSQL("INSERT INTO header(title, icon_path) VALUES (\"카테고리\", \"computer.ico\")");
-                        Console.WriteLine("SQL Execute  Success");
-                    }
-                    else
-                    {
-                        Console.WriteLine("SQL Execute Failed");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("SQL Open Failed");
-                }
-            }
+            PCLinkerDB.GetInstance();
 
             TabControl1.DataContext = MainTabControlViewModel.getInstance();
 

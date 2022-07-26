@@ -41,7 +41,7 @@ namespace PCLinkerProject.Controls
                     {
                         String[] path = IconTextbox.Text.ToString().Split('\\');
                         File.Copy(IconTextbox.Text, Environment.CurrentDirectory + @"\ICO\" + path[path.Length - 1]);
-                        MainTabControlViewModel.getInstance().addTab(IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
+                        MainTabControlViewModel.getInstance().addTab(0, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
                         break;
                     }
                 case PresentStatusEnum.UpdateTab:

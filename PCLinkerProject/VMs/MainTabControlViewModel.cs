@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLiteComponent;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -27,37 +28,18 @@ namespace PCLinkerProject.ViewModel
         public MainTabControlViewModel()
         {
             Tabs = new ObservableCollection<TabItem>();
+            
+            addTab(1, "Computer.ico", "게임");
 
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    var temp = new ObservableCollection<TabContentViewModel>();
 
-            //    for (int j = 0; j < 50; j++)
-            //    {
-            //        temp.Add(new TabContentViewModel()
-            //        {
-            //            ContentIcon = Environment.CurrentDirectory + @"\ICO\content\kakaotalk.ico",
-            //            ContentText = "비주얼" + i + "-" + j
-            //        }
-            //        );
-            //    }
-            //    contentInstance.Add(temp);
-            //}
-
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    Tabs.Add(new TabItem { HeaderIcon = Environment.CurrentDirectory + @"\ICO\header\Computer.ico", HeaderText = "게임" + i, Content = contentInstance[i] });
-
-            //}
-            addTab("Computer.ico", "게임");
-            //addTab("Computer.ico", "유틸리티");
         }
 
-        public void addTab(string headerIcon, string headerText)
+        public void addTab(long uid, string headerIcon, string headerText)
         {
             var temp = new ObservableCollection<TabContentViewModel>();
             Tabs.Add(new TabItem
             {
+                Uid = uid,
                 HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon,
                 HeaderText = headerText,
                 Content = temp,
@@ -75,7 +57,18 @@ namespace PCLinkerProject.ViewModel
         }
         public void deleteTab(int tab_idx)
         {
-            Tabs.RemoveAt(tab_idx);
+            long tab_uid = Tabs[tab_idx].Uid;
+            try
+            {
+                PCLinkerDB.GetInstance().DeleteHeader(tab_uid);
+
+                // Tabs.RemoveAt(tab_idx); // TODO: 주석제거
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            
         }
 
         public void addContent(int tab_idx, string headerIcon, string headerText, string programPath)
@@ -105,9 +98,16 @@ namespace PCLinkerProject.ViewModel
 
     public sealed class TabItem : NotifyPropertyChanged
     {
+        private long uid;
+
         private string _headerIcon;
 
         private string _headerText;
+
+        public long Uid
+        {
+            get;set;
+        }
         public string HeaderIcon
         {
             get

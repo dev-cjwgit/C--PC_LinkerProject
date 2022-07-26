@@ -279,24 +279,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CJW\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\multicampus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CJW\\Documents\\PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj",
+      "projectUniqueName": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj",
       "projectName": "SQLiteComponent",
-      "projectPath": "C:\\Users\\CJW\\Documents\\PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj",
-      "packagesPath": "C:\\Users\\CJW\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CJW\\Documents\\PC_LinkerProject\\SQLiteComponent\\obj\\",
+      "projectPath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj",
+      "packagesPath": "C:\\Users\\multicampus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\SQLiteComponent\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\CJW\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\multicampus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -343,7 +338,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
