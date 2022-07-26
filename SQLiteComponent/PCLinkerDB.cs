@@ -9,7 +9,7 @@ namespace SQLiteComponent
         private static PCLinkerDB instance;
         public static PCLinkerDB GetInstance()
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = new PCLinkerDB();
             }
@@ -29,22 +29,22 @@ namespace SQLiteComponent
 
                     /****************************************************************************/
                     if (sql.ExecuteSQL("CREATE TABLE header (" +
-                        "uid INTEGER PRIMARY KEY NOT NULL ," +
-                        "title TEXT UNIQUE NULL DEFAULT NULL," +
+                        "title TEXT PRIMARY KEY NOT NULL," +
                         "icon_path TEXT NULL DEFAULT NULL" +
                         ");" +
                         "" +
                         "CREATE TABLE content (" +
-                        "uid INTERGER PRIMARY KEY NOT NULL ," +
-                        "header_uid INTEGER NOT NULL," +
+                        "uid INTEGER PRIMARY KEY NOT NULL ," +
+                        "header_title TEXT NOT NULL," +
                         "title TEXT NULL DEFAULT NULL," +
                         "icon_path TEXT NULL DEFAULT NULL," +
-                        "shell_path TEXT NULL DEFAULT NULL," +
-                        "command TEXt NULL DEFAULT NULL," +
-                        "CONSTRAINT header_uid_FK FOREIGN KEY(header_uid) REFERENCES header(uid) ON UPDATE CASCADE ON DELETE CASCADE" +
+                        "shell_path TEXT NULL DEFAULT \"\"," +
+                        "command TEXT NULL DEFAULT \"\"," +
+                        "CONSTRAINT header_title_FK FOREIGN KEY(header_title) REFERENCES header(title) ON UPDATE CASCADE ON DELETE CASCADE" +
                         ");"))
                     {
                         sql.ExecuteSQL("INSERT INTO header(title, icon_path) VALUES (\"카테고리\", \"computer.ico\")");
+                        sql.ExecuteSQL("INSERT INTO content(header_title, title, icon_path,  shell_path, command) VALUES (\"카테고리\",\"김치찌개\",\"computer.ico\", \"\", \"\");");
                         Console.WriteLine("SQL Execute  Success");
                     }
                     else
@@ -95,5 +95,9 @@ namespace SQLiteComponent
         }
 
 
+        public bool addContent(string header_title, string icon_path, string title, string shell_path, string command)
+        {
+            return sql.ExecuteSQL("INSERT INTO content(header_title, title, icon_path,  shell_path, command) VALUES (\"" + header_title + "\",\"" + title + "\",\"" + icon_path + "\", \"" + shell_path + "\", \"" + command + "\");");
+        }
     }
 }

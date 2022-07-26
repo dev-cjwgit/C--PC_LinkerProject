@@ -74,14 +74,11 @@ namespace PCLinkerProject.Controls
         {
             IconEditWindow.Visibility = Visibility.Visible;
             //OpenFileDialog dlgOpenFile = new OpenFileDialog();
-
             //dlgOpenFile.Filter = "Icon File (*.ico) | *.ico;";
-
 
             //if (dlgOpenFile.ShowDialog().ToString() == "OK")
             //{
             //    IconTextbox.Text = dlgOpenFile.FileName;
-
             //}
         }
 
