@@ -9,8 +9,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
     <Grid>
+
         <Border Background="Black" Opacity="0.3" Panel.ZIndex="0">
-            <ProgressBar Style="{StaticResource DefaultProgressBar}" Opacity="0" MouseLeftButtonUp="ProgressBar_MouseLeftButtonUp" />
+            <ProgressBar Style="{StaticResource DefaultProgressBar}" Opacity="0" MouseRightButtonDown="ProgressBar_MouseLeftButtonUp" />
         </Border>
         <Border Width="550" Height="450" Background="White" BorderBrush="Black" BorderThickness="1" Panel.ZIndex="1" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid>
@@ -21,6 +22,7 @@
                 </Grid.RowDefinitions>
                 <ListBox x:Name="IconEditListbox"
                          Grid.Row="0"
+                         MouseDoubleClick="CheckDoubleClick"
                          SelectionChanged="IconEdit_Selected"
                                      ScrollViewer.CanContentScroll="True"
                                      dd:DragDrop.IsDragSource="True"

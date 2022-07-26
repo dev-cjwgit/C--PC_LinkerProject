@@ -9,7 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Border Background="Black" Opacity="0.3" Panel.ZIndex="0">
-            <ProgressBar Style="{StaticResource DefaultProgressBar}" Opacity="0" MouseLeftButtonUp="ProgressBar_MouseLeftButtonUp" />
+            <ProgressBar Style="{StaticResource DefaultProgressBar}" Opacity="0" MouseRightButtonDown="ProgressBar_MouseLeftButtonUp" />
         </Border>
         <Border Width="350" Height="400" Background="White" BorderBrush="Black" BorderThickness="1" Panel.ZIndex="1" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid>

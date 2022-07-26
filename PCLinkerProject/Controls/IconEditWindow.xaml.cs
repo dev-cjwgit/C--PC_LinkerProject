@@ -21,15 +21,20 @@ namespace PCLinkerProject.Controls
     /// <summary>
     /// IconEditWindow.xaml에 대한 상호 작용 논리
     /// </summary>
+    /// 
+    public delegate void Selection(string data);
+
     public partial class IconEditWindow : System.Windows.Controls.UserControl
     {
+        public static Selection send;
         private int selected_index;
         public IconEditWindow()
         {
             InitializeComponent();
             IconEditListbox.ItemsSource = IconEditViewModel.GetInstance().Tabs;
 
-
+            IconEditViewModel.GetInstance().Tabs.Clear();
+            // TODO: 2번 호출되는 이유 찾고 오류 고쳐야함
             string[] files = Directory.GetFiles(Environment.CurrentDirectory + @"\ICO\", "*.ico");
             foreach (var file in files)
             {
@@ -96,6 +101,15 @@ namespace PCLinkerProject.Controls
             {
                 IconTextbox.Text = dlgOpenFile.FileName;
             }
+        }
+
+        private void CheckDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            dynamic meta_data = sender as dynamic;
+            var temp = IconEditViewModel.GetInstance().Tabs[selected_index];
+            String[] dir = temp.HeaderIcon.ToString().Split('\\');
+            send(dir[dir.Length -1]);
+            this.Visibility = Visibility.Collapsed;
         }
     }
 }

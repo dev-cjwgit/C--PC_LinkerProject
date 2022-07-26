@@ -46,13 +46,15 @@ namespace PCLinkerProject.Controls
 
                 case PresentStatusEnum.AddContent:
                     {
-                        MainTabControlViewModel.getInstance().addContent(MainWindow.selected_tab, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString(), ShellTextbox.Text.ToString());
+                        String[] dir = IconTextbox.Text.ToString().Split('\\');
+                        MainTabControlViewModel.getInstance().addContent(MainWindow.selected_tab, dir[dir.Length - 1], TitleTextbox.Text.ToString(), ShellTextbox.Text.ToString());
                         break;
                     }
 
                 case PresentStatusEnum.UpdateContent:
                     {
-                        MainTabControlViewModel.getInstance().updateContent(MainWindow.selected_tab, MainWindow.selected_content, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString(), ShellTextbox.Text.ToString());
+                        String[] dir = IconTextbox.Text.ToString().Split('\\');
+                        MainTabControlViewModel.getInstance().updateContent(MainWindow.selected_tab, MainWindow.selected_content, dir[dir.Length - 1], TitleTextbox.Text.ToString(), ShellTextbox.Text.ToString());
                         break;
                     }
             }

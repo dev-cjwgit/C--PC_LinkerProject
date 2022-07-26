@@ -18,14 +18,18 @@ using System.Windows.Shapes;
 
 namespace PCLinkerProject.Controls
 {
+    
     /// <summary>
     /// HeaderEditWindow.xaml에 대한 상호 작용 논리
     /// </summary> test
     public partial class HeaderEditWindow : System.Windows.Controls.UserControl
     {
+        
+
         public HeaderEditWindow()
         {
             InitializeComponent();
+            IconEditWindow.send = recv;
         }
 
         private void AcceptButton_onClick(object sender, RoutedEventArgs e)
@@ -40,7 +44,6 @@ namespace PCLinkerProject.Controls
                 case PresentStatusEnum.AddTab:
                     {
                         String[] path = IconTextbox.Text.ToString().Split('\\');
-                        File.Copy(IconTextbox.Text, Environment.CurrentDirectory + @"\ICO\" + path[path.Length - 1]);
                         MainTabControlViewModel.getInstance().addTab(IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
                         break;
                     }
@@ -55,7 +58,7 @@ namespace PCLinkerProject.Controls
 
         private void CancelButton_onClick(object sender, RoutedEventArgs e)
         {
-
+            this.Visibility = Visibility.Collapsed;
         }
 
         private void ProgressBar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -63,19 +66,25 @@ namespace PCLinkerProject.Controls
             this.Visibility = Visibility.Collapsed;
         }
 
+
+        private void recv(String name)
+        {
+            IconTextbox.Text = name;
+        }
         private void IconSelectButton_onClick(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog dlgOpenFile = new OpenFileDialog();
+            IconEditWindow.Visibility = Visibility.Visible;
+            //OpenFileDialog dlgOpenFile = new OpenFileDialog();
 
-            dlgOpenFile.Filter = "Icon File (*.ico) | *.ico;";
+            //dlgOpenFile.Filter = "Icon File (*.ico) | *.ico;";
 
 
 
-            if (dlgOpenFile.ShowDialog().ToString() == "OK")
-            {
-                IconTextbox.Text = dlgOpenFile.FileName;
+            //if (dlgOpenFile.ShowDialog().ToString() == "OK")
+            //{
+            //    IconTextbox.Text = dlgOpenFile.FileName;
 
-            }
+            //}
         }
     }
 }
