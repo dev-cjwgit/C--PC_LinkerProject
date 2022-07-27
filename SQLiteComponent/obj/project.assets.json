@@ -68,6 +68,16 @@
             "rid": "win-x86"
           }
         }
+      },
+      "ProgramCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ProgramCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProgramCore.dll": {}
+        }
       }
     }
   },
@@ -270,11 +280,17 @@
         "system.data.sqlite.core.1.0.113.1.nupkg.sha512",
         "system.data.sqlite.core.nuspec"
       ]
+    },
+    "ProgramCore/1.0.0": {
+      "type": "project",
+      "path": "../ProgramCore/ProgramCore.csproj",
+      "msbuildProject": "../ProgramCore/ProgramCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
+      "ProgramCore >= 1.0.0",
       "System.Data.SQLite.Core >= 1.0.113.1"
     ]
   },
@@ -304,7 +320,11 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj": {
+              "projectPath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

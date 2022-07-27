@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgramCore.DAO;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -60,10 +61,20 @@ namespace SQLiteComponent
             }
         }
 
-        public List<Dictionary<string, object>> GetHeaderList()
+        public List<HeaderDAO> GetHeaderList()
         {
+            List<HeaderDAO> result = new List<HeaderDAO>();
             sql.ExecuteSQL("SELECT * FROM header;");
-            return sql.GetData();
+            var tempdata = sql.GetData();
+            foreach (var item in tempdata)
+            {
+                result.Add(new HeaderDAO()
+                {
+                    IconPath = item["icon_path"].ToString(),
+                    Title = item["title"].ToString()
+                });
+            }
+            return result;
         }
 
         public int getHeaderUidByTitle(string title)

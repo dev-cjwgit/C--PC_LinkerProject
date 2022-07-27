@@ -5,10 +5,16 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLinkerProject", "PCLinkerProject\PCLinkerProject.csproj", "{A91FC078-9B24-4FB4-BE3F-55F535A5C533}"
 	ProjectSection(ProjectDependencies) = postProject
+		{64230D7D-F639-4628-B184-14E197E7CE3E} = {64230D7D-F639-4628-B184-14E197E7CE3E}
 		{A5BC0E77-CEBF-4F35-AC63-0EAE2C0EBDE8} = {A5BC0E77-CEBF-4F35-AC63-0EAE2C0EBDE8}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLiteComponent", "SQLiteComponent\SQLiteComponent.csproj", "{A5BC0E77-CEBF-4F35-AC63-0EAE2C0EBDE8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{64230D7D-F639-4628-B184-14E197E7CE3E} = {64230D7D-F639-4628-B184-14E197E7CE3E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramCore", "ProgramCore\ProgramCore.csproj", "{64230D7D-F639-4628-B184-14E197E7CE3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +30,10 @@ Global
 		{A5BC0E77-CEBF-4F35-AC63-0EAE2C0EBDE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5BC0E77-CEBF-4F35-AC63-0EAE2C0EBDE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5BC0E77-CEBF-4F35-AC63-0EAE2C0EBDE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64230D7D-F639-4628-B184-14E197E7CE3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64230D7D-F639-4628-B184-14E197E7CE3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64230D7D-F639-4628-B184-14E197E7CE3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64230D7D-F639-4628-B184-14E197E7CE3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

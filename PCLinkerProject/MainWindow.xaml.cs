@@ -33,7 +33,6 @@ namespace PCLinkerProject
         public MainWindow()
         {
             InitializeComponent();
-
             PCLinkerDB.GetInstance();
 
             TabControl1.DataContext = MainTabControlViewModel.getInstance();

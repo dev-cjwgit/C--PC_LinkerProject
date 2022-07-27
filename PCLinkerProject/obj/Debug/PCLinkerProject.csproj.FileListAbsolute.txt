@@ -63,7 +63,6 @@ C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\MaterialDesignColors.dll
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\SQLiteComponent.dll
-C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\System.Data.SQLite.dll
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\SQLiteComponent.pdb
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\GongSolutions.WPF.DragDrop.xml
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\MaterialDesignColors.pdb
@@ -91,3 +90,6 @@ C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\obj\Debug\
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\obj\Debug\PCLinkerProject.csproj.CopyComplete
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\obj\Debug\PCLinkerProject.exe
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\obj\Debug\PCLinkerProject.pdb
+C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\ProgramCore.dll
+C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\ProgramCore.pdb
+C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\System.Data.SQLite.dll

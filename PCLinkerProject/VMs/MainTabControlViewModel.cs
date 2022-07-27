@@ -29,10 +29,11 @@ namespace PCLinkerProject.ViewModel
         {
             Tabs = new ObservableCollection<TabItem>();
 
+            // TODO: View와 로직을 구분해야한다.
             var data = PCLinkerDB.GetInstance().GetHeaderList();
             foreach (var item in data)
             {
-                addTab(item["icon_path"].ToString(), item["title"].ToString());
+                addTab(item.IconPath, item.Title);
             }
             Console.WriteLine();
 
