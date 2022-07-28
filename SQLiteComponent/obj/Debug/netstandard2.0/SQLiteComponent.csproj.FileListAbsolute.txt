@@ -48,3 +48,6 @@ C:\Users\multicampus\source\repos\C--PC_LinkerProject\SQLiteComponent\obj\Debug\
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\SQLiteComponent\bin\Debug\netstandard2.0\ProgramCore.dll
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\SQLiteComponent\bin\Debug\netstandard2.0\ProgramCore.pdb
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.csproj.CopyComplete
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\bin\Debug\netstandard2.0\ProgramCore.dll
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\bin\Debug\netstandard2.0\ProgramCore.pdb
+C:\Users\CJW\Documents\PC_LinkerProject\SQLiteComponent\obj\Debug\netstandard2.0\SQLiteComponent.csproj.CopyComplete

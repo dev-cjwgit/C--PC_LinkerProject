@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xMn+7V8wpOAQKL4pqPzOsSljPaa8Vd0oJCkRHClY7eA7DaN1QkAwsv9h4+SCkHAtEaVjbg/Apj8Q9JfutpkvHQ==",
+  "dgSpecHash": "LoeKbKNOqnrM0eHqzyqVQnQ5BYhfKm/G3/ft7ylBa4E7/4TpBf/K9Bcake8aJ9LHg+vrkYBwl+PvtvvAlETdbA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj",
+  "projectFilePath": "C:\\Users\\CJW\\Documents\\PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\multicampus\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\multicampus\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\multicampus\\.nuget\\packages\\system.data.sqlite.core\\1.0.113.1\\system.data.sqlite.core.1.0.113.1.nupkg.sha512"
+    "C:\\Users\\CJW\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\CJW\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\CJW\\.nuget\\packages\\system.data.sqlite.core\\1.0.113.1\\system.data.sqlite.core.1.0.113.1.nupkg.sha512"
   ],
   "logs": []
 }

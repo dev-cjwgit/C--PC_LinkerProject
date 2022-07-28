@@ -180,19 +180,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\multicampus\\.nuget\\packages\\": {}
+    "C:\\Users\\CJW\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
+      "projectUniqueName": "C:\\Users\\CJW\\Documents\\PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
       "projectName": "ProgramCore",
-      "projectPath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
-      "packagesPath": "C:\\Users\\multicampus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\obj\\",
+      "projectPath": "C:\\Users\\CJW\\Documents\\PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
+      "packagesPath": "C:\\Users\\CJW\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\CJW\\Documents\\PC_LinkerProject\\ProgramCore\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\multicampus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\CJW\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

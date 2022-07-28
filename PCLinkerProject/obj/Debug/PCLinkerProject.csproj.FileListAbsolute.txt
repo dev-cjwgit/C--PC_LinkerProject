@@ -93,3 +93,5 @@ C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\obj\Debug\
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\ProgramCore.dll
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\ProgramCore.pdb
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\System.Data.SQLite.dll
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\ProgramCore.dll
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\ProgramCore.pdb

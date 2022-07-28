@@ -8,3 +8,13 @@ C:\Users\multicampus\source\repos\C--PC_LinkerProject\ProgramCore\obj\Debug\nets
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\ProgramCore\obj\Debug\netstandard2.0\ProgramCore.csproj.CoreCompileInputs.cache
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\ProgramCore\obj\Debug\netstandard2.0\ProgramCore.dll
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\ProgramCore\obj\Debug\netstandard2.0\ProgramCore.pdb
+C:\Users\CJW\Documents\PC_LinkerProject\ProgramCore\bin\Debug\netstandard2.0\ProgramCore.deps.json
+C:\Users\CJW\Documents\PC_LinkerProject\ProgramCore\bin\Debug\netstandard2.0\ProgramCore.dll
+C:\Users\CJW\Documents\PC_LinkerProject\ProgramCore\bin\Debug\netstandard2.0\ProgramCore.pdb
+C:\Users\CJW\Documents\PC_LinkerProject\ProgramCore\obj\Debug\netstandard2.0\ProgramCore.csproj.AssemblyReference.cache
+C:\Users\CJW\Documents\PC_LinkerProject\ProgramCore\obj\Debug\netstandard2.0\ProgramCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CJW\Documents\PC_LinkerProject\ProgramCore\obj\Debug\netstandard2.0\ProgramCore.AssemblyInfoInputs.cache
+C:\Users\CJW\Documents\PC_LinkerProject\ProgramCore\obj\Debug\netstandard2.0\ProgramCore.AssemblyInfo.cs
+C:\Users\CJW\Documents\PC_LinkerProject\ProgramCore\obj\Debug\netstandard2.0\ProgramCore.csproj.CoreCompileInputs.cache
+C:\Users\CJW\Documents\PC_LinkerProject\ProgramCore\obj\Debug\netstandard2.0\ProgramCore.dll
+C:\Users\CJW\Documents\PC_LinkerProject\ProgramCore\obj\Debug\netstandard2.0\ProgramCore.pdb
