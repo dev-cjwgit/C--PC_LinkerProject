@@ -8,7 +8,7 @@ namespace ProgramCore.DAO
 {
     public class ContentDAO
     {
-        public long Uid { get; set; }
+        public int Uid { get; set; }
 
         public string HeaderTitle { get; set; }
 

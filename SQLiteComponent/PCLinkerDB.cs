@@ -61,6 +61,27 @@ namespace SQLiteComponent
             }
         }
 
+        public List<ContentDAO> getContentList(string header_title)
+        {
+            List<ContentDAO> result = new List<ContentDAO>();
+            sql.ExecuteSQL("SELECT * FROM content WHERE header_title = \"" + header_title + "\"");
+            var tempdata = sql.GetData();
+            foreach(var item in tempdata)
+            {
+                result.Add(new ContentDAO()
+                {
+                    Uid = int.Parse(item["uid"].ToString()),
+                    HeaderTitle = header_title,
+                    Title = item["title"].ToString(),
+                    IconPath = item["icon_path"].ToString(),
+                    ShellPath = item["shell_path"].ToString(),
+                    Command = item["command"].ToString()
+                });
+            }
+
+            return result;
+        }
+
         public List<HeaderDAO> GetHeaderList()
         {
             List<HeaderDAO> result = new List<HeaderDAO>();
@@ -76,7 +97,7 @@ namespace SQLiteComponent
             }
             return result;
         }
-
+        
         public int getHeaderUidByTitle(string title)
         {
             sql.ExecuteSQL("SELECT uid FROM header WHERE title = \"" + title + "\"");

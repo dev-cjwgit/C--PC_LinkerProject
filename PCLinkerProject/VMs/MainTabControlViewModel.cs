@@ -29,15 +29,6 @@ namespace PCLinkerProject.ViewModel
         {
             Tabs = new ObservableCollection<TabItem>();
 
-            // TODO: View와 로직을 구분해야한다.
-            var data = PCLinkerDB.GetInstance().GetHeaderList();
-            foreach (var item in data)
-            {
-                addTab(item.IconPath, item.Title);
-            }
-            Console.WriteLine();
-
-
         }
 
         public void addTab(string headerIcon, string headerText)
@@ -64,14 +55,26 @@ namespace PCLinkerProject.ViewModel
             Tabs.RemoveAt(tab_idx);
         }
 
-        public void addContent(int tab_idx, string headerIcon, string headerText, string programPath)
+        public void addContent(int uid, string header_tItle, string title, string icon_path, string shell_path, string command)
         {
-            getInstance(tab_idx).Add(new TabContentViewModel()
+            int idx = 0;
+            foreach(var data in instance.Tabs)
             {
-                ContentIcon = Environment.CurrentDirectory + @"\ICO\" + headerIcon,
-                ContentText = headerText,
-                ProgramPath = programPath
-            });
+                if(data.HeaderText == header_tItle)
+                {
+                    getInstance(idx).Add(new TabContentViewModel()
+                    {
+                        ContentIcon = Environment.CurrentDirectory + @"\ICO\" + icon_path,
+                        ContentText = title,
+                        ProgramPath = shell_path,
+                        Command = command,
+                        Uid = uid
+                    });
+                    break;
+                }
+                idx++;
+            }
+            
         }
 
         public void updateContent(int tab_idx, int content_idx, string headerIcon, string headerText, string programPath)
@@ -91,7 +94,6 @@ namespace PCLinkerProject.ViewModel
 
     public sealed class TabItem : NotifyPropertyChanged
     {
-        private long uid;
 
         private string _headerIcon;
 
@@ -124,6 +126,5 @@ namespace PCLinkerProject.ViewModel
         }
 
         public ObservableCollection<TabContentViewModel> Content { get; set; }
-        //public ObservableCollection<TabContentViewModel> Content { get; set; }
     }
 }
