@@ -109,7 +109,7 @@ namespace SQLiteComponent
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return false;
+                throw e;
             }
         }
 
@@ -128,8 +128,7 @@ namespace SQLiteComponent
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-                return false;
+                throw e;
             }
         }
 
@@ -156,8 +155,7 @@ namespace SQLiteComponent
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-                return null;
+                throw e;
             }
         }
 

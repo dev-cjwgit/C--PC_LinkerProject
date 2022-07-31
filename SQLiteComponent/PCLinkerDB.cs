@@ -16,7 +16,12 @@ namespace SQLiteComponent
             }
             return instance;
         }
+        private ISQLite sql = new SQLite();
 
+        public PCLinkerDB()
+        {
+            InitDB();
+        }
         public bool InitDB()
         {
             sql = new SQLite(Environment.CurrentDirectory, "default");
@@ -64,39 +69,76 @@ namespace SQLiteComponent
             return true;
         }
 
-        public bool CreateHeader(string title, string icon_path)
+        public long CreateHeader(string title, string icon_path)
         {
-            throw new NotImplementedException();
+            sql.ExecuteSQL("INSERT INTO header(title, icon_path) VALUES (\"" + title + "\", \"" + icon_path + "\")");
+            sql.ExecuteSQL("SELECT uid FROM header WHERE title = \"" + title + "\"");
+            long uid = long.Parse(sql.GetData()[0]["uid"].ToString());
+
+            return uid;
         }
 
         public bool UpdateHeader(long uid, string title, string icon_path)
         {
-            throw new NotImplementedException();
+            return sql.ExecuteSQL("UPDATE header SET title = \"" + title + "\", icon_path = \"" + icon_path + "\" WHERE uid = " + uid);
         }
 
         public bool DeleteHeader(long uid)
         {
-            throw new NotImplementedException();
+            sql.ExecuteSQL("SELECT count(*) FROM header");
+            var data = sql.GetData();
+            int header_cnt = int.Parse(data[0]["count(*)"].ToString());
+            if (header_cnt > 1)
+                return sql.ExecuteSQL("DELETE FROM header WHERE uid = " + uid);
+            else
+                throw new Exception("삭제할 수 없습니다.");
         }
 
         public bool DeleteHeader(string title)
         {
-            throw new NotImplementedException();
+            sql.ExecuteSQL("SELECT count(*) FROM header");
+            var data = sql.GetData();
+            int header_cnt = int.Parse(data[0]["count(*)"].ToString());
+            if (header_cnt > 1)
+                return sql.ExecuteSQL("DELETE FROM header WHERE title = \"" + title + "\"");
+            else
+                throw new Exception("삭제할 수 없습니다.");
         }
 
         public List<HeaderDAO> GetHeaderList()
         {
-            throw new NotImplementedException();
+            List<HeaderDAO> result = new List<HeaderDAO>();
+            sql.ExecuteSQL("SELECT * FROM header;");
+            var tempdata = sql.GetData();
+            foreach (var item in tempdata)
+            {
+                result.Add(new HeaderDAO()
+                {
+                    Uid = long.Parse(item["uid"].ToString()),
+                    IconPath = item["icon_path"].ToString(),
+                    Title = item["title"].ToString()
+                });
+            }
+            return result;
         }
 
-        public bool CreateContent(long header_uid, string title, string icon_path, string shell_path, string command)
+        public long CreateContent(long header_uid, string title, string icon_path, string shell_path, string command)
         {
-            throw new NotImplementedException();
+            sql.ExecuteSQL("INSERT INTO content(header_uid, title, icon_path,  shell_path, command) VALUES (" + header_uid + ",\"" + title + "\",\"" + icon_path + "\", \"" + shell_path + "\", \"" + command + "\");");
+
+            sql.ExecuteSQL("SELECT uid FROM content WHERE title = \"" + title + "\" AND header_uid = " + header_uid);
+            long uid = long.Parse(sql.GetData()[0]["uid"].ToString());
+            return uid;
         }
 
         public bool UpdateContent(long uid, long header_uid, string title, string icon_path, string shell_path, string command)
         {
-            throw new NotImplementedException();
+            return sql.ExecuteSQL("UPDATE content SET header_uid = " + header_uid + ", " +
+                "title = \"" + title + "\", " +
+                "icon_path = \"" + icon_path + "\", " +
+                "shell_path = \"" + shell_path + "\", " +
+                "command = \"" + command + "\" " +
+                "WHERE uid = " + uid);
         }
 
         public bool DeleteContent(long uid)
@@ -114,12 +156,12 @@ namespace SQLiteComponent
             throw new NotImplementedException();
         }
 
-        private ISQLite sql = new SQLite();
-
-        public PCLinkerDB()
+        public bool CreateHistory(long content_uid)
         {
-            
+            throw new NotImplementedException();
         }
+
+
 
     }
 }
