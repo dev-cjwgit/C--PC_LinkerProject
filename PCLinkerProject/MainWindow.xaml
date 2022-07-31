@@ -290,8 +290,8 @@
 
                     <TabControl.Resources>
                         <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource {x:Type TabItem}}">
-                            <Setter Property="Width" Value="64" />
-                            <Setter Property="Height" Value="96" />
+                            <Setter Property="Height" Value="80" />
+                            <Setter Property="Width" Value="96" />
                         </Style>
                         
                     </TabControl.Resources>

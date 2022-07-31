@@ -20,6 +20,6 @@ namespace SQLiteComponent
         bool DeleteContent(long header_uid, string title);
         List<ContentDAO> GetContentList(long header_uid);
 
-        bool CreateHistory(long content_uid);
+        long CreateHistory(long content_uid);
     }
 }

@@ -40,11 +40,6 @@ namespace PCLinkerProject
             foreach (var item in data)
             {
                 MainTabControlViewModel.getInstance().addTab(item.IconPath, item.Title);
-                var content_data = PCLinkerDB.GetInstance().getContentList(item.Title);
-
-                foreach(var it in content_data) {
-                    MainTabControlViewModel.getInstance().addContent(it.Uid, it.HeaderTitle, it.Title, it.IconPath, it.ShellPath, it.Command);
-                }
             }
             Console.WriteLine();
 
