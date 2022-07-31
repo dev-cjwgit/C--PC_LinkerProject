@@ -8,8 +8,18 @@ namespace ProgramCore.DAO
 {
     public class HeaderDAO
     {
-        public string Title { get; set; }
+        public long Uid
+        {
+            get; set;
+        }
+        public string Title
+        {
+            get; set;
+        }
 
-        public string IconPath { get; set; }
+        public string IconPath
+        {
+            get; set;
+        }
     }
 }

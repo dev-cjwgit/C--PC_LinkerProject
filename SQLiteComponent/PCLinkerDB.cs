@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SQLiteComponent
 {
-    public class PCLinkerDB
+    public class PCLinkerDB : IPCLinkerDB
     {
         private static PCLinkerDB instance;
         public static PCLinkerDB GetInstance()
@@ -16,9 +16,8 @@ namespace SQLiteComponent
             }
             return instance;
         }
-        private ISQLite sql = new SQLite();
 
-        public PCLinkerDB()
+        public bool InitDB()
         {
             sql = new SQLite(Environment.CurrentDirectory, "default");
             while (!sql.OpenDataBase())
@@ -51,85 +50,76 @@ namespace SQLiteComponent
                     else
                     {
                         Console.WriteLine("SQL Execute Failed");
+                        return false;
                     }
 
                 }
                 else
                 {
                     Console.WriteLine("SQL Open Failed");
+                    return false;
                 }
             }
+
+            return true;
         }
 
-        public List<ContentDAO> getContentList(string header_title)
+        public bool CreateHeader(string title, string icon_path)
         {
-            List<ContentDAO> result = new List<ContentDAO>();
-            sql.ExecuteSQL("SELECT * FROM content WHERE header_title = \"" + header_title + "\"");
-            var tempdata = sql.GetData();
-            foreach(var item in tempdata)
-            {
-                result.Add(new ContentDAO()
-                {
-                    Uid = int.Parse(item["uid"].ToString()),
-                    HeaderTitle = header_title,
-                    Title = item["title"].ToString(),
-                    IconPath = item["icon_path"].ToString(),
-                    ShellPath = item["shell_path"].ToString(),
-                    Command = item["command"].ToString()
-                });
-            }
-
-            return result;
-        }
-
-        public List<HeaderDAO> GetHeaderList()
-        {
-            List<HeaderDAO> result = new List<HeaderDAO>();
-            sql.ExecuteSQL("SELECT * FROM header;");
-            var tempdata = sql.GetData();
-            foreach (var item in tempdata)
-            {
-                result.Add(new HeaderDAO()
-                {
-                    IconPath = item["icon_path"].ToString(),
-                    Title = item["title"].ToString()
-                });
-            }
-            return result;
-        }
-        
-        public int getHeaderUidByTitle(string title)
-        {
-            sql.ExecuteSQL("SELECT uid FROM header WHERE title = \"" + title + "\"");
-            var data = sql.GetData();
-            return int.Parse(data[0]["uid"].ToString());
-        }
-
-        public bool AddHeader(string title, string icon_path)
-        {
-            return sql.ExecuteSQL("INSERT INTO header(title, icon_path) VALUES (\"" + title + "\", \"" + icon_path + "\")");
+            throw new NotImplementedException();
         }
 
         public bool UpdateHeader(long uid, string title, string icon_path)
         {
-            return sql.ExecuteSQL("UPDATE header SET title = \"" + title + "\", icon_path = \"" + icon_path + "\" WHERE uid = " + uid);
+            throw new NotImplementedException();
         }
 
         public bool DeleteHeader(long uid)
         {
-            sql.ExecuteSQL("SELECT count(*) FROM header");
-            var data = sql.GetData();
-            int header_cnt = int.Parse(data[0]["count(*)"].ToString());
-            if (header_cnt > 1)
-                return sql.ExecuteSQL("DELETE FROM header WHERE uid = " + uid);
-            else
-                throw new Exception("삭제할 수 없습니다.");
+            throw new NotImplementedException();
         }
 
-
-        public bool addContent(string header_title, string icon_path, string title, string shell_path, string command)
+        public bool DeleteHeader(string title)
         {
-            return sql.ExecuteSQL("INSERT INTO content(header_title, title, icon_path,  shell_path, command) VALUES (\"" + header_title + "\",\"" + title + "\",\"" + icon_path + "\", \"" + shell_path + "\", \"" + command + "\");");
+            throw new NotImplementedException();
         }
+
+        public List<HeaderDAO> GetHeaderList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CreateContent(long header_uid, string title, string icon_path, string shell_path, string command)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateContent(long uid, long header_uid, string title, string icon_path, string shell_path, string command)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteContent(long uid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteContent(long header_uid, string title)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ContentDAO> GetContentList(long header_uid)
+        {
+            throw new NotImplementedException();
+        }
+
+        private ISQLite sql = new SQLite();
+
+        public PCLinkerDB()
+        {
+            
+        }
+
     }
 }
