@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProgramCore.DAO
 {
-    public class ContentDAO
+    public class HeaderDTO
     {
-        public long Uid { get; set; }
-
-        public long HeaderUid
+        public long Uid
         {
             get; set;
         }
@@ -20,14 +18,6 @@ namespace ProgramCore.DAO
         }
 
         public string IconPath
-        {
-            get; set;
-        }
-        public string ShellPath
-        {
-            get; set;
-        }
-        public string Command
         {
             get; set;
         }

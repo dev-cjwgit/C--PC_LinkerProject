@@ -47,7 +47,7 @@ namespace SQLiteComponent
                         "shell_path TEXT NULL DEFAULT \"\"," +
                         "command TEXT NULL DEFAULT \"\"," +
                         "CONSTRAINT header_uid_FK FOREIGN KEY(header_uid) REFERENCES header(uid) ON UPDATE CASCADE ON DELETE CASCADE ," +
-                        "UNIQUE(header_uid, title)" + 
+                        "UNIQUE(header_uid, title)" +
                         ");" +
                         "" +
                         "CREATE TABLE history(" +
@@ -114,14 +114,14 @@ namespace SQLiteComponent
                 throw new Exception("삭제할 수 없습니다.");
         }
 
-        public List<HeaderDAO> GetHeaderList()
+        public List<HeaderDTO> GetHeaderList()
         {
-            List<HeaderDAO> result = new List<HeaderDAO>();
+            List<HeaderDTO> result = new List<HeaderDTO>();
             sql.ExecuteSQL("SELECT * FROM header;");
             var tempdata = sql.GetData();
             foreach (var item in tempdata)
             {
-                result.Add(new HeaderDAO()
+                result.Add(new HeaderDTO()
                 {
                     Uid = long.Parse(item["uid"].ToString()),
                     IconPath = item["icon_path"].ToString(),
@@ -160,14 +160,14 @@ namespace SQLiteComponent
             return sql.ExecuteSQL("DELETE FROM content WHERE header_uid = " + header_uid + " AND title = \"" + title + "\"");
         }
 
-        public List<ContentDAO> GetContentList(long header_uid)
+        public List<ContentDTO> GetContentList(long header_uid)
         {
-            List<ContentDAO> result = new List<ContentDAO>();
+            List<ContentDTO> result = new List<ContentDTO>();
             sql.ExecuteSQL("SELECT * FROM content;");
             var tempdata = sql.GetData();
             foreach (var item in tempdata)
             {
-                result.Add(new ContentDAO()
+                result.Add(new ContentDTO()
                 {
                     Uid = long.Parse(item["uid"].ToString()),
                     HeaderUid = long.Parse(item["header_uid"].ToString()),
@@ -192,7 +192,21 @@ namespace SQLiteComponent
 
         }
 
-
-
+        public List<HistoryDTO> GetHistoryList()
+        {
+            List<HistoryDTO> result = new List<HistoryDTO>();
+            sql.ExecuteSQL("SELECT * FROM content;");
+            var tempdata = sql.GetData();
+            foreach (var item in tempdata)
+            {
+                result.Add(new HistoryDTO()
+                {
+                    Uid = long.Parse(item["uid"].ToString()),
+                    ContentUid = long.Parse(item["content_uid"].ToString()),
+                    date = DateTime.Parse(item["date"].ToString())
+                });
+            }
+            return result;
+        }
     }
 }

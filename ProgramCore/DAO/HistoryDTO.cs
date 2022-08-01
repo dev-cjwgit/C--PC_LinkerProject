@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ProgramCore.DAO
 {
-    public class HeaderDAO
+    public class HistoryDTO
     {
         public long Uid
         {
             get; set;
         }
-        public string Title
+        public long ContentUid
         {
             get; set;
         }
-
-        public string IconPath
+        public DateTime date
         {
             get; set;
         }
