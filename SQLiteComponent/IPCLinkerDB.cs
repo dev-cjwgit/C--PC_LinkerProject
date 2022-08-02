@@ -21,7 +21,6 @@ namespace SQLiteComponent
         List<ContentDTO> GetContentList(long header_uid);
 
         long CreateHistory(long content_uid);
-
         List<HistoryDTO> GetHistoryList();
     }
 }
