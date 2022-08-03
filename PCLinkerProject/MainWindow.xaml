@@ -286,7 +286,7 @@
 
             <Grid Grid.Row="1" Margin="8,0,8,8">
                 <TabControl Style="{StaticResource BasedTabControlStyle}" x:Name="TabControl1" ItemsSource="{Binding Tabs}" 
-                            SelectionChanged ="TabControl1_SelectionChanged">
+                            SelectedItem="{Binding SelectedHeaderItem}">
 
                     <TabControl.Resources>
                         <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource {x:Type TabItem}}">
@@ -306,7 +306,9 @@
                                         RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
                                         <MenuItem Header="추가" Click="Header_Append"/>
                                         <MenuItem Header="수정" Click="Header_Update"/>
-                                            <MenuItem Header="삭제" Command="{Binding PlacementTarget.Tag.DeleteCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ContextMenu}}"/>
+                                            <MenuItem Header="삭제" Command="{Binding PlacementTarget.Tag.DeleteHeaderCommand,
+                                                RelativeSource={RelativeSource Mode=FindAncestor,
+                                                AncestorType=ContextMenu}}"/>
                                     </ContextMenu>
                                 </Grid.ContextMenu>
                                 <Grid.RowDefinitions>
@@ -325,19 +327,24 @@
                         <!-- this is the body of the TabItem template-->
                         <DataTemplate>
                                 <ListBox x:Name="ContentListBox1"
-                                     SelectionChanged="Content_Selected"
+                                     SelectedItem="{Binding DataContext.SelectedContentItem, RelativeSource={RelativeSource Mode=FindAncestor,
+                                                AncestorType=Window}}"
                                      MouseDoubleClick="Content_StartProgram" 
                                      ScrollViewer.CanContentScroll="True"
                                      dd:DragDrop.IsDragSource="True"
                                      dd:DragDrop.IsDropTarget="True"
                                      ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                         Tag="{Binding DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                      ItemsSource="{Binding Content}">
                                 
                                 <ListBox.ContextMenu>
-                                    <ContextMenu>
+                                        <ContextMenu DataContext="{Binding Path=DataContext, 
+                                        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
                                         <MenuItem Header="추가" Click="Content_Append"/>
                                         <MenuItem Header="수정" Click="Content_Update"/>
-                                        <MenuItem Header="삭제" Click="Content_Delete"/>
+                                            <MenuItem Header="삭제" Command="{Binding PlacementTarget.Tag.DeleteContentCommand,
+                                                RelativeSource={RelativeSource Mode=FindAncestor,
+                                                AncestorType=ContextMenu}}"/>
                                     </ContextMenu>
                                 </ListBox.ContextMenu>
                                 

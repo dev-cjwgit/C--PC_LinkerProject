@@ -1,7 +1,8 @@
-﻿using PCLinkerProject.ViewModel;
+﻿using PCLinker.ViewModel.config;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 
 namespace PCLinker.ViewModel
 {
@@ -11,7 +12,7 @@ namespace PCLinker.ViewModel
         private string _contentIcon;
         private string _contentText;
         private string _programPath;
-        private string _command;
+        private string _args;
 
         public int Uid
         {
@@ -24,16 +25,15 @@ namespace PCLinker.ViewModel
                 _uid = value;
             }
         }
-
-        public string Command
+        public string Args
         {
             get
             {
-                return _command;
+                return _args;
             }
             set
             {
-                _command = value;
+                _args = value;
             }
         }
         public string ContentIcon
@@ -48,7 +48,6 @@ namespace PCLinker.ViewModel
                 OnPropertyChanged("ContentIcon");
             }
         }
-
         public string ContentText
         {
             get
@@ -61,7 +60,6 @@ namespace PCLinker.ViewModel
                 OnPropertyChanged("ContentText");
             }
         }
-
         public string ProgramPath
         {
             get

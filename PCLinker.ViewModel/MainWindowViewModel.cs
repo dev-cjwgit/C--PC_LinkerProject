@@ -1,4 +1,5 @@
-﻿using SQLiteComponent;
+﻿using PCLinker.ViewModel.config;
+using SQLiteComponent;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -9,8 +10,9 @@ namespace PCLinker.ViewModel
     {
         public MainWindowViewModel()
         {
-            Tabs = new ObservableCollection<HeaderItem>();
-            DeleteCommand = new Command(ExecuteMethod, null);
+            Tabs = new ObservableCollection<TabControlHeaderViewModel>();
+            DeleteHeaderCommand = new Command(DeleteHeader, null);
+            DeleteContentCommand = new Command(DeleteContent, null);
             PCLinkerDB.GetInstance();
             
             var data = PCLinkerDB.GetInstance().GetHeaderList();
@@ -28,7 +30,7 @@ namespace PCLinker.ViewModel
                     ContentIcon = Environment.CurrentDirectory + @"\ICO\computer.ico"
                 });
 
-                Tabs.Add(new HeaderItem()
+                Tabs.Add(new TabControlHeaderViewModel()
                 {
                     HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + item.IconPath ,
                     HeaderText = item.Title,
@@ -37,37 +39,25 @@ namespace PCLinker.ViewModel
             }
         }
 
-        private void ExecuteMethod(object obj)
+
+        private void DeleteHeader(object obj)
         {
             Console.WriteLine("");
-            throw new NotImplementedException();
         }
 
-        public ICommand DeleteCommand { get; set; }
-
-        public ObservableCollection<HeaderItem> Tabs { get; set; }
-    }
-    public class Command : ICommand
-    {
-        Action<object> _executeMethod;
-        Func<object, bool> _canexecuteMethod;
-        public event EventHandler CanExecuteChanged;
-        public Command(Action<object> executeMethod, Func<object, bool> canexecuteMethod)
+        private void DeleteContent(object obj)
         {
-            this._executeMethod = executeMethod;
-            this._canexecuteMethod = canexecuteMethod;
+            Console.WriteLine("");
         }
 
+        public TabControlHeaderViewModel SelectedHeaderItem { get; set; }
 
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
+        public TabContentViewModel SelectedContentItem { get; set; }
 
-        public void Execute(object parameter)
-        {
-            _executeMethod(parameter);
-            throw new NotImplementedException();
-        }
+        public ICommand DeleteHeaderCommand { get; private set; }
+
+        public ICommand DeleteContentCommand { get; private set; }
+
+        public ObservableCollection<TabControlHeaderViewModel> Tabs { get; set; }
     }
 }

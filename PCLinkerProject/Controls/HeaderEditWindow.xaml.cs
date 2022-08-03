@@ -1,4 +1,4 @@
-﻿using PCLinkerProject.ViewModel;
+﻿
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,25 +34,25 @@ namespace PCLinkerProject.Controls
 
         private void AcceptButton_onClick(object sender, RoutedEventArgs e)
         {
-            switch (MainWindow.presentStatus)
-            {
-                case PresentStatusEnum.None:
-                    {
-                        break;
-                    }
+            //switch (MainWindow.presentStatus)
+            //{
+            //    case PresentStatusEnum.None:
+            //        {
+            //            break;
+            //        }
 
-                case PresentStatusEnum.AddTab:
-                    {
-                        String[] path = IconTextbox.Text.ToString().Split('\\');
-                        //MainTabControlViewModel.getInstance().addTab(IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
-                        break;
-                    }
-                case PresentStatusEnum.UpdateTab:
-                    {
-                        //MainTabControlViewModel.getInstance().updateTab(MainWindow.selected_tab, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
-                        break;
-                    }
-            }
+            //    case PresentStatusEnum.AddTab:
+            //        {
+            //            String[] path = IconTextbox.Text.ToString().Split('\\');
+            //            //MainTabControlViewModel.getInstance().addTab(IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
+            //            break;
+            //        }
+            //    case PresentStatusEnum.UpdateTab:
+            //        {
+            //            //MainTabControlViewModel.getInstance().updateTab(MainWindow.selected_tab, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
+            //            break;
+            //        }
+            //}
             this.Visibility = Visibility.Collapsed;
         }
 

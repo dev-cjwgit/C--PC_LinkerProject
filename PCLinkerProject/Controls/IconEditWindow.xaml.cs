@@ -1,4 +1,4 @@
-﻿using PCLinkerProject.VMs;
+﻿
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,20 +32,20 @@ namespace PCLinkerProject.Controls
         public IconEditWindow()
         {
             InitializeComponent();
-            IconEditListbox.ItemsSource = IconEditViewModel.GetInstance().Tabs;
+            //IconEditListbox.ItemsSource = IconEditViewModel.GetInstance().Tabs;
 
-            IconEditViewModel.GetInstance().Tabs.Clear();
-            // TODO: 2번 호출되는 이유 찾고 오류 고쳐야함
-            string[] files = Directory.GetFiles(Environment.CurrentDirectory + @"\ICO\", "*.ico");
-            foreach (var file in files)
-            {
-                String[] split = file.Split('\\');
-                IconEditViewModel.GetInstance().Tabs.Add(new HeaderItem()
-                {
-                    HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + split[split.Length - 1],
-                    HeaderText = split[split.Length - 1]
-                });
-            }
+            //IconEditViewModel.GetInstance().Tabs.Clear();
+            //// TODO: 2번 호출되는 이유 찾고 오류 고쳐야함
+            //string[] files = Directory.GetFiles(Environment.CurrentDirectory + @"\ICO\", "*.ico");
+            //foreach (var file in files)
+            //{
+            //    String[] split = file.Split('\\');
+            //    IconEditViewModel.GetInstance().Tabs.Add(new HeaderItem()
+            //    {
+            //        HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + split[split.Length - 1],
+            //        HeaderText = split[split.Length - 1]
+            //    });
+            //}
 
             //IconEditViewModel.GetInstance().Tabs.Add(new HeaderItem()
             //{
@@ -71,11 +71,11 @@ namespace PCLinkerProject.Controls
             string fileName = dir[dir.Length - 1];
             File.Copy(IconTextbox.Text, Environment.CurrentDirectory + @"\ICO\" + fileName);
 
-            IconEditViewModel.GetInstance().Tabs.Add(new HeaderItem()
-            {
-                HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + fileName,
-                HeaderText = fileName
-            });
+            //IconEditViewModel.GetInstance().Tabs.Add(new HeaderItem()
+            //{
+            //    HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + fileName,
+            //    HeaderText = fileName
+            //});
         }
 
         private void DeleteButton_onClick(object sender, RoutedEventArgs e)
@@ -106,12 +106,12 @@ namespace PCLinkerProject.Controls
 
         private void CheckDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            dynamic meta_data = sender as dynamic;
-            var temp = IconEditViewModel.GetInstance().Tabs[selected_index];
-            String[] dir = temp.HeaderIcon.ToString().Split('\\');
-            send1(dir[dir.Length - 1]);
-            send2(dir[dir.Length - 1]);
-            this.Visibility = Visibility.Collapsed;
+            //dynamic meta_data = sender as dynamic;
+            //var temp = IconEditViewModel.GetInstance().Tabs[selected_index];
+            //String[] dir = temp.HeaderIcon.ToString().Split('\\');
+            //send1(dir[dir.Length - 1]);
+            //send2(dir[dir.Length - 1]);
+            //this.Visibility = Visibility.Collapsed;
         }
     }
 }

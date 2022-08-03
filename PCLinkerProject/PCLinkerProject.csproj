@@ -76,7 +76,6 @@
     <Compile Include="Controls\IconEditWindow.xaml.cs">
       <DependentUpon>IconEditWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PresentStatusEnum.cs" />
     <Page Include="Controls\ContentEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

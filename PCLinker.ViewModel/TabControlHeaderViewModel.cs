@@ -1,36 +1,14 @@
-﻿using PCLinkerProject.ViewModel;
+﻿using PCLinker.ViewModel.config;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace PCLinkerProject.VMs
+namespace PCLinker.ViewModel
 {
-    public class IconEditViewModel : NotifyPropertyChanged
+    public sealed class TabControlHeaderViewModel : NotifyPropertyChanged
     {
-        public IconEditViewModel()
-        {
-            Tabs = new ObservableCollection<HeaderItem>();
-        }
-        private static IconEditViewModel instance;
-        public static IconEditViewModel GetInstance()
-        {
-            if (instance == null)
-            {
 
-                instance = new IconEditViewModel();
-            }
-            return instance;
-        }
-        public ObservableCollection<HeaderItem> Tabs { get; set; }
-
-
-
-    }
-    public sealed class HeaderItem : NotifyPropertyChanged
-    {
         private string _headerIcon;
 
         private string _headerText;
@@ -60,5 +38,7 @@ namespace PCLinkerProject.VMs
                 OnPropertyChanged("HeaderText");
             }
         }
+
+        public ObservableCollection<TabContentViewModel> Content { get; set; }
     }
 }

@@ -16,7 +16,6 @@ namespace PCLinkerProject
         public static int selected_tab = -1; // selected tab idx
         public static int selected_content = -1; // selected listbox idx
         private WindowState PrevWindowState = WindowState.Normal;
-        public static PresentStatusEnum presentStatus = PresentStatusEnum.None;
         public MainWindow()
         {
             InitializeComponent();
