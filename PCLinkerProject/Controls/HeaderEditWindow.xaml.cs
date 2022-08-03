@@ -44,12 +44,12 @@ namespace PCLinkerProject.Controls
                 case PresentStatusEnum.AddTab:
                     {
                         String[] path = IconTextbox.Text.ToString().Split('\\');
-                        MainTabControlViewModel.getInstance().addTab(IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
+                        //MainTabControlViewModel.getInstance().addTab(IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
                         break;
                     }
                 case PresentStatusEnum.UpdateTab:
                     {
-                        MainTabControlViewModel.getInstance().updateTab(MainWindow.selected_tab, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
+                        //MainTabControlViewModel.getInstance().updateTab(MainWindow.selected_tab, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
                         break;
                     }
             }
