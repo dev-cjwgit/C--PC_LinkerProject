@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hpA8eBw0UJ1NyagBoOX5HT4pDHsoNu0DQQ0Fv03mp7toZsa3Z+ZkOGCZc3bOqv/9Arx9RwDIbKmj5OY1vKfOtQ==",
+  "dgSpecHash": "C5rG7bCJvsPnkpD5jdjck8OlCwHmlKVMUNx8Lywgze3GIipAo9Vnd7XgGT6JJ/mLX3aw3uAwSp7ZsYDZJ/ffqA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
+  "projectFilePath": "C:\\Users\\CJW\\Documents\\PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\multicampus\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\multicampus\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\CJW\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\CJW\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

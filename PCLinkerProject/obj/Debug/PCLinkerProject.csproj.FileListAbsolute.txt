@@ -54,7 +54,6 @@ C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\Heade
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\IconEditWindow.g.cs
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\Controls\IconEditWindow.baml
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\SQLiteComponent.dll
-C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\System.Data.SQLite.dll
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\SQLiteComponent.pdb
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\PCLinkerProject.exe.config
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\PCLinkerProject.exe
@@ -99,3 +98,7 @@ C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\ProgramCore.pdb
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\SQLiteComponent.pdb
 C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\bin\Debug\System.Data.SQLite.dll
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\PCLinker.ViewModel.dll
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\PCLinker.BusinessModel.dll
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\PCLinker.ViewModel.pdb
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\PCLinker.BusinessModel.pdb
