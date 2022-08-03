@@ -134,13 +134,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProgramCore\ProgramCore.csproj">
-      <Project>{64230D7D-F639-4628-B184-14E197E7CE3E}</Project>
-      <Name>ProgramCore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQLiteComponent\SQLiteComponent.csproj">
-      <Project>{A5BC0E77-CEBF-4F35-AC63-0EAE2C0EBDE8}</Project>
-      <Name>SQLiteComponent</Name>
+    <ProjectReference Include="..\PCLinker.ViewModel\PCLinker.ViewModel.csproj">
+      <Project>{FE3C1864-6167-46D1-ABBD-9F847AD6A05E}</Project>
+      <Name>PCLinker.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

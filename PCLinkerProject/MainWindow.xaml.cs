@@ -1,22 +1,9 @@
-﻿using PCLinkerProject.ViewModel;
-using SQLiteComponent;
+﻿using PCLinker.ViewModel;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PCLinkerProject
 {
@@ -25,7 +12,7 @@ namespace PCLinkerProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static PCLinkerDB db;
+        //public static PCLinkerDB db;
         public static int selected_tab = -1; // selected tab idx
         public static int selected_content = -1; // selected listbox idx
         private WindowState PrevWindowState = WindowState.Normal;
@@ -33,15 +20,15 @@ namespace PCLinkerProject
         public MainWindow()
         {
             InitializeComponent();
-            PCLinkerDB.GetInstance();
-            TabControl1.DataContext = MainTabControlViewModel.getInstance();
+            DataContext = new MainWindowViewModel();
+            //PCLinkerDB.GetInstance();
+            //TabControl1.DataContext = MainTabControlViewModel.getInstance();
 
-            var data = PCLinkerDB.GetInstance().GetHeaderList();
-            foreach (var item in data)
-            {
-                MainTabControlViewModel.getInstance().addTab(item.IconPath, item.Title);
-            }
-            Console.WriteLine();
+            //var data = PCLinkerDB.GetInstance().GetHeaderList();
+            //foreach (var item in data)
+            //{
+            //    MainTabControlViewModel.getInstance().addTab(item.IconPath, item.Title);
+            //}
 
         }
 
@@ -108,37 +95,37 @@ namespace PCLinkerProject
 
         private void Content_StartProgram(object sender, MouseButtonEventArgs e)
         {
-            dynamic meta_data = sender as dynamic;
-            var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
-            //temp[selected_content].ProgramPath;
-            Process myProcess = new Process();
-            myProcess.StartInfo.FileName = temp[selected_content].ProgramPath;
-            myProcess.Start();
+            //dynamic meta_data = sender as dynamic;
+            //var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
+            ////temp[selected_content].ProgramPath;
+            //Process myProcess = new Process();
+            //myProcess.StartInfo.FileName = temp[selected_content].ProgramPath;
+            //myProcess.Start();
         }
 
         private void TabControl1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Console.WriteLine("Console");
-            selected_tab = (sender as System.Windows.Controls.TabControl).SelectedIndex;
+            //Console.WriteLine("Console");
+            //selected_tab = (sender as System.Windows.Controls.TabControl).SelectedIndex;
         }
 
         private void Content_Selected(object sender, SelectionChangedEventArgs e)
         {
-            dynamic meta_data = sender as dynamic;
-            selected_content = meta_data.SelectedIndex;
+            //dynamic meta_data = sender as dynamic;
+            //selected_content = meta_data.SelectedIndex;
 
         }
 
         private void Content_Append(object sender, RoutedEventArgs e)
         {
-            presentStatus = PresentStatusEnum.AddContent;
-            ContentEditWindow.Visibility = Visibility.Visible;
+            //presentStatus = PresentStatusEnum.AddContent;
+            //ContentEditWindow.Visibility = Visibility.Visible;
         }
 
         private void Content_Update(object sender, RoutedEventArgs e)
         {
-            presentStatus = PresentStatusEnum.UpdateContent;
-            ContentEditWindow.Visibility = Visibility.Visible;
+            //presentStatus = PresentStatusEnum.UpdateContent;
+            //ContentEditWindow.Visibility = Visibility.Visible;
             //var temp = MainTabControlViewModel.getInstance(selected_index);
             //Console.WriteLine("U : " + temp[selected_item_index].ContentText);
         }
@@ -147,16 +134,16 @@ namespace PCLinkerProject
         {
             // MainTabControlViewModel.getInstance().addContent(selected_index, "PyCharm.ico", textbox1.Text.ToString());
             // MainTabControlViewModel.getInstance().addTab("chrome.ico", textbox1.Text.ToString());
-            var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
-            Console.WriteLine("D : " + temp[selected_content].ContentText);
+            //var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
+            //Console.WriteLine("D : " + temp[selected_content].ContentText);
 
-            MainTabControlViewModel.getInstance().deleteContent(selected_tab, selected_content);
+            //MainTabControlViewModel.getInstance().deleteContent(selected_tab, selected_content);
 
         }
         private void WindowsConfigButton_Click(object sender, RoutedEventArgs e)
         {
             //
-            IconEditWindow.Visibility = Visibility.Visible;
+            //IconEditWindow.Visibility = Visibility.Visible;
         }
 
         private void Temp_onClick(object sender, MouseButtonEventArgs e)
@@ -169,19 +156,19 @@ namespace PCLinkerProject
 
         private void Header_Append(object sender, RoutedEventArgs e)
         {
-            presentStatus = PresentStatusEnum.AddTab;
-            HeaderEditWindow.Visibility = Visibility.Visible;
+            //presentStatus = PresentStatusEnum.AddTab;
+            //HeaderEditWindow.Visibility = Visibility.Visible;
         }
 
         private void Header_Update(object sender, RoutedEventArgs e)
         {
-            presentStatus = PresentStatusEnum.UpdateTab;
-            HeaderEditWindow.Visibility = Visibility.Visible;
+            //presentStatus = PresentStatusEnum.UpdateTab;
+            //HeaderEditWindow.Visibility = Visibility.Visible;
         }
 
         private void Header_Delete(object sender, RoutedEventArgs e)
         {
-            MainTabControlViewModel.getInstance().deleteTab(selected_tab);
+            //MainTabControlViewModel.getInstance().deleteTab(selected_tab);
         }
 
     }
