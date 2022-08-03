@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DJB56W6V781wJqhsS9u/ZyR9YntV4fo9bw/+Se+XWyhx+KZv4L0CchfH1YfAKvutlb5kemV1ARAdTPo0me96Ow==",
+  "dgSpecHash": "hpA8eBw0UJ1NyagBoOX5HT4pDHsoNu0DQQ0Fv03mp7toZsa3Z+ZkOGCZc3bOqv/9Arx9RwDIbKmj5OY1vKfOtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
+  "projectFilePath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\multicampus\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\multicampus\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

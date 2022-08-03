@@ -299,13 +299,14 @@
                     <TabControl.ItemTemplate>
                         <!-- this is the header template-->
                         <DataTemplate>
-                                <Grid Height="64" Width="64" Tag="{Binding Path=DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+                                <Grid Height="64" Width="64"
+                                      Tag="{Binding DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}">
                                     <Grid.ContextMenu>
                                         <ContextMenu DataContext="{Binding Path=DataContext, 
                                         RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
                                         <MenuItem Header="추가" Click="Header_Append"/>
                                         <MenuItem Header="수정" Click="Header_Update"/>
-                                            <MenuItem Header="삭제" Command="{Binding DeleteCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                            <MenuItem Header="삭제" Command="{Binding PlacementTarget.Tag.DeleteCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ContextMenu}}"/>
                                     </ContextMenu>
                                 </Grid.ContextMenu>
                                 <Grid.RowDefinitions>

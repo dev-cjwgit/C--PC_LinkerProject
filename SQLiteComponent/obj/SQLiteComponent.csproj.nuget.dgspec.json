@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj": {}
+    "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj": {}
   },
   "projects": {
-    "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj": {
+    "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
+        "projectUniqueName": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
         "projectName": "ProgramCore",
-        "projectPath": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
+        "projectPath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
         "packagesPath": "C:\\Users\\multicampus\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\obj\\",
         "projectStyle": "PackageReference",
@@ -61,12 +61,12 @@
         }
       }
     },
-    "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj": {
+    "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj",
+        "projectUniqueName": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj",
         "projectName": "SQLiteComponent",
-        "projectPath": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj",
+        "projectPath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj",
         "packagesPath": "C:\\Users\\multicampus\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\SQLiteComponent\\obj\\",
         "projectStyle": "PackageReference",
@@ -85,8 +85,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj": {
-                "projectPath": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj"
+              "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj": {
+                "projectPath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj"
               }
             }
           }

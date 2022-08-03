@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj": {}
+    "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj": {
+    "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
+        "projectUniqueName": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
         "projectName": "ProgramCore",
-        "projectPath": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
+        "projectPath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\ProgramCore\\ProgramCore.csproj",
         "packagesPath": "C:\\Users\\multicampus\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\ProgramCore\\obj\\",
         "projectStyle": "PackageReference",
