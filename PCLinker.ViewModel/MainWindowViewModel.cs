@@ -1,5 +1,6 @@
-﻿using PCLinker.ViewModel.config;
-using SQLiteComponent;
+﻿using PCLinker.BusinessModel;
+using PCLinker.BusinessModel.interfaces;
+using PCLinker.ViewModel.config;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -8,33 +9,22 @@ namespace PCLinker.ViewModel
 {
     public class MainWindowViewModel
     {
+        private IDatabaseManager db;
         public MainWindowViewModel()
         {
             Tabs = new ObservableCollection<TabControlHeaderViewModel>();
             DeleteHeaderCommand = new Command(DeleteHeader, null);
             DeleteContentCommand = new Command(DeleteContent, null);
-            PCLinkerDB.GetInstance();
-            
-            var data = PCLinkerDB.GetInstance().GetHeaderList();
-            foreach (var item in data)
-            {
-                var temp = new ObservableCollection<TabContentViewModel>();
-                temp.Add(new TabContentViewModel()
-                {
-                    ContentText = "김치찌개1",
-                    ContentIcon = Environment.CurrentDirectory + @"\ICO\computer.ico"
-                });
-                temp.Add(new TabContentViewModel()
-                {
-                    ContentText = "김치찌개2",
-                    ContentIcon = Environment.CurrentDirectory + @"\ICO\computer.ico"
-                });
 
+            db = new DatabaseManager();
+
+            foreach(var item in db.GetHeaderList())
+            {
                 Tabs.Add(new TabControlHeaderViewModel()
                 {
-                    HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + item.IconPath ,
+                    HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + item.IconPath,
                     HeaderText = item.Title,
-                    Content = temp
+                    Content = new ObservableCollection<TabContentViewModel>()
                 });
             }
         }

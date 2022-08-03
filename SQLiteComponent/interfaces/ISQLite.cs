@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SQLiteComponent
+namespace SQLiteComponent.interfaces
 {
     public interface ISQLite
     {

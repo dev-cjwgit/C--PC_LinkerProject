@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
+using SQLiteComponent.interfaces;
 using SQLiteComponent.User_Defined_Exception;
 
 namespace SQLiteComponent

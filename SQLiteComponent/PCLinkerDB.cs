@@ -1,4 +1,5 @@
 ﻿using ProgramCore.DAO;
+using SQLiteComponent.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,19 +8,12 @@ namespace SQLiteComponent
 {
     public class PCLinkerDB : IPCLinkerDB
     {
-        private static PCLinkerDB instance;
-        public static PCLinkerDB GetInstance()
-        {
-            if (instance == null)
-            {
-                instance = new PCLinkerDB();
-            }
-            return instance;
-        }
-        private ISQLite sql = new SQLite();
+
+        private ISQLite sql;
 
         public PCLinkerDB()
         {
+            sql = new SQLite();
             InitDB();
         }
         public bool InitDB()

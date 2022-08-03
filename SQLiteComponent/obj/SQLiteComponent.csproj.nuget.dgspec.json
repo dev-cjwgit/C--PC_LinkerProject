@@ -68,7 +68,7 @@
         "projectName": "SQLiteComponent",
         "projectPath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\SQLiteComponent\\SQLiteComponent.csproj",
         "packagesPath": "C:\\Users\\multicampus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\multicampus\\Source\\Repos\\C--PC_LinkerProject\\SQLiteComponent\\obj\\",
+        "outputPath": "C:\\Users\\multicampus\\source\\repos\\C--PC_LinkerProject\\SQLiteComponent\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\multicampus\\AppData\\Roaming\\NuGet\\NuGet.Config",
