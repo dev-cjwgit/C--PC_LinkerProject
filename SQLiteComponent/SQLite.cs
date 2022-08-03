@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
+<<<<<<< .merge_file_a28668
+=======
+using SQLiteComponent.interfaces;
+>>>>>>> .merge_file_a29184
 using SQLiteComponent.User_Defined_Exception;
 
 namespace SQLiteComponent

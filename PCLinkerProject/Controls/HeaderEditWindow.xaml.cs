@@ -1,4 +1,8 @@
+<<<<<<< .merge_file_a28592
 ﻿using PCLinkerProject.ViewModel;
+=======
+﻿
+>>>>>>> .merge_file_a28496
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,6 +38,7 @@ namespace PCLinkerProject.Controls
 
         private void AcceptButton_onClick(object sender, RoutedEventArgs e)
         {
+<<<<<<< .merge_file_a28592
             switch (MainWindow.presentStatus)
             {
                 case PresentStatusEnum.None:
@@ -53,6 +58,27 @@ namespace PCLinkerProject.Controls
                         break;
                     }
             }
+=======
+            //switch (MainWindow.presentStatus)
+            //{
+            //    case PresentStatusEnum.None:
+            //        {
+            //            break;
+            //        }
+
+            //    case PresentStatusEnum.AddTab:
+            //        {
+            //            String[] path = IconTextbox.Text.ToString().Split('\\');
+            //            //MainTabControlViewModel.getInstance().addTab(IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
+            //            break;
+            //        }
+            //    case PresentStatusEnum.UpdateTab:
+            //        {
+            //            //MainTabControlViewModel.getInstance().updateTab(MainWindow.selected_tab, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
+            //            break;
+            //        }
+            //}
+>>>>>>> .merge_file_a28496
             this.Visibility = Visibility.Collapsed;
         }
 

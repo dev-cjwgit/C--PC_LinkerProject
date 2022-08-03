@@ -1,4 +1,8 @@
 ﻿using ProgramCore.DAO;
+<<<<<<< .merge_file_a02140
+=======
+using SQLiteComponent.interfaces;
+>>>>>>> .merge_file_a27328
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +11,7 @@ namespace SQLiteComponent
 {
     public class PCLinkerDB : IPCLinkerDB
     {
+<<<<<<< .merge_file_a02140
         private static PCLinkerDB instance;
         public static PCLinkerDB GetInstance()
         {
@@ -20,6 +25,14 @@ namespace SQLiteComponent
 
         public PCLinkerDB()
         {
+=======
+
+        private ISQLite sql;
+
+        public PCLinkerDB()
+        {
+            sql = new SQLite();
+>>>>>>> .merge_file_a27328
             InitDB();
         }
         public bool InitDB()

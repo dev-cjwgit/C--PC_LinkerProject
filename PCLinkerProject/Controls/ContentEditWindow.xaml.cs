@@ -1,4 +1,8 @@
+<<<<<<< .merge_file_a05932
 ﻿using PCLinkerProject.ViewModel;
+=======
+﻿
+>>>>>>> .merge_file_a01896
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +45,7 @@ namespace PCLinkerProject.Controls
         private void AcceptButton_onClick(object sender, RoutedEventArgs e)
         {
 
+<<<<<<< .merge_file_a05932
             switch (MainWindow.presentStatus)
             {
                 case PresentStatusEnum.None:
@@ -64,6 +69,31 @@ namespace PCLinkerProject.Controls
                     }
             }
             this.Visibility = Visibility.Collapsed;
+=======
+            //switch (MainWindow.presentStatus)
+            //{
+            //    case PresentStatusEnum.None:
+            //        {
+            //            break;
+            //        }
+
+            //    case PresentStatusEnum.AddContent:
+            //        {
+            //            String[] dir = IconTextbox.Text.ToString().Split('\\');
+            //            //MainTabControlViewModel.getInstance().addContent(-1, 
+            //            //    MainWindow.selected_tab, dir[dir.Length - 1], TitleTextbox.Text.ToString(), ShellTextbox.Text.ToString());
+            //            break;
+            //        }
+
+            //    case PresentStatusEnum.UpdateContent:
+            //        {
+            //            String[] dir = IconTextbox.Text.ToString().Split('\\');
+            //            //MainTabControlViewModel.getInstance().updateContent(MainWindow.selected_tab, MainWindow.selected_content, dir[dir.Length - 1], TitleTextbox.Text.ToString(), ShellTextbox.Text.ToString());
+            //            break;
+            //        }
+            //}
+            //this.Visibility = Visibility.Collapsed;
+>>>>>>> .merge_file_a01896
         }
 
         private void CancelButton_onClick(object sender, RoutedEventArgs e)

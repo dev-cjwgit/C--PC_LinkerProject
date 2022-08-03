@@ -1,11 +1,10 @@
-﻿using System;
+﻿using PCLinker.ViewModel.config;
+using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Input;
 
-namespace PCLinkerProject.ViewModel
+namespace PCLinker.ViewModel
 {
     public class TabContentViewModel : NotifyPropertyChanged
     {
@@ -13,7 +12,7 @@ namespace PCLinkerProject.ViewModel
         private string _contentIcon;
         private string _contentText;
         private string _programPath;
-        private string _command;
+        private string _args;
 
         public int Uid
         {
@@ -26,16 +25,15 @@ namespace PCLinkerProject.ViewModel
                 _uid = value;
             }
         }
-
-        public string Command
+        public string Args
         {
             get
             {
-                return _command;
+                return _args;
             }
             set
             {
-                _command = value;
+                _args = value;
             }
         }
         public string ContentIcon
@@ -50,7 +48,6 @@ namespace PCLinkerProject.ViewModel
                 OnPropertyChanged("ContentIcon");
             }
         }
-
         public string ContentText
         {
             get
@@ -63,7 +60,6 @@ namespace PCLinkerProject.ViewModel
                 OnPropertyChanged("ContentText");
             }
         }
-
         public string ProgramPath
         {
             get

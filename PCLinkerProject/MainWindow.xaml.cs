@@ -1,3 +1,4 @@
+<<<<<<< .merge_file_a25916
 ﻿using PCLinkerProject.ViewModel;
 using SQLiteComponent;
 using System;
@@ -17,6 +18,14 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+=======
+﻿using PCLinker.ViewModel;
+using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media.Animation;
+>>>>>>> .merge_file_a26948
 
 namespace PCLinkerProject
 {
@@ -25,6 +34,7 @@ namespace PCLinkerProject
     /// </summary>
     public partial class MainWindow : Window
     {
+<<<<<<< .merge_file_a25916
         public static PCLinkerDB db;
         public static int selected_tab = -1; // selected tab idx
         public static int selected_content = -1; // selected listbox idx
@@ -42,6 +52,24 @@ namespace PCLinkerProject
                 MainTabControlViewModel.getInstance().addTab(item.IconPath, item.Title);
             }
             Console.WriteLine();
+=======
+        //public static PCLinkerDB db;
+        public static int selected_tab = -1; // selected tab idx
+        public static int selected_content = -1; // selected listbox idx
+        private WindowState PrevWindowState = WindowState.Normal;
+        public MainWindow()
+        {
+            InitializeComponent();
+            DataContext = new MainWindowViewModel();
+            //PCLinkerDB.GetInstance();
+            //TabControl1.DataContext = MainTabControlViewModel.getInstance();
+
+            //var data = PCLinkerDB.GetInstance().GetHeaderList();
+            //foreach (var item in data)
+            //{
+            //    MainTabControlViewModel.getInstance().addTab(item.IconPath, item.Title);
+            //}
+>>>>>>> .merge_file_a26948
 
         }
 
@@ -108,37 +136,66 @@ namespace PCLinkerProject
 
         private void Content_StartProgram(object sender, MouseButtonEventArgs e)
         {
+<<<<<<< .merge_file_a25916
             dynamic meta_data = sender as dynamic;
             var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
             //temp[selected_content].ProgramPath;
             Process myProcess = new Process();
             myProcess.StartInfo.FileName = temp[selected_content].ProgramPath;
             myProcess.Start();
+=======
+            //dynamic meta_data = sender as dynamic;
+            //var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
+            ////temp[selected_content].ProgramPath;
+            //Process myProcess = new Process();
+            //myProcess.StartInfo.FileName = temp[selected_content].ProgramPath;
+            //myProcess.Start();
+>>>>>>> .merge_file_a26948
         }
 
         private void TabControl1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+<<<<<<< .merge_file_a25916
             Console.WriteLine("Console");
             selected_tab = (sender as System.Windows.Controls.TabControl).SelectedIndex;
+=======
+            //Console.WriteLine("Console");
+            //selected_tab = (sender as System.Windows.Controls.TabControl).SelectedIndex;
+>>>>>>> .merge_file_a26948
         }
 
         private void Content_Selected(object sender, SelectionChangedEventArgs e)
         {
+<<<<<<< .merge_file_a25916
             dynamic meta_data = sender as dynamic;
             selected_content = meta_data.SelectedIndex;
+=======
+            //dynamic meta_data = sender as dynamic;
+            //selected_content = meta_data.SelectedIndex;
+>>>>>>> .merge_file_a26948
 
         }
 
         private void Content_Append(object sender, RoutedEventArgs e)
         {
+<<<<<<< .merge_file_a25916
             presentStatus = PresentStatusEnum.AddContent;
             ContentEditWindow.Visibility = Visibility.Visible;
+=======
+            //presentStatus = PresentStatusEnum.AddContent;
+            //ContentEditWindow.Visibility = Visibility.Visible;
+>>>>>>> .merge_file_a26948
         }
 
         private void Content_Update(object sender, RoutedEventArgs e)
         {
+<<<<<<< .merge_file_a25916
             presentStatus = PresentStatusEnum.UpdateContent;
             ContentEditWindow.Visibility = Visibility.Visible;
+=======
+            //presentStatus = PresentStatusEnum.UpdateContent;
+            //ContentEditWindow.Visibility = Visibility.Visible;
+>>>>>>> .merge_file_a26948
             //var temp = MainTabControlViewModel.getInstance(selected_index);
             //Console.WriteLine("U : " + temp[selected_item_index].ContentText);
         }
@@ -147,16 +204,27 @@ namespace PCLinkerProject
         {
             // MainTabControlViewModel.getInstance().addContent(selected_index, "PyCharm.ico", textbox1.Text.ToString());
             // MainTabControlViewModel.getInstance().addTab("chrome.ico", textbox1.Text.ToString());
+<<<<<<< .merge_file_a25916
             var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
             Console.WriteLine("D : " + temp[selected_content].ContentText);
 
             MainTabControlViewModel.getInstance().deleteContent(selected_tab, selected_content);
+=======
+            //var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
+            //Console.WriteLine("D : " + temp[selected_content].ContentText);
+
+            //MainTabControlViewModel.getInstance().deleteContent(selected_tab, selected_content);
+>>>>>>> .merge_file_a26948
 
         }
         private void WindowsConfigButton_Click(object sender, RoutedEventArgs e)
         {
             //
+<<<<<<< .merge_file_a25916
             IconEditWindow.Visibility = Visibility.Visible;
+=======
+            //IconEditWindow.Visibility = Visibility.Visible;
+>>>>>>> .merge_file_a26948
         }
 
         private void Temp_onClick(object sender, MouseButtonEventArgs e)
@@ -169,19 +237,33 @@ namespace PCLinkerProject
 
         private void Header_Append(object sender, RoutedEventArgs e)
         {
+<<<<<<< .merge_file_a25916
             presentStatus = PresentStatusEnum.AddTab;
             HeaderEditWindow.Visibility = Visibility.Visible;
+=======
+            //presentStatus = PresentStatusEnum.AddTab;
+            //HeaderEditWindow.Visibility = Visibility.Visible;
+>>>>>>> .merge_file_a26948
         }
 
         private void Header_Update(object sender, RoutedEventArgs e)
         {
+<<<<<<< .merge_file_a25916
             presentStatus = PresentStatusEnum.UpdateTab;
             HeaderEditWindow.Visibility = Visibility.Visible;
+=======
+            //presentStatus = PresentStatusEnum.UpdateTab;
+            //HeaderEditWindow.Visibility = Visibility.Visible;
+>>>>>>> .merge_file_a26948
         }
 
         private void Header_Delete(object sender, RoutedEventArgs e)
         {
+<<<<<<< .merge_file_a25916
             MainTabControlViewModel.getInstance().deleteTab(selected_tab);
+=======
+            //MainTabControlViewModel.getInstance().deleteTab(selected_tab);
+>>>>>>> .merge_file_a26948
         }
 
     }

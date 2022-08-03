@@ -76,11 +76,14 @@
     <Compile Include="Controls\IconEditWindow.xaml.cs">
       <DependentUpon>IconEditWindow.xaml</DependentUpon>
     </Compile>
+<<<<<<< .merge_file_a11004
     <Compile Include="PresentStatusEnum.cs" />
     <Compile Include="VMs\IconEditViewModel.cs" />
     <Compile Include="VMs\MainTabControlViewModel.cs" />
     <Compile Include="VMs\NotifyPropertyChanged.cs" />
     <Compile Include="VMs\TabContentViewModel.cs" />
+=======
+>>>>>>> .merge_file_a10244
     <Page Include="Controls\ContentEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,6 +137,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< .merge_file_a11004
     <ProjectReference Include="..\ProgramCore\ProgramCore.csproj">
       <Project>{64230D7D-F639-4628-B184-14E197E7CE3E}</Project>
       <Name>ProgramCore</Name>
@@ -143,6 +147,14 @@
       <Name>SQLiteComponent</Name>
     </ProjectReference>
   </ItemGroup>
+=======
+    <ProjectReference Include="..\PCLinker.ViewModel\PCLinker.ViewModel.csproj">
+      <Project>{FE3C1864-6167-46D1-ABBD-9F847AD6A05E}</Project>
+      <Name>PCLinker.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+>>>>>>> .merge_file_a10244
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< .merge_file_a10508
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\obj\Debug\
+=======
+C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\obj\Debug\
+>>>>>>> .merge_file_a22500
 PCLinkerProject
 none
 false
 DEBUG;TRACE
+<<<<<<< .merge_file_a10508
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\App.xaml
 4-677347366
 
 13-705654186
 20938193873
+=======
+C:\Users\multicampus\source\repos\C--PC_LinkerProject\PCLinkerProject\App.xaml
+4-677347366
+
+82137660480
+19314429094
+>>>>>>> .merge_file_a22500
 Controls\ContentEditWindow.xaml;Controls\HeaderEditWindow.xaml;Controls\IconEditWindow.xaml;MainWindow.xaml;
 
 False
