@@ -67,7 +67,7 @@ namespace PCLinkerProject.Controls
 
         private void CancelButton_onClick(object sender, RoutedEventArgs e)
         {
-            //this.Visibility = Visibility.Collapsed;
+            this.Visibility = Visibility.Collapsed;
         }
 
         private void IconSelectButton_onClick(object sender, RoutedEventArgs e)

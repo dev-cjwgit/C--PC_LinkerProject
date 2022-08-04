@@ -140,8 +140,7 @@ namespace PCLinkerProject
         }
         private void WindowsConfigButton_Click(object sender, RoutedEventArgs e)
         {
-            //
-            //IconEditWindow.Visibility = Visibility.Visible;
+            IconEditWindow.Visibility = Visibility.Visible;
         }
 
         private void Temp_onClick(object sender, MouseButtonEventArgs e)

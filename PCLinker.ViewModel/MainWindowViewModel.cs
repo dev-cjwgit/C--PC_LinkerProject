@@ -51,7 +51,6 @@ namespace PCLinker.ViewModel
 
         private void CreateHeader(object obj)
         {
-            IconEditWindowDataContext.IconEditWindowVisibility = true;
             Console.WriteLine("헤더 추가");
         }
 

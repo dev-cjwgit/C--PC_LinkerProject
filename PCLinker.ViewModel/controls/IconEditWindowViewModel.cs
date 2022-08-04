@@ -4,6 +4,7 @@ using System.Windows;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using System.Windows.Forms;
 
 namespace PCLinker.ViewModel.controls
 {
@@ -15,11 +16,21 @@ namespace PCLinker.ViewModel.controls
             IconEditWindowVisibility = false;
         }
 
+        #region Command
         private void Dialog(object obj)
         {
-            Console.WriteLine("");
+            OpenFileDialog dlgOpenFile = new OpenFileDialog();
+            dlgOpenFile.Filter = "Icon File (*.ico) | *.ico;";
+
+            if (dlgOpenFile.ShowDialog().ToString() == "OK")
+            {
+                IconPathText = dlgOpenFile.FileName;
+            }
         }
 
+        #endregion
+
+        #region Proerty
         private Boolean _iconEditWindowVisibility = false;
         public Boolean IconEditWindowVisibility
         {
@@ -30,11 +41,13 @@ namespace PCLinker.ViewModel.controls
             set
             {
                 _iconEditWindowVisibility = value;
+                if (!value)
+                {
+                    IconPathText = "";
+                }
                 OnPropertyChanged(nameof(IconEditWindowVisibility));
             }
         }
-
-        public ICommand DialogCommand { get; set; }
 
         private string _iconPathText;
         public string IconPathText
@@ -45,9 +58,18 @@ namespace PCLinker.ViewModel.controls
             }
             set
             {
+                Console.WriteLine(value);
                 _iconPathText = value;
                 OnPropertyChanged(nameof(IconPathText));
             }
         }
+
+        #endregion
+
+        #region ICommand
+        public ICommand DialogCommand { get; set; }
+
+        #endregion
+        
     }
 }
