@@ -25,7 +25,7 @@ namespace PCLinker.ViewModel
 
             db = new DatabaseManager();
 
-            foreach(var item in db.GetHeaderList())
+            foreach (var item in db.GetHeaderList())
             {
                 var temp = new ObservableCollection<TabContentViewModel>();
                 temp.Add(new TabContentViewModel()
@@ -41,6 +41,8 @@ namespace PCLinker.ViewModel
                 });
             }
         }
+
+        #region VM Command Method
 
         private void CreateHeader(object obj)
         {
@@ -77,9 +79,18 @@ namespace PCLinker.ViewModel
             Console.WriteLine("dd");
         }
 
+        #endregion
+
+        #region VM Property
+
         public TabControlHeaderViewModel SelectedHeaderItem { get; set; }
 
         public TabContentViewModel SelectedContentItem { get; set; }
+
+        #endregion
+
+        #region VM ICommand
+
         public ICommand CreateHeaderCommand { get; private set; }
         public ICommand UpdateHeaderCommand { get; private set; }
         public ICommand DeleteHeaderCommand { get; private set; }
@@ -89,6 +100,8 @@ namespace PCLinker.ViewModel
         public ICommand DeleteContentCommand { get; private set; }
 
         public ICommand ContentStartCommand { get; private set; }
+
+        #endregion
 
         public ObservableCollection<TabControlHeaderViewModel> Tabs { get; set; }
     }
