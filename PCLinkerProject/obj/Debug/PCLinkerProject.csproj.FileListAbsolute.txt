@@ -102,3 +102,4 @@ C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\PCLinker.ViewM
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\PCLinker.BusinessModel.dll
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\PCLinker.ViewModel.pdb
 C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\PCLinker.BusinessModel.pdb
+C:\Users\CJW\Documents\PC_LinkerProject\PCLinkerProject\bin\Debug\System.Data.SQLite.dll

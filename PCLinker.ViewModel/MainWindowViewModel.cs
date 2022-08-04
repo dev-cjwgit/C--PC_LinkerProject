@@ -25,11 +25,17 @@ namespace PCLinker.ViewModel
 
             foreach(var item in db.GetHeaderList())
             {
+                var temp = new ObservableCollection<TabContentViewModel>();
+                temp.Add(new TabContentViewModel()
+                {
+                    ContentIcon = Environment.CurrentDirectory + @"\ICO\computer.ico",
+                    ContentText = "김치찌개"
+                });
                 Tabs.Add(new TabControlHeaderViewModel()
                 {
                     HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + item.IconPath,
                     HeaderText = item.Title,
-                    Content = new ObservableCollection<TabContentViewModel>()
+                    Content = temp
                 });
             }
         }

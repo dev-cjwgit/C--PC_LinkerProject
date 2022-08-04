@@ -13,6 +13,12 @@ namespace PCLinker.ViewModel
         private string _contentText;
         private string _programPath;
         private string _args;
+        public TabContentViewModel()
+        {
+            
+        }
+
+
 
         public int Uid
         {

@@ -14,8 +14,6 @@ namespace PCLinkerProject
     {
         // starting
         //public static PCLinkerDB db;
-        public static int selected_tab = -1; // selected tab idx
-        public static int selected_content = -1; // selected listbox idx
         private WindowState PrevWindowState = WindowState.Normal;
         public MainWindow()
         {
