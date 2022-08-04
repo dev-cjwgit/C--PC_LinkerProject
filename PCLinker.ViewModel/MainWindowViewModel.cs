@@ -21,6 +21,8 @@ namespace PCLinker.ViewModel
             UpdateContentCommand = new Command(UpdateContent, null);
             DeleteContentCommand = new Command(DeleteContent, null);
 
+            ContentStartCommand = new Command(ContentStart, null);
+
             db = new DatabaseManager();
 
             foreach(var item in db.GetHeaderList())
@@ -70,6 +72,11 @@ namespace PCLinker.ViewModel
             Console.WriteLine("컨텐츠 삭제");
         }
 
+        private void ContentStart(object obj)
+        {
+            Console.WriteLine("dd");
+        }
+
         public TabControlHeaderViewModel SelectedHeaderItem { get; set; }
 
         public TabContentViewModel SelectedContentItem { get; set; }
@@ -80,6 +87,8 @@ namespace PCLinker.ViewModel
         public ICommand CreateContentCommand { get; private set; }
         public ICommand UpdateContentCommand { get; private set; }
         public ICommand DeleteContentCommand { get; private set; }
+
+        public ICommand ContentStartCommand { get; private set; }
 
         public ObservableCollection<TabControlHeaderViewModel> Tabs { get; set; }
     }
