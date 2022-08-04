@@ -1,18 +1,23 @@
 ﻿using PCLinker.BusinessModel;
 using PCLinker.BusinessModel.interfaces;
 using PCLinker.ViewModel.config;
+using PCLinker.ViewModel.controls;
 using System;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PCLinker.ViewModel
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : NotifyPropertyChanged
     {
         private IDatabaseManager db;
         public MainWindowViewModel()
         {
             Tabs = new ObservableCollection<TabControlHeaderViewModel>();
+
+            IconEditWindowDataContext = new IconEditWindowViewModel();
+            
             CreateHeaderCommand = new Command(CreateHeader, null);
             UpdateHeaderCommand = new Command(UpdateHeader, null);
             DeleteHeaderCommand = new Command(DeleteHeader, null);
@@ -46,6 +51,7 @@ namespace PCLinker.ViewModel
 
         private void CreateHeader(object obj)
         {
+            IconEditWindowDataContext.IconEditWindowVisibility = true;
             Console.WriteLine("헤더 추가");
         }
 
@@ -82,7 +88,7 @@ namespace PCLinker.ViewModel
         #endregion
 
         #region VM Property
-
+        public IconEditWindowViewModel IconEditWindowDataContext { get; set; }
         public TabControlHeaderViewModel SelectedHeaderItem { get; set; }
 
         public TabContentViewModel SelectedContentItem { get; set; }

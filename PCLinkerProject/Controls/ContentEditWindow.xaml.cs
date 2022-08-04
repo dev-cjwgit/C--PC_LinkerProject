@@ -26,7 +26,6 @@ namespace PCLinkerProject.Controls
         public ContentEditWindow()
         {
             InitializeComponent();
-            IconEditWindow.send2 = recv;
         }
         public void recv(String fileName)
         {

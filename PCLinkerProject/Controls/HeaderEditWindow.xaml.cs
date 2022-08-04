@@ -29,7 +29,7 @@ namespace PCLinkerProject.Controls
         public HeaderEditWindow()
         {
             InitializeComponent();
-            IconEditWindow.send1 = recv;
+            //IconEditWindow.send1 = recv;
         }
 
         private void AcceptButton_onClick(object sender, RoutedEventArgs e)
