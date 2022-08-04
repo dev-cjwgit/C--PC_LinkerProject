@@ -63,15 +63,15 @@
                         <ColumnDefinition Width="48"/>
                     </Grid.ColumnDefinitions>
                     <TextBox  Grid.Column="0" Margin="8,0,8,0"
-                              Text="{Binding IconPathText}"
-                              IsReadOnly="True"
+                              Text="{Binding IconPathText, Mode=TwoWay}"
+                             
                               materialDesign:HintAssist.Hint="Icon Path"
                               Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                               VerticalAlignment="Center" Cursor="Arrow" />
 
                     <Button Grid.Column="1"
                           Style="{StaticResource MaterialDesignIconButton}"
-                                Click="IconSelectButton_onClick"
+                               Command="{Binding DialogCommand}"
                           ToolTip="MaterialDesignIconButton" Cursor="Hand">
                         <materialDesign:PackIcon Kind="DotsHorizontal" />
                     </Button>

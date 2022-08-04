@@ -17,7 +17,7 @@ namespace PCLinker.ViewModel.controls
 
         private void Dialog(object obj)
         {
-
+            Console.WriteLine("");
         }
 
         private Boolean _iconEditWindowVisibility = false;
