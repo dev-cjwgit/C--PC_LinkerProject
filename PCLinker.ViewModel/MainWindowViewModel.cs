@@ -11,6 +11,7 @@ namespace PCLinker.ViewModel
 {
     public class MainWindowViewModel : NotifyPropertyChanged
     {
+        // Commit Test
         private IDatabaseManager db;
         public MainWindowViewModel()
         {
