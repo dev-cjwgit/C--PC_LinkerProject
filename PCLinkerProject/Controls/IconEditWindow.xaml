@@ -64,7 +64,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBox  Grid.Column="0" Margin="8,0,8,0"
                               Text="{Binding IconPathText}"
-                             IsReadOnly="True"
+                           
                               materialDesign:HintAssist.Hint="Icon Path"
                               Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                               VerticalAlignment="Center" Cursor="Arrow" />

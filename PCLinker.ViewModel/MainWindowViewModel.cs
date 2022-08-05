@@ -17,8 +17,9 @@ namespace PCLinker.ViewModel
         {
             Tabs = new ObservableCollection<TabControlHeaderViewModel>();
 
-            IconEditWindowDataContext = new IconEditWindowViewModel();
-            
+            //IconEditWindowDataContext = new IconEditWindowViewModel();
+            DialogCommand = new Command(CreateHeader, null);
+
             CreateHeaderCommand = new Command(CreateHeader, null);
             UpdateHeaderCommand = new Command(UpdateHeader, null);
             DeleteHeaderCommand = new Command(DeleteHeader, null);
@@ -88,7 +89,7 @@ namespace PCLinker.ViewModel
         #endregion
 
         #region VM Property
-        public IconEditWindowViewModel IconEditWindowDataContext { get; set; }
+        public IconEditWindowViewModel IconEditWindowDataContext { get; set; } = new IconEditWindowViewModel();
         public TabControlHeaderViewModel SelectedHeaderItem { get; set; }
 
         public TabContentViewModel SelectedContentItem { get; set; }
@@ -96,6 +97,7 @@ namespace PCLinker.ViewModel
         #endregion
 
         #region VM ICommand
+        public ICommand DialogCommand { get; set; }
 
         public ICommand CreateHeaderCommand { get; private set; }
         public ICommand UpdateHeaderCommand { get; private set; }

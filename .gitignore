@@ -152,6 +152,7 @@ AppPackages/
 sql/
 *.Cache
 ClientBin/
+.git/
 [Ss]tyle[Cc]op.*
 ~$*
 *~
