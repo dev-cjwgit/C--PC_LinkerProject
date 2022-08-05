@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PCLinker.ViewModel.controls
+namespace PCLinker.ViewModel
 {
-    public class HeaderEditWindowViewModel
+    public class ContentEditWindowViewModel
     {
     }
 }

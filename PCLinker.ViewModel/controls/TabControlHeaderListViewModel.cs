@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace PCLinker.ViewModel
+namespace PCLinker.ViewModel.controls
 {
-    public sealed class TabControlHeaderViewModel : NotifyPropertyChanged
+    public sealed class TabControlHeaderListViewModel : NotifyPropertyChanged
     {
 
         private string _headerIcon;
@@ -39,6 +39,6 @@ namespace PCLinker.ViewModel
             }
         }
 
-        public ObservableCollection<TabContentViewModel> Content { get; set; }
+        public ObservableCollection<TabContentListViewModel> Content { get; set; }
     }
 }

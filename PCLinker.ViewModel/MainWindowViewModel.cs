@@ -15,10 +15,9 @@ namespace PCLinker.ViewModel
         private IDatabaseManager db;
         public MainWindowViewModel()
         {
-            Tabs = new ObservableCollection<TabControlHeaderViewModel>();
+            Tabs = new ObservableCollection<TabControlHeaderListViewModel>();
 
             //IconEditWindowDataContext = new IconEditWindowViewModel();
-            DialogCommand = new Command(CreateHeader, null);
 
             CreateHeaderCommand = new Command(CreateHeader, null);
             UpdateHeaderCommand = new Command(UpdateHeader, null);
@@ -34,13 +33,13 @@ namespace PCLinker.ViewModel
 
             foreach (var item in db.GetHeaderList())
             {
-                var temp = new ObservableCollection<TabContentViewModel>();
-                temp.Add(new TabContentViewModel()
+                var temp = new ObservableCollection<TabContentListViewModel>();
+                temp.Add(new TabContentListViewModel()
                 {
                     ContentIcon = Environment.CurrentDirectory + @"\ICO\computer.ico",
                     ContentText = "김치찌개"
                 });
-                Tabs.Add(new TabControlHeaderViewModel()
+                Tabs.Add(new TabControlHeaderListViewModel()
                 {
                     HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + item.IconPath,
                     HeaderText = item.Title,
@@ -83,21 +82,20 @@ namespace PCLinker.ViewModel
 
         private void ContentStart(object obj)
         {
-            Console.WriteLine("dd");
+            Console.WriteLine("컨텐츠 시작");
         }
 
         #endregion
 
         #region VM Property
         public IconEditWindowViewModel IconEditWindowDataContext { get; set; } = new IconEditWindowViewModel();
-        public TabControlHeaderViewModel SelectedHeaderItem { get; set; }
+        public TabControlHeaderListViewModel SelectedHeaderItem { get; set; }
 
-        public TabContentViewModel SelectedContentItem { get; set; }
+        public TabContentListViewModel SelectedContentItem { get; set; }
 
         #endregion
 
         #region VM ICommand
-        public ICommand DialogCommand { get; set; }
 
         public ICommand CreateHeaderCommand { get; private set; }
         public ICommand UpdateHeaderCommand { get; private set; }
@@ -111,6 +109,6 @@ namespace PCLinker.ViewModel
 
         #endregion
 
-        public ObservableCollection<TabControlHeaderViewModel> Tabs { get; set; }
+        public ObservableCollection<TabControlHeaderListViewModel> Tabs { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-using PCLinker.ViewModel.controls;
+using PCLinker.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -83,12 +83,29 @@ namespace PCLinkerProject.Controls
 
         private void CheckDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            IconEditWindowViewModel vm = DataContext as IconEditWindowViewModel;
+
+
             //dynamic meta_data = sender as dynamic;
             //var temp = IconEditViewModel.GetInstance().Tabs[selected_index];
             //String[] dir = temp.HeaderIcon.ToString().Split('\\');
             //send1(dir[dir.Length - 1]);
             //send2(dir[dir.Length - 1]);
-            //this.Visibility = Visibility.Collapsed;
+            this.Visibility = Visibility.Collapsed;
+            Console.WriteLine(vm.IconSelectedItem.IconPath);
+        }
+
+        private void DialogButton_onClick(object sender, RoutedEventArgs e)
+        {
+            IconEditWindowViewModel IconEditVM = DataContext as IconEditWindowViewModel;
+
+            OpenFileDialog dlgOpenFile = new OpenFileDialog();
+            dlgOpenFile.Filter = "Icon File (*.ico) | *.ico;";
+
+            if (dlgOpenFile.ShowDialog().ToString() == "OK")
+            {
+                IconEditVM.IconPathText = dlgOpenFile.FileName;
+            }
         }
     }
 }

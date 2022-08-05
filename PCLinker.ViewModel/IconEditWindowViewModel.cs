@@ -1,38 +1,60 @@
 ﻿using PCLinker.ViewModel.config;
 using System;
-using System.Windows;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
-using System.Windows.Forms;
+using System.Collections.ObjectModel;
+using PCLinker.ViewModel.controls;
+using System.IO;
 
-namespace PCLinker.ViewModel.controls
+namespace PCLinker.ViewModel
 {
     public class IconEditWindowViewModel : NotifyPropertyChanged
     {
         public IconEditWindowViewModel()
         {
-            DialogCommand = new Command(Dialog, null);
             IconEditWindowVisibility = false;
+
+
+            IconListSource = new ObservableCollection<IconEditListViewModel>();
+            string[] path = Directory.GetFiles(Environment.CurrentDirectory + @"\ICO\", "*.ico");
+
+            foreach(string item in path)
+            {
+
+                string[] dir = item.Split('\\');
+                IconListSource.Add(new IconEditListViewModel()
+                {
+                    IconPath = item,
+                    Title = dir[dir.Length - 1]
+                });
+            }
+            
         }
 
         #region Command
-        private void Dialog(object obj)
-        {
-            OpenFileDialog dlgOpenFile = new OpenFileDialog();
-            dlgOpenFile.Filter = "Icon File (*.ico) | *.ico;";
-
-            if (dlgOpenFile.ShowDialog().ToString() == "OK")
-            {
-                IconPathText = dlgOpenFile.FileName;
-            }
-        }
 
         #endregion
 
         #region Proerty
-        private Boolean _iconEditWindowVisibility = false;
-        public Boolean IconEditWindowVisibility
+        private ObservableCollection<IconEditListViewModel> _iconListSource;
+        public ObservableCollection<IconEditListViewModel> IconListSource
+        {
+            get
+            {
+                return _iconListSource;
+            }
+            set
+            {
+
+                _iconListSource = value;
+                OnPropertyChanged(nameof(IconListSource));
+            }
+        }
+
+        public IconEditListViewModel IconSelectedItem { get; set; }
+
+
+        private bool _iconEditWindowVisibility = false;
+        public bool IconEditWindowVisibility
         {
             get
             {
@@ -70,6 +92,6 @@ namespace PCLinker.ViewModel.controls
         public ICommand DialogCommand { get; set; }
 
         #endregion
-        
+
     }
 }

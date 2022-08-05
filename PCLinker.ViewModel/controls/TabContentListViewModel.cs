@@ -4,18 +4,18 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 
-namespace PCLinker.ViewModel
+namespace PCLinker.ViewModel.controls
 {
-    public class TabContentViewModel : NotifyPropertyChanged
+    public class TabContentListViewModel : NotifyPropertyChanged
     {
         private int _uid;
         private string _contentIcon;
         private string _contentText;
         private string _programPath;
         private string _args;
-        public TabContentViewModel()
+        public TabContentListViewModel()
         {
-            
+
         }
 
 

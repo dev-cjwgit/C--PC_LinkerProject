@@ -23,7 +23,8 @@
                 <ListBox x:Name="IconEditListbox"
                          Grid.Row="0"
                          MouseDoubleClick="CheckDoubleClick"
-                         SelectionChanged="IconEdit_Selected"
+                         ItemsSource="{Binding IconListSource}"
+                         SelectedItem="{Binding IconSelectedItem}"
                                      ScrollViewer.CanContentScroll="True"
                                      dd:DragDrop.IsDragSource="True"
                                      dd:DragDrop.IsDropTarget="True"
@@ -45,11 +46,11 @@
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                     <Image HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                                Source="{Binding HeaderIcon}"/>
+                                                Source="{Binding IconPath}"/>
 
                                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
                                                            TextTrimming="CharacterEllipsis"
-                                                 Grid.Row="1" Text="{Binding HeaderText}" />
+                                                 Grid.Row="1" Text="{Binding Title}" />
                                 </Grid>
                             </Border>
                         </DataTemplate>
@@ -71,7 +72,7 @@
 
                     <Button Grid.Column="1"
                           Style="{StaticResource MaterialDesignIconButton}"
-                               Command="{Binding DialogCommand}"
+                               Click="DialogButton_onClick"
                           ToolTip="MaterialDesignIconButton" Cursor="Hand">
                         <materialDesign:PackIcon Kind="DotsHorizontal" />
                     </Button>
