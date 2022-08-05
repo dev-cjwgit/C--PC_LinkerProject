@@ -8,7 +8,7 @@ namespace PCLinker.ViewModel.controls
 {
     public class TabContentListViewModel : NotifyPropertyChanged
     {
-        private int _uid;
+        private long _uid;
         private string _contentIcon;
         private string _contentText;
         private string _programPath;
@@ -20,7 +20,7 @@ namespace PCLinker.ViewModel.controls
 
 
 
-        public int Uid
+        public long Uid
         {
             get
             {

@@ -157,7 +157,7 @@ namespace SQLiteComponent
         public List<ContentDTO> GetContentList(long header_uid)
         {
             List<ContentDTO> result = new List<ContentDTO>();
-            sql.ExecuteSQL("SELECT * FROM content;");
+            sql.ExecuteSQL("SELECT * FROM content WHERE header_uid = " + header_uid + ";");
             var tempdata = sql.GetData();
             foreach (var item in tempdata)
             {

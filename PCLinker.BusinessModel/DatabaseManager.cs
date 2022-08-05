@@ -15,6 +15,11 @@ namespace PCLinker.BusinessModel
             db = new PCLinkerDB();
         }
 
+        public IEnumerable<ContentDTO> GetContentList(long uid)
+        {
+            return db.GetContentList(uid);
+        }
+
         public IEnumerable<HeaderDTO> GetHeaderList()
         {
             return db.GetHeaderList();

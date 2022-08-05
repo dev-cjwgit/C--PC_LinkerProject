@@ -31,18 +31,31 @@ namespace PCLinker.ViewModel
 
             db = new DatabaseManager();
 
-            foreach (var item in db.GetHeaderList())
+            foreach (var headerItem in db.GetHeaderList())
             {
                 var temp = new ObservableCollection<TabContentListViewModel>();
-                temp.Add(new TabContentListViewModel()
+
+                var contentList = db.GetContentList(headerItem.Uid);
+
+                foreach(var contentItem in contentList)
                 {
-                    ContentIcon = Environment.CurrentDirectory + @"\ICO\computer.ico",
-                    ContentText = "김치찌개"
-                });
+                    temp.Add(new TabContentListViewModel()
+                    {
+                        Uid = contentItem.Uid,
+                        ContentText = contentItem.Title,
+                        ContentIcon = Environment.CurrentDirectory + @"\ICO\" + contentItem.IconPath,
+                        ProgramPath = contentItem.ShellPath,
+                        Args = contentItem.Command
+                    });
+                }
+
+               
+
+
                 Tabs.Add(new TabControlHeaderListViewModel()
                 {
-                    HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + item.IconPath,
-                    HeaderText = item.Title,
+                    HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerItem.IconPath,
+                    HeaderText = headerItem.Title,
                     Content = temp
                 });
             }
@@ -82,7 +95,8 @@ namespace PCLinker.ViewModel
 
         private void ContentStart(object obj)
         {
-            Console.WriteLine("컨텐츠 시작");
+            
+            Console.WriteLine(SelectedContentItem.ContentText + " 컨텐츠 시작");
         }
 
         #endregion

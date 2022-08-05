@@ -8,5 +8,9 @@ namespace PCLinker.BusinessModel.interfaces
     public interface IDatabaseManager
     {
         IEnumerable<HeaderDTO> GetHeaderList();
+
+        IEnumerable<ContentDTO> GetContentList(long uid);
+
+
     }
 }
