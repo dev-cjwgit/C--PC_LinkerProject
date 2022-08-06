@@ -62,7 +62,7 @@
 
                         <Button Grid.Column="0"
                             Style="{StaticResource MaterialDesignFlatButton}"
-                            Click="AcceptButton_onClick"
+                            Command="{Binding AcceptButtonCommand}"
                             ToolTip="MaterialDesignFlatButton" Cursor="Hand">
                             확인
                         </Button>

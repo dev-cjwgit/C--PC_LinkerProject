@@ -1,13 +1,42 @@
 ﻿using PCLinker.ViewModel.config;
+using ProgramCore.DAO;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 
 namespace PCLinker.ViewModel
 {
     public class HeaderEditWindowViewModel : NotifyPropertyChanged
     {
+        public Func<HeaderDTO, int> callBack;
+        public HeaderEditWindowViewModel()
+        {
+            AcceptButtonCommand = new Command(AcceptButton, null);
+        }
+
+
+        #region Command Method
+
+        private void AcceptButton(object obj)
+        {
+            if (callBack != null)
+            {
+                string[] dir = IconPath.Split('\\');
+                callBack(new HeaderDTO()
+                {
+                    Uid = 0,
+                    IconPath = dir[dir.Length - 1],
+                    Title = Title
+                });
+            }
+            HeaderEditWindowVisibility = false;
+        }
+
+        #endregion
+
         #region Property
+
 
         private bool _headerEditWindowVisibility = false;
         public bool HeaderEditWindowVisibility
@@ -56,6 +85,11 @@ namespace PCLinker.ViewModel
                 OnPropertyChanged(nameof(IconPath));
             }
         }
+        #endregion
+
+        #region ICommand
+        public ICommand AcceptButtonCommand { get; set; }
+
         #endregion
     }
 }

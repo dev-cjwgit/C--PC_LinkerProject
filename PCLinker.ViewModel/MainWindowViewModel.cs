@@ -13,6 +13,7 @@ namespace PCLinker.ViewModel
     {
         // Commit Test 1
         private IDatabaseManager db;
+
         public MainWindowViewModel()
         {
             Tabs = new ObservableCollection<TabControlHeaderListViewModel>();
@@ -64,16 +65,34 @@ namespace PCLinker.ViewModel
         private void CreateHeader(object obj)
         {
             HeaderEditWindowDataContext.HeaderEditWindowVisibility = true;
+
+            HeaderEditWindowDataContext.callBack = (headerDTO) =>
+            {
+                if (db.CreateHeader(headerDTO.Title, headerDTO.IconPath))
+                {
+                    Tabs.Add(new TabControlHeaderListViewModel()
+                    {
+                        HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerDTO.IconPath,
+                        HeaderText = headerDTO.Title,
+                        Content = new ObservableCollection<TabContentListViewModel>()
+                    });
+                }
+                return 1;
+            };
         }
 
         private void UpdateHeader(object obj)
         {
+
             Console.WriteLine("헤더 수정");
         }
 
         private void DeleteHeader(object obj)
         {
-            Console.WriteLine("헤더 삭제");
+            if (db.DeleteHeader(SelectedHeaderItem.HeaderText))
+            {
+                Tabs.Remove(SelectedHeaderItem);
+            }
         }
 
         private void CreateContent(object obj)

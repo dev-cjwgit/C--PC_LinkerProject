@@ -52,7 +52,6 @@ namespace PCLinkerProject.Controls
         private void IconSelectButton_onClick(object sender, RoutedEventArgs e)
         {
             HeaderEditWindowViewModel vm = DataContext as HeaderEditWindowViewModel;
-            System.Windows.Controls.ListBox list = new System.Windows.Controls.ListBox();
 
             IconEditWindowViewModel.GetInstance((s) => {
                 vm.IconPath = s;

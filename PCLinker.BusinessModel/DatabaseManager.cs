@@ -24,5 +24,16 @@ namespace PCLinker.BusinessModel
         {
             return db.GetHeaderList();
         }
+
+        public bool CreateHeader(string title, string icon_path)
+        {
+            return db.CreateHeader(title, icon_path) > 0;
+        }
+
+        public bool DeleteHeader(string title)
+        {
+            return db.DeleteHeader(title);
+        }
+
     }
 }
