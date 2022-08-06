@@ -32,7 +32,13 @@ namespace PCLinker.BusinessModel
 
         public bool DeleteHeader(string title)
         {
-            return db.DeleteHeader(title);
+            try
+            {
+                return db.DeleteHeader(title);
+            }catch(Exception ex)
+            {
+                return false;
+            }
         }
 
     }
