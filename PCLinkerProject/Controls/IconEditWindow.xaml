@@ -85,15 +85,15 @@
                     </Grid.ColumnDefinitions>
                     <Button Grid.Column="0"
                             Style="{StaticResource MaterialDesignFlatButton}"
-                            Click="AddButton_onClick"
+                            Command="{Binding IconAddButtonCommand}"
                             ToolTip="MaterialDesignFlatButton">
                         추가
                     </Button>
 
                     <Button Grid.Column="1"
                             Style="{StaticResource MaterialDesignFlatButton}"
-                            Click="DeleteButton_onClick"
-                            ToolTip="MaterialDesignFlatButton">
+                            Command="{Binding IconDeleteButtonCommand}"
+                            ToolTip="MaterialDesignFlatButton" Cursor="Hand">
                         삭제
                     </Button>
 

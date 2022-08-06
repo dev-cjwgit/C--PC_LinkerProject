@@ -4,13 +4,20 @@ using System.Windows.Input;
 using System.Collections.ObjectModel;
 using PCLinker.ViewModel.controls;
 using System.IO;
+using PCLinker.BusinessModel;
 
 namespace PCLinker.ViewModel
 {
     public class IconEditWindowViewModel : NotifyPropertyChanged
     {
+        private IconEditManager iconEditManager;
         public IconEditWindowViewModel()
         {
+            iconEditManager = new IconEditManager();
+
+            IconAddButtonCommand = new Command(IconAddButton, null);
+            IconDeleteButtonCommand = new Command(IconDeleteButton, null);
+
             IconEditWindowVisibility = false;
 
 
@@ -31,7 +38,26 @@ namespace PCLinker.ViewModel
         }
 
         #region Command
+        private void IconAddButton(object obj)
+        {
+            if (iconEditManager.CopyIcon(IconPathText))
+            {
+                String[] dir = IconPathText.Split('\\');
+                string fileName = dir[dir.Length - 1];
 
+                IconListSource.Add(new IconEditListViewModel()
+                {
+                    IconPath = IconPathText,
+                    Title = fileName
+                });
+                IconPathText = "";
+            }
+        }
+
+        private void IconDeleteButton(object obj)
+        {
+
+        }
         #endregion
 
         #region Proerty
@@ -91,6 +117,9 @@ namespace PCLinker.ViewModel
         #region ICommand
         public ICommand DialogCommand { get; set; }
 
+        public ICommand IconAddButtonCommand { get; set; }
+
+        public ICommand IconDeleteButtonCommand { get; set; }
         #endregion
 
     }
