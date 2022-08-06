@@ -29,9 +29,13 @@ namespace PCLinker.BusinessModel
 
         public bool DeleteIcon(string iconPath)
         {
+            //GC.Collect();
+            //GC.WaitForPendingFinalizers();
+            //FileInfo f = new FileInfo(iconPath);
+            //f.Delete();
 
-            File.Delete(iconPath);
-            return false;
+            //return true;
+            throw new NotImplementedException();
         }
     }
 }

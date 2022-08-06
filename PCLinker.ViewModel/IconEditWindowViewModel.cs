@@ -5,11 +5,25 @@ using System.Collections.ObjectModel;
 using PCLinker.ViewModel.controls;
 using System.IO;
 using PCLinker.BusinessModel;
+using System.Windows.Forms;
 
 namespace PCLinker.ViewModel
 {
+    public delegate void ButtonClickEventHandler();
     public class IconEditWindowViewModel : NotifyPropertyChanged
     {
+        public static Func<string, int> callback;
+
+
+        private static IconEditWindowViewModel instance;
+        public static IconEditWindowViewModel GetInstance(Func<string, int> func)
+        {
+            if (instance == null)
+                instance = new IconEditWindowViewModel();
+            callback = func;
+            return instance;
+        }
+
         private IconEditManager iconEditManager;
         public IconEditWindowViewModel()
         {
@@ -17,6 +31,8 @@ namespace PCLinker.ViewModel
 
             IconAddButtonCommand = new Command(IconAddButton, null);
             IconDeleteButtonCommand = new Command(IconDeleteButton, null);
+
+            //SelectIconCommand = new Command(SelectIconButton, null);
 
             IconEditWindowVisibility = false;
 
@@ -34,10 +50,10 @@ namespace PCLinker.ViewModel
                     Title = dir[dir.Length - 1]
                 });
             }
-            
+            instance = this;
         }
 
-        #region Command
+        #region Command Method
         private void IconAddButton(object obj)
         {
             if (iconEditManager.CopyIcon(IconPathText))
@@ -56,8 +72,22 @@ namespace PCLinker.ViewModel
 
         private void IconDeleteButton(object obj)
         {
-
+            MessageBox.Show("지원하지 않는 기능입니다.");
+            //if (IconSelectedItem != null)
+            //{
+            //    var temp = IconSelectedItem;
+            //    IconListSource.Remove(IconSelectedItem);
+            //    if (!iconEditManager.DeleteIcon(temp.IconPath))
+            //    {
+            //        IconListSource.Add(temp);
+            //    }
+            //}
         }
+
+        //private void SelectIconButton(object obj)
+        //{
+        //    callback(IconPathText);
+        //}
         #endregion
 
         #region Proerty
@@ -120,6 +150,8 @@ namespace PCLinker.ViewModel
         public ICommand IconAddButtonCommand { get; set; }
 
         public ICommand IconDeleteButtonCommand { get; set; }
+
+        //public ICommand SelectIconCommand { get; set; }
         #endregion
 
     }

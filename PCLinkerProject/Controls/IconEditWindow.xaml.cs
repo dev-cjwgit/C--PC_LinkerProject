@@ -81,19 +81,6 @@ namespace PCLinkerProject.Controls
             //}
         }
 
-        private void CheckDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            IconEditWindowViewModel vm = DataContext as IconEditWindowViewModel;
-
-
-            //dynamic meta_data = sender as dynamic;
-            //var temp = IconEditViewModel.GetInstance().Tabs[selected_index];
-            //String[] dir = temp.HeaderIcon.ToString().Split('\\');
-            //send1(dir[dir.Length - 1]);
-            //send2(dir[dir.Length - 1]);
-            this.Visibility = Visibility.Collapsed;
-            Console.WriteLine(vm.IconSelectedItem.IconPath);
-        }
 
         private void DialogButton_onClick(object sender, RoutedEventArgs e)
         {
@@ -106,6 +93,18 @@ namespace PCLinkerProject.Controls
             {
                 IconEditVM.IconPathText = dlgOpenFile.FileName;
             }
+        }
+
+        private void SelectButton_onClick(object sender, MouseButtonEventArgs e)
+        {
+            // TODO : callback을 어떻게 처리해야할지 모르겠음..
+            IconEditWindowViewModel IconEditVM = DataContext as IconEditWindowViewModel;
+            if (IconEditWindowViewModel.callback != null)
+            {
+                IconEditWindowViewModel.callback(IconEditVM.IconSelectedItem.IconPath);
+                IconEditVM.IconEditWindowVisibility = false;
+            }
+
         }
     }
 }

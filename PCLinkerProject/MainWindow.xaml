@@ -226,9 +226,9 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Ct:HeaderEditWindow x:Name="HeaderEditWindow" Grid.RowSpan="2" Panel.ZIndex="1" Visibility="Collapsed"/>
+        <Ct:HeaderEditWindow x:Name="HeaderEditWindow" Grid.RowSpan="2" Panel.ZIndex="1" Visibility="Collapsed" DataContext="{Binding HeaderEditWindowDataContext}"/>
         <Ct:ContentEditWindow x:Name="ContentEditWindow" Grid.RowSpan="2" Panel.ZIndex="1" Visibility="Collapsed"/>
-        <Ct:IconEditWindow x:Name="IconEditWindow" Grid.RowSpan="2" Panel.ZIndex="2" Visibility="Visible" DataContext="{Binding IconEditWindowDataContext}"/>
+        <Ct:IconEditWindow x:Name="IconEditWindow" Grid.RowSpan="2" Panel.ZIndex="2" Visibility="Collapsed" DataContext="{Binding IconEditWindowDataContext}"/>
         
         <Border CornerRadius="2.5" Background="WhiteSmoke" BorderBrush="Black" BorderThickness="1.0" Margin="5">
         <Border.Effect>

@@ -1,4 +1,5 @@
 ﻿
+using PCLinker.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,30 +30,12 @@ namespace PCLinkerProject.Controls
         public HeaderEditWindow()
         {
             InitializeComponent();
+            DataContext = new HeaderEditWindowViewModel();
             //IconEditWindow.send1 = recv;
         }
 
         private void AcceptButton_onClick(object sender, RoutedEventArgs e)
         {
-            //switch (MainWindow.presentStatus)
-            //{
-            //    case PresentStatusEnum.None:
-            //        {
-            //            break;
-            //        }
-
-            //    case PresentStatusEnum.AddTab:
-            //        {
-            //            String[] path = IconTextbox.Text.ToString().Split('\\');
-            //            //MainTabControlViewModel.getInstance().addTab(IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
-            //            break;
-            //        }
-            //    case PresentStatusEnum.UpdateTab:
-            //        {
-            //            //MainTabControlViewModel.getInstance().updateTab(MainWindow.selected_tab, IconTextbox.Text.ToString(), TitleTextbox.Text.ToString());
-            //            break;
-            //        }
-            //}
             this.Visibility = Visibility.Collapsed;
         }
 
@@ -66,14 +49,16 @@ namespace PCLinkerProject.Controls
             this.Visibility = Visibility.Collapsed;
         }
 
-
-        private void recv(String name)
-        {
-            IconTextbox.Text = name;
-        }
         private void IconSelectButton_onClick(object sender, RoutedEventArgs e)
         {
-            IconEditWindow.Visibility = Visibility.Visible;
+            HeaderEditWindowViewModel vm = DataContext as HeaderEditWindowViewModel;
+            System.Windows.Controls.ListBox list = new System.Windows.Controls.ListBox();
+
+            IconEditWindowViewModel.GetInstance((s) => {
+                vm.IconPath = s;
+                return 0;
+            }).IconEditWindowVisibility = true;
+            //IconEditWindow.Visibility = Visibility.Visible;
             //OpenFileDialog dlgOpenFile = new OpenFileDialog();
 
             //dlgOpenFile.Filter = "Icon File (*.ico) | *.ico;";
@@ -83,7 +68,6 @@ namespace PCLinkerProject.Controls
             //if (dlgOpenFile.ShowDialog().ToString() == "OK")
             //{
             //    IconTextbox.Text = dlgOpenFile.FileName;
-
             //}
         }
     }

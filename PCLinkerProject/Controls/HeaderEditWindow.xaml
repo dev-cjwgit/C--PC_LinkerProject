@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:PCLinkerProject.Controls"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
+             Visibility="{Binding HeaderEditWindowVisibility, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <local:IconEditWindow x:Name="IconEditWindow" Grid.RowSpan="2" Panel.ZIndex="2" Visibility="Collapsed"/>
-        
+
         <Border Background="Black" Opacity="0.3" Panel.ZIndex="0">
             <ProgressBar Style="{StaticResource DefaultProgressBar}" Opacity="0" MouseRightButtonDown="ProgressBar_MouseLeftButtonUp" />
         </Border>
@@ -34,8 +34,9 @@
                         <TextBox 
                             Grid.Column="0" x:Name="IconTextbox" Margin="8,0,8,0"
                               IsReadOnly="True"
-                          materialDesign:HintAssist.Hint="Icon Name"
+                          materialDesign:HintAssist.Hint="Icon Path"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            Text="{Binding IconPath}"
                           VerticalAlignment="Center" Cursor="Arrow" />
                         <Button Grid.Column="1"
                           Style="{StaticResource MaterialDesignIconButton}"
@@ -48,8 +49,9 @@
 
                     <TextBox Grid.Row="1" x:Name="TitleTextbox"  Margin="8,0,8,0"
                           materialDesign:HintAssist.Hint="Title"
+                             Text="{Binding Title}"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                          VerticalAlignment="Center" />
+                          VerticalAlignment="Center" Cursor="Arrow" />
 
 
                     <Grid Grid.Row="3">

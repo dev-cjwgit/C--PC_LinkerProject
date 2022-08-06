@@ -17,8 +17,6 @@ namespace PCLinker.ViewModel
         {
             Tabs = new ObservableCollection<TabControlHeaderListViewModel>();
 
-            //IconEditWindowDataContext = new IconEditWindowViewModel();
-
             CreateHeaderCommand = new Command(CreateHeader, null);
             UpdateHeaderCommand = new Command(UpdateHeader, null);
             DeleteHeaderCommand = new Command(DeleteHeader, null);
@@ -65,7 +63,7 @@ namespace PCLinker.ViewModel
 
         private void CreateHeader(object obj)
         {
-            Console.WriteLine("헤더 추가");
+            HeaderEditWindowDataContext.HeaderEditWindowVisibility = true;
         }
 
         private void UpdateHeader(object obj)
@@ -102,6 +100,7 @@ namespace PCLinker.ViewModel
         #endregion
 
         #region VM Property
+        public HeaderEditWindowViewModel HeaderEditWindowDataContext { get; set; } = new HeaderEditWindowViewModel();
         public IconEditWindowViewModel IconEditWindowDataContext { get; set; } = new IconEditWindowViewModel();
         public TabControlHeaderListViewModel SelectedHeaderItem { get; set; }
 

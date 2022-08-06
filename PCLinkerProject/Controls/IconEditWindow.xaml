@@ -22,14 +22,15 @@
                 </Grid.RowDefinitions>
                 <ListBox x:Name="IconEditListbox"
                          Grid.Row="0"
-                         MouseDoubleClick="CheckDoubleClick"
                          ItemsSource="{Binding IconListSource}"
                          SelectedItem="{Binding IconSelectedItem}"
+                         MouseDoubleClick="SelectButton_onClick"
                                      ScrollViewer.CanContentScroll="True"
                                      dd:DragDrop.IsDragSource="True"
                                      dd:DragDrop.IsDropTarget="True"
                                      ScrollViewer.VerticalScrollBarVisibility="Visible">
-
+                    
+                    
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"/>
