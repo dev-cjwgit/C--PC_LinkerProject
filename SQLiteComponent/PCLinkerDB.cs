@@ -180,6 +180,12 @@ namespace SQLiteComponent
             return result;
         }
 
+        public long GetContentUidByInfo(long header_uid, string content_title)
+        {
+            sql.ExecuteSQL("SELECT uid FROM content WHERE title = \"" + content_title + "\" AND header_uid = " + header_uid);
+            return long.Parse(sql.GetData()[0]["uid"].ToString());
+        }
+
         public long CreateHistory(long content_uid)
         {
             string date = new DateTime().ToString("yyyy-MM-dd HH:mm:ss");

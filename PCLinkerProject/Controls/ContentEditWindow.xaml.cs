@@ -1,4 +1,5 @@
 ﻿
+using PCLinker.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace PCLinkerProject.Controls
         }
         public void recv(String fileName)
         {
-            IconTextbox.Text = fileName;
+            //IconTextbox.Text = fileName;
         }
         private void ProgressBar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -72,29 +73,29 @@ namespace PCLinkerProject.Controls
 
         private void IconSelectButton_onClick(object sender, RoutedEventArgs e)
         {
-            IconEditWindow.Visibility = Visibility.Visible;
-            //OpenFileDialog dlgOpenFile = new OpenFileDialog();
-            //dlgOpenFile.Filter = "Icon File (*.ico) | *.ico;";
+            ContentEditWindowViewModel vm = DataContext as ContentEditWindowViewModel;
 
-            //if (dlgOpenFile.ShowDialog().ToString() == "OK")
-            //{
-            //    IconTextbox.Text = dlgOpenFile.FileName;
-            //}
+            IconEditWindowViewModel.GetInstance((s) => {
+                vm.IconPath = s;
+                return 0;
+            }).IconEditWindowVisibility = true;
         }
-
 
         private void ShellPathSelectButton_onClick(object sender, RoutedEventArgs e)
         {
+            ContentEditWindowViewModel vm = DataContext as ContentEditWindowViewModel;
             OpenFileDialog dlgOpenFile = new OpenFileDialog();
 
             dlgOpenFile.Filter = "응용 프로그램 (*.exe) | *.exe;";
 
-
             if (dlgOpenFile.ShowDialog().ToString() == "OK")
             {
-                ShellTextbox.Text = dlgOpenFile.FileName;
-
+                vm.ShellPath = dlgOpenFile.FileName;
             }
         }
+
+        #region VM Property
+
+        #endregion
     }
 }

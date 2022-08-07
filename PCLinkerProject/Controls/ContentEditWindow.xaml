@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:PCLinkerProject.Controls"
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Visibility="{Binding ContentEditWindowVisibility, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <local:IconEditWindow x:Name="IconEditWindow" Grid.RowSpan="2" Panel.ZIndex="2" Visibility="Collapsed"/>
         <Border Background="Black" Opacity="0.3" Panel.ZIndex="0">
             <ProgressBar Style="{StaticResource DefaultProgressBar}" Opacity="0" MouseRightButtonDown="ProgressBar_MouseLeftButtonUp" />
         </Border>
@@ -34,22 +34,25 @@
                             <ColumnDefinition Width="96"/>
                         </Grid.ColumnDefinitions>
                         <TextBox 
-                            Grid.Column="0" x:Name="IconTextbox" Margin="8,0,8,0"
+                            Grid.Column="0" Margin="8,0,8,0"
                               IsReadOnly="True"
                           materialDesign:HintAssist.Hint="Icon Name"
+                            Text="{Binding IconPath}"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                           VerticalAlignment="Center" Cursor="Arrow" />
                         <Button Grid.Column="1"
                           Style="{StaticResource MaterialDesignIconButton}"
                                 Click="IconSelectButton_onClick"
-                          ToolTip="MaterialDesignIconButton">
+                          ToolTip="MaterialDesignIconButton" Cursor="Hand">
                             <materialDesign:PackIcon Kind="DotsHorizontal" />
                         </Button>
                     </Grid>
 
-                    <TextBox Grid.Row="1" x:Name="TitleTextbox"  Margin="8,0,8,0"
+                    <TextBox Grid.Row="1" Margin="8,0,8,0"
                           materialDesign:HintAssist.Hint="Title"
+                             Text="{Binding Title}"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             
                           VerticalAlignment="Center" />
 
                     <Grid Grid.Row="2">
@@ -58,8 +61,9 @@
                             <ColumnDefinition Width="96"/>
                         </Grid.ColumnDefinitions>
                         <TextBox 
-                            Grid.Column="0" x:Name="ShellTextbox" Margin="8,0,8,0"
+                            Grid.Column="0" Margin="8,0,8,0"
                               IsReadOnly="True"
+                            Text="{Binding ShellPath}"
                           materialDesign:HintAssist.Hint="shell path"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                           VerticalAlignment="Center" Cursor="Arrow" />
@@ -72,8 +76,9 @@
                     </Grid>
 
                     <TextBox 
-                            Grid.Row="3" x:Name="CommandTextbox" Margin="8,0,8,0"
+                            Grid.Row="3" Margin="8,0,8,0"
                           materialDesign:HintAssist.Hint="Command"
+                        Text="{Binding CommandText}"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                           VerticalAlignment="Center" Cursor="Arrow" />
                     
@@ -85,7 +90,7 @@
 
                         <Button Grid.Column="0"
                             Style="{StaticResource MaterialDesignFlatButton}"
-                            Click="AcceptButton_onClick"
+                            Command="{Binding AcceptButtonCommand}"
                             ToolTip="MaterialDesignFlatButton">
                             확인
                         </Button>

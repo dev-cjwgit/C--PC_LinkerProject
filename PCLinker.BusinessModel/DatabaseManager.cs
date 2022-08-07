@@ -47,5 +47,23 @@ namespace PCLinker.BusinessModel
             }
         }
 
+        public bool CreateContent(string content_title, string title, string icon_path, string shell_path, string command)
+        {
+            try
+            {
+                long header_uid = db.GetHeaderUidByTitle(content_title);
+                return db.CreateContent(header_uid, title, icon_path, shell_path, command) > 0;
+            }catch(Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteContent(string header_title, string content_title)
+        {
+            long header_uid = db.GetHeaderUidByTitle(header_title);
+            long content_uid = db.GetContentUidByInfo(header_uid, content_title);
+            return db.DeleteContent(content_uid);
+        }
     }
 }

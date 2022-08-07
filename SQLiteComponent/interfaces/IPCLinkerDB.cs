@@ -15,11 +15,13 @@ namespace SQLiteComponent.interfaces
         List<HeaderDTO> GetHeaderList();
         long GetHeaderUidByTitle(string title);
 
+
         long CreateContent(long header_uid, string title, string icon_path, string shell_path, string command);
         bool UpdateContent(long uid, long header_uid, string title, string icon_path, string shell_path, string command);
         bool DeleteContent(long uid);
         bool DeleteContent(long header_uid, string title);
         List<ContentDTO> GetContentList(long header_uid);
+        long GetContentUidByInfo(long header_uid, string content_title);
 
         long CreateHistory(long content_uid);
         List<HistoryDTO> GetHistoryList();

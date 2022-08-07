@@ -113,6 +113,24 @@ namespace PCLinker.ViewModel
 
         private void CreateContent(object obj)
         {
+            ContentEditWindowDataContext.ContentEditWindowVisibility = true;
+
+            ContentEditWindowDataContext.callBack = (contentDTO) =>
+            {
+                if (db.CreateContent(SelectedHeaderItem.HeaderText, contentDTO.Title, contentDTO.IconPath, contentDTO.ShellPath, contentDTO.Command))
+                {
+                    SelectedHeaderItem.Content.Add(new TabContentListViewModel()
+                    {
+                        Uid = 0,
+                        ContentIcon = Environment.CurrentDirectory + @"\ICO\" + contentDTO.IconPath,
+                        ContentText = contentDTO.Title,
+                        ProgramPath = contentDTO.ShellPath,
+                        Args = contentDTO.Command
+                    });
+
+                }
+                return 1;
+            };
             Console.WriteLine("컨텐츠 생성");
         }
 
@@ -123,7 +141,10 @@ namespace PCLinker.ViewModel
 
         private void DeleteContent(object obj)
         {
-            Console.WriteLine("컨텐츠 삭제");
+            if(db.DeleteContent(SelectedHeaderItem.HeaderText, SelectedContentItem.ContentText))
+            {
+                SelectedHeaderItem.Content.Remove(SelectedContentItem);
+            }
         }
 
         private void ContentStart(object obj)
@@ -135,6 +156,7 @@ namespace PCLinker.ViewModel
 
         #region VM Property
         public HeaderEditWindowViewModel HeaderEditWindowDataContext { get; set; } = new HeaderEditWindowViewModel();
+        public ContentEditWindowViewModel ContentEditWindowDataContext { get; set; } = new ContentEditWindowViewModel();
         public IconEditWindowViewModel IconEditWindowDataContext { get; set; } = new IconEditWindowViewModel();
         public TabControlHeaderListViewModel SelectedHeaderItem { get; set; }
 
