@@ -137,12 +137,34 @@ namespace PCLinker.ViewModel
 
         private void UpdateContent(object obj)
         {
+            if (SelectedContentItem != null)
+            {
+                ContentEditWindowDataContext.ContentEditWindowVisibility = true;
+
+                ContentEditWindowDataContext.IconPath = Environment.CurrentDirectory + @"\ICO\" + SelectedContentItem.ContentIcon;
+                ContentEditWindowDataContext.Title = SelectedContentItem.ContentText;
+                ContentEditWindowDataContext.ShellPath = SelectedContentItem.ProgramPath;
+                ContentEditWindowDataContext.CommandText = SelectedContentItem.Args;
+
+                ContentEditWindowDataContext.callBack = (contentDTO) =>
+                {
+
+                    if (db.UpdateContent(SelectedHeaderItem.HeaderText, SelectedContentItem.ContentText, contentDTO.Title, contentDTO.IconPath, contentDTO.ShellPath, contentDTO.Command))
+                    {
+                        SelectedContentItem.ContentIcon = Environment.CurrentDirectory + @"\ICO\" + contentDTO.IconPath;
+                        SelectedContentItem.ContentText = contentDTO.Title;
+                        SelectedContentItem.ProgramPath = contentDTO.ShellPath;
+                        SelectedContentItem.Args = contentDTO.Command;
+                    }
+                    return 1;
+                };
+            }
             Console.WriteLine("컨텐츠 수정");
         }
 
         private void DeleteContent(object obj)
         {
-            if(db.DeleteContent(SelectedHeaderItem.HeaderText, SelectedContentItem.ContentText))
+            if (db.DeleteContent(SelectedHeaderItem.HeaderText, SelectedContentItem.ContentText))
             {
                 SelectedHeaderItem.Content.Remove(SelectedContentItem);
             }
