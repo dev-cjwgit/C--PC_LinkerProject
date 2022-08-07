@@ -36,7 +36,7 @@ namespace PCLinker.ViewModel
 
                 var contentList = db.GetContentList(headerItem.Uid);
 
-                foreach(var contentItem in contentList)
+                foreach (var contentItem in contentList)
                 {
                     temp.Add(new TabContentListViewModel()
                     {
@@ -48,7 +48,7 @@ namespace PCLinker.ViewModel
                     });
                 }
 
-               
+
 
 
                 Tabs.Add(new TabControlHeaderListViewModel()
@@ -83,7 +83,23 @@ namespace PCLinker.ViewModel
 
         private void UpdateHeader(object obj)
         {
+            if (SelectedHeaderItem != null)
+            {
+                HeaderEditWindowDataContext.HeaderEditWindowVisibility = true;
 
+                HeaderEditWindowDataContext.IconPath = Environment.CurrentDirectory + @"\ICO\" + SelectedHeaderItem.HeaderIcon;
+                HeaderEditWindowDataContext.Title = SelectedHeaderItem.HeaderText;
+
+                HeaderEditWindowDataContext.callBack = (headerDTO) =>
+                {
+                    if (db.UpdateHeader(SelectedHeaderItem.HeaderText, headerDTO.Title, headerDTO.IconPath))
+                    {
+                        SelectedHeaderItem.HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerDTO.IconPath;
+                        SelectedHeaderItem.HeaderText = headerDTO.Title;
+                    }
+                    return 1;
+                };
+            }
             Console.WriteLine("헤더 수정");
         }
 
@@ -112,7 +128,6 @@ namespace PCLinker.ViewModel
 
         private void ContentStart(object obj)
         {
-            
             Console.WriteLine(SelectedContentItem.ContentText + " 컨텐츠 시작");
         }
 

@@ -12,7 +12,7 @@ namespace PCLinker.BusinessModel.interfaces
         IEnumerable<ContentDTO> GetContentList(long uid);
 
         bool CreateHeader(string title, string icon_path);
-
+        bool UpdateHeader(string originTitle, string title, string icon_path);
         bool DeleteHeader(string title);
     }
 }

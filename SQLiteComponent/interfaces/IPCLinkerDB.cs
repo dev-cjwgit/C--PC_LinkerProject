@@ -13,6 +13,7 @@ namespace SQLiteComponent.interfaces
         bool DeleteHeader(long uid);
         bool DeleteHeader(string title);
         List<HeaderDTO> GetHeaderList();
+        long GetHeaderUidByTitle(string title);
 
         long CreateContent(long header_uid, string title, string icon_path, string shell_path, string command);
         bool UpdateContent(long uid, long header_uid, string title, string icon_path, string shell_path, string command);

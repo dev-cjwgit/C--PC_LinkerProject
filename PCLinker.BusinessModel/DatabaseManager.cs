@@ -30,6 +30,12 @@ namespace PCLinker.BusinessModel
             return db.CreateHeader(title, icon_path) > 0;
         }
 
+        public bool UpdateHeader(string originTitle,  string title, string icon_path)
+        {
+            long uid = db.GetHeaderUidByTitle(originTitle);
+            return db.UpdateHeader(uid, title, icon_path);
+        }
+
         public bool DeleteHeader(string title)
         {
             try

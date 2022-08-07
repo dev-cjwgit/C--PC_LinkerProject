@@ -125,6 +125,12 @@ namespace SQLiteComponent
             return result;
         }
 
+        public long GetHeaderUidByTitle(string title)
+        {
+            sql.ExecuteSQL("SELECT uid FROM header WHERE title = \"" + title +"\"");
+            return long.Parse(sql.GetData()[0]["uid"].ToString());
+        }
+
         public long CreateContent(long header_uid, string title, string icon_path, string shell_path, string command)
         {
             sql.ExecuteSQL("INSERT INTO content(header_uid, title, icon_path,  shell_path, command) VALUES (" + header_uid + ",\"" + title + "\",\"" + icon_path + "\", \"" + shell_path + "\", \"" + command + "\");");
@@ -202,5 +208,7 @@ namespace SQLiteComponent
             }
             return result;
         }
+
+
     }
 }
