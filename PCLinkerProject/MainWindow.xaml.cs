@@ -19,14 +19,6 @@ namespace PCLinkerProject
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
-            //PCLinkerDB.GetInstance();
-            //TabControl1.DataContext = MainTabControlViewModel.getInstance();
-
-            //var data = PCLinkerDB.GetInstance().GetHeaderList();
-            //foreach (var item in data)
-            //{
-            //    MainTabControlViewModel.getInstance().addTab(item.IconPath, item.Title);
-            //}
 
         }
 
@@ -91,53 +83,7 @@ namespace PCLinkerProject
 
         #endregion
 
-        private void Content_StartProgram(object sender, MouseButtonEventArgs e)
-        {
-            //dynamic meta_data = sender as dynamic;
-            //var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
-            ////temp[selected_content].ProgramPath;
-            //Process myProcess = new Process();
-            //myProcess.StartInfo.FileName = temp[selected_content].ProgramPath;
-            //myProcess.Start();
-        }
 
-        private void TabControl1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //Console.WriteLine("Console");
-            //selected_tab = (sender as System.Windows.Controls.TabControl).SelectedIndex;
-        }
-
-        private void Content_Selected(object sender, SelectionChangedEventArgs e)
-        {
-            //dynamic meta_data = sender as dynamic;
-            //selected_content = meta_data.SelectedIndex;
-
-        }
-
-        private void Content_Append(object sender, RoutedEventArgs e)
-        {
-            //presentStatus = PresentStatusEnum.AddContent;
-            //ContentEditWindow.Visibility = Visibility.Visible;
-        }
-
-        private void Content_Update(object sender, RoutedEventArgs e)
-        {
-            //presentStatus = PresentStatusEnum.UpdateContent;
-            //ContentEditWindow.Visibility = Visibility.Visible;
-            //var temp = MainTabControlViewModel.getInstance(selected_index);
-            //Console.WriteLine("U : " + temp[selected_item_index].ContentText);
-        }
-
-        private void Content_Delete(object sender, RoutedEventArgs e)
-        {
-            // MainTabControlViewModel.getInstance().addContent(selected_index, "PyCharm.ico", textbox1.Text.ToString());
-            // MainTabControlViewModel.getInstance().addTab("chrome.ico", textbox1.Text.ToString());
-            //var temp = MainTabControlViewModel.getInstance().getInstance(selected_tab);
-            //Console.WriteLine("D : " + temp[selected_content].ContentText);
-
-            //MainTabControlViewModel.getInstance().deleteContent(selected_tab, selected_content);
-
-        }
         private void WindowsConfigButton_Click(object sender, RoutedEventArgs e)
         {
             IconEditWindow.Visibility = Visibility.Visible;
@@ -149,24 +95,5 @@ namespace PCLinkerProject
 
             //EditWindow.Visibility = Visibility.Visible;
         }
-
-
-        private void Header_Append(object sender, RoutedEventArgs e)
-        {
-            //presentStatus = PresentStatusEnum.AddTab;
-            //HeaderEditWindow.Visibility = Visibility.Visible;
-        }
-
-        private void Header_Update(object sender, RoutedEventArgs e)
-        {
-            //presentStatus = PresentStatusEnum.UpdateTab;
-            //HeaderEditWindow.Visibility = Visibility.Visible;
-        }
-
-        private void Header_Delete(object sender, RoutedEventArgs e)
-        {
-            //MainTabControlViewModel.getInstance().deleteTab(selected_tab);
-        }
-
     }
 }

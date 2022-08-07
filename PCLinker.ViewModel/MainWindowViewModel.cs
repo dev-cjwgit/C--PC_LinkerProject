@@ -4,6 +4,7 @@ using PCLinker.ViewModel.config;
 using PCLinker.ViewModel.controls;
 using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 
@@ -149,7 +150,10 @@ namespace PCLinker.ViewModel
 
         private void ContentStart(object obj)
         {
-            Console.WriteLine(SelectedContentItem.ContentText + " 컨텐츠 시작");
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = SelectedContentItem.ProgramPath;
+            startInfo.Arguments = SelectedContentItem.Args;
+            Process.Start(startInfo);
         }
 
         #endregion

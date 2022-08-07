@@ -52,7 +52,6 @@ namespace SQLiteComponent
                         ")"))
                     {
                         long header_uid = CreateHeader("카테고리1", "computer.ico");
-                        CreateContent(header_uid, "카카오톡", "kakaotalk.ico", @"C:\Program Files (x86)\Kakao\KakaoTalk\KakaoTalk.exe", "");
                         Console.WriteLine("SQL Execute  Success");
                     }
                     else
