@@ -73,6 +73,13 @@ namespace PCLinker.BusinessModel
             return db.DeleteContent(content_uid);
         }
 
-        
+        public bool CreateHistory(string header_title, string content_title)
+        {
+            long header_uid = db.GetHeaderUidByTitle(header_title);
+            long content_uid = db.GetContentUidByInfo(header_uid, content_title);
+            
+            return db.CreateHistory(content_uid) > 0;
+        }
+
     }
 }

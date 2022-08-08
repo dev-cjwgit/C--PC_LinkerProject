@@ -176,6 +176,7 @@ namespace PCLinker.ViewModel
             startInfo.FileName = SelectedContentItem.ProgramPath;
             startInfo.Arguments = SelectedContentItem.Args;
             Process.Start(startInfo);
+            db.CreateHistory(SelectedHeaderItem.HeaderText, SelectedContentItem.ContentText);
         }
 
         #endregion
