@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 
@@ -19,7 +20,7 @@ namespace PCLinkerProject
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
-            
+
         }
 
         #region Windows Events
@@ -59,7 +60,22 @@ namespace PCLinkerProject
             anim.Completed += (s, _) =>
             {
                 this.WindowState = WindowState.Minimized;
-                //TrayInit();
+                NotifyIcon ni = new NotifyIcon();
+                ni.Icon = new System.Drawing.Icon("ICO\\" + "computer.ico");
+                ni.Visible = true;
+                ni.Text = "PC Linker";
+
+                ni.DoubleClick += (send, events) =>
+                {
+                    bool presTopmost = Topmost;
+                    Topmost = true;
+                    WindowState = WindowState.Normal;
+                    PrevWindowState = WindowState;
+                    DoubleAnimation anim2 = new DoubleAnimation(0, 1, (Duration)TimeSpan.FromSeconds(0.33));
+                    BeginAnimation(OpacityProperty, anim2);
+                    Topmost = presTopmost;
+                    ni.Dispose();
+                };
 
             };
 

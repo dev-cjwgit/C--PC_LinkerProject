@@ -13,7 +13,6 @@
         mc:Ignorable="d"
         xmlns:Ct="clr-namespace:PCLinkerProject.Controls"
         MinHeight="500" MinWidth="700"
-        WindowState="{Binding CurrentWindowState, Mode=TwoWay}"
         Topmost="{Binding MainWindowAlwaysTop}"
         Title="MainWindow" Height="500" Width="700">
     <Window.Resources>
