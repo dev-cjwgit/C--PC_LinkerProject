@@ -19,7 +19,6 @@ namespace PCLinkerProject
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
-
         }
 
         #region Windows Events

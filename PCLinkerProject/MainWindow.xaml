@@ -13,6 +13,7 @@
         mc:Ignorable="d"
         xmlns:Ct="clr-namespace:PCLinkerProject.Controls"
         MinHeight="500" MinWidth="700"
+        Topmost="{Binding MainWindowAlwaysTop}"
         Title="MainWindow" Height="500" Width="700">
     <Window.Resources>
         <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
@@ -162,7 +163,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <!--TabControl-->
         <Style x:Key="BasedTabControlStyle" TargetType="{x:Type TabControl}" >
             <Setter Property="TabStripPlacement"        Value="Bottom"/>
@@ -273,8 +274,12 @@
                     <materialDesign:PackIcon Kind="Close"/>
                 </Button>
 
+                <ToggleButton
+                                  HorizontalAlignment="Right"
+                                    IsChecked="{Binding IsConnected, Mode=TwoWay}"
+                                     Background="WhiteSmoke" Foreground="WhiteSmoke" Margin="0,0,80,0"/>
 
-                <Button x:Name="WindowsConfigButton"
+                    <Button x:Name="WindowsConfigButton"
                                     Style="{StaticResource BasedMainButtonStyle}"
                                     Click="WindowsConfigButton_Click" HorizontalAlignment="Left"
                                     VerticalAlignment="Center"

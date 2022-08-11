@@ -182,6 +182,32 @@ namespace PCLinker.ViewModel
         #endregion
 
         #region VM Property
+
+        private bool _mainWindowAlwaysTop;
+        public bool MainWindowAlwaysTop {
+            get
+            {
+                return _mainWindowAlwaysTop;
+            }
+            set
+            {
+                _mainWindowAlwaysTop = value;
+                OnPropertyChanged(nameof(MainWindowAlwaysTop));
+            }
+        }
+
+        private bool _isConnected;
+
+        public bool IsConnected
+        {
+            get { return _isConnected; }
+            set
+            {
+                _isConnected = value;
+                MainWindowAlwaysTop = value;
+                OnPropertyChanged(nameof(IsConnected));
+            }
+        }
         public HeaderEditWindowViewModel HeaderEditWindowDataContext { get; set; } = new HeaderEditWindowViewModel();
         public ContentEditWindowViewModel ContentEditWindowDataContext { get; set; } = new ContentEditWindowViewModel();
         public IconEditWindowViewModel IconEditWindowDataContext { get; set; } = new IconEditWindowViewModel();
