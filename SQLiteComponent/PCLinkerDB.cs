@@ -187,8 +187,8 @@ namespace SQLiteComponent
 
         public long CreateHistory(long content_uid)
         {
-            string date = new DateTime().ToString("yyyy-MM-dd HH:mm:ss");
-            sql.ExecuteSQL("INSERT INTO history(`content_uid`, `date`) VALUES (" + content_uid + ", \"" + date + "\"");
+            string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            sql.ExecuteSQL("INSERT INTO history(`content_uid`, `date`) VALUES (" + content_uid + ", \"" + date + "\")");
 
             sql.ExecuteSQL("SELECT uid FROM history WHERE `date` = \"" + date + "\" AND content_uid = " + content_uid);
             long uid = long.Parse(sql.GetData()[0]["uid"].ToString());
