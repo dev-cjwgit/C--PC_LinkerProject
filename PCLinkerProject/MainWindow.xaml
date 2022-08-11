@@ -13,6 +13,7 @@
         mc:Ignorable="d"
         xmlns:Ct="clr-namespace:PCLinkerProject.Controls"
         MinHeight="500" MinWidth="700"
+        WindowState="{Binding CurrentWindowState, Mode=TwoWay}"
         Topmost="{Binding MainWindowAlwaysTop}"
         Title="MainWindow" Height="500" Width="700">
     <Window.Resources>
@@ -227,9 +228,9 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Ct:HeaderEditWindow x:Name="HeaderEditWindow" Grid.RowSpan="2" Panel.ZIndex="1" Visibility="Collapsed" DataContext="{Binding HeaderEditWindowDataContext}"/>
-        <Ct:ContentEditWindow x:Name="ContentEditWindow" Grid.RowSpan="2" Panel.ZIndex="1" Visibility="Collapsed" DataContext="{Binding ContentEditWindowDataContext}"/>
-        <Ct:IconEditWindow x:Name="IconEditWindow" Grid.RowSpan="2" Panel.ZIndex="2" Visibility="Collapsed" DataContext="{Binding IconEditWindowDataContext}"/>
+        <Ct:HeaderEditWindow x:Name="HeaderEditWindow" Grid.RowSpan="2" Panel.ZIndex="1" Visibility="Hidden" DataContext="{Binding HeaderEditWindowDataContext}"/>
+        <Ct:ContentEditWindow x:Name="ContentEditWindow" Grid.RowSpan="2" Panel.ZIndex="1" Visibility="Hidden" DataContext="{Binding ContentEditWindowDataContext}"/>
+        <Ct:IconEditWindow x:Name="IconEditWindow" Grid.RowSpan="2" Panel.ZIndex="2" Visibility="Hidden" DataContext="{Binding IconEditWindowDataContext}"/>
         
         <Border CornerRadius="2.5" Background="WhiteSmoke" BorderBrush="Black" BorderThickness="1.0" Margin="5">
         <Border.Effect>

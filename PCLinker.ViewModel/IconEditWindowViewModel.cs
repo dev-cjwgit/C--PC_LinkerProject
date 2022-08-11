@@ -122,6 +122,7 @@ namespace PCLinker.ViewModel
                 if (!value)
                 {
                     IconPathText = "";
+                    callback = null;
                 }
                 OnPropertyChanged(nameof(IconEditWindowVisibility));
             }

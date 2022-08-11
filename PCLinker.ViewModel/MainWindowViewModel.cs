@@ -208,11 +208,12 @@ namespace PCLinker.ViewModel
                 OnPropertyChanged(nameof(IsConnected));
             }
         }
+
         public HeaderEditWindowViewModel HeaderEditWindowDataContext { get; set; } = new HeaderEditWindowViewModel();
         public ContentEditWindowViewModel ContentEditWindowDataContext { get; set; } = new ContentEditWindowViewModel();
-        public IconEditWindowViewModel IconEditWindowDataContext { get; set; } = new IconEditWindowViewModel();
+        public IconEditWindowViewModel IconEditWindowDataContext { get; set; } = IconEditWindowViewModel.GetInstance(null);
+        
         public TabControlHeaderListViewModel SelectedHeaderItem { get; set; }
-
         public TabContentListViewModel SelectedContentItem { get; set; }
 
         #endregion
