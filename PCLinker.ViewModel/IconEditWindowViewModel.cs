@@ -5,7 +5,6 @@ using System.Collections.ObjectModel;
 using PCLinker.ViewModel.controls;
 using System.IO;
 using PCLinker.BusinessModel;
-using System.Windows.Forms;
 
 namespace PCLinker.ViewModel
 {
@@ -72,7 +71,7 @@ namespace PCLinker.ViewModel
 
         private void IconDeleteButton(object obj)
         {
-            MessageBox.Show("지원하지 않는 기능입니다.");
+            //MessageBox.Show("지원하지 않는 기능입니다.");
             //if (IconSelectedItem != null)
             //{
             //    var temp = IconSelectedItem;
