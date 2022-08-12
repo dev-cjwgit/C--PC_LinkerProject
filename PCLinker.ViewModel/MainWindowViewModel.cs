@@ -28,7 +28,7 @@ namespace PCLinker.ViewModel
             DeleteContentCommand = new Command(DeleteContent, null);
 
             ContentStartCommand = new Command(ContentStart, null);
-
+            SliderOpacity = 100;
             db = new DatabaseManager();
 
             foreach (var headerItem in db.GetHeaderList())
@@ -182,6 +182,40 @@ namespace PCLinker.ViewModel
         #endregion
 
         #region VM Property
+
+        private double _windowOpacity;
+
+        public double WindowOpacity
+        {
+            get
+            {
+                return _windowOpacity;
+            }
+            set
+            {
+                _windowOpacity = value;
+                OnPropertyChanged(nameof(WindowOpacity));
+            }
+        }
+
+        private double _sliderOpacity;
+
+        public double SliderOpacity
+        {
+            get
+            {
+                return _sliderOpacity;
+            }
+            set
+            {
+                if (value >= 20)
+                {
+                    _sliderOpacity = value;
+                    WindowOpacity = value / 100.0;
+                    OnPropertyChanged(nameof(SliderOpacity));
+                }
+            }
+        }
 
         private bool _mainWindowAlwaysTop;
         public bool MainWindowAlwaysTop {

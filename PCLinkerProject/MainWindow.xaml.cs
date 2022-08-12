@@ -1,7 +1,9 @@
 ﻿using PCLinker.ViewModel;
 using System;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
@@ -11,8 +13,29 @@ namespace PCLinkerProject
     /// <summary>
     /// MainWindow.xaml에 대한 상호 작용 논리
     /// </summary>
+    /// 
+
+    public class DoubleToCurrencyConverter : IValueConverter
+    {
+        #region IValueConverter Members
+
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            double d = (double)value;
+            return d.ToString("F0");
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+    }
     public partial class MainWindow : Window
     {
+       
+
         // starting
         //public static PCLinkerDB db;
         private WindowState PrevWindowState = WindowState.Normal;
