@@ -59,6 +59,8 @@ namespace PCLinker.ViewModel
                     Content = temp
                 });
             }
+
+            SelectedHeaderItem = Tabs[0];
         }
 
         #region VM Command Method

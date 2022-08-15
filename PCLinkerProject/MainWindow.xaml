@@ -385,7 +385,7 @@
             </Grid>
 
             <Grid Grid.Row="1" Margin="8,0,8,8">
-                <TabControl Style="{StaticResource BasedTabControlStyle}" x:Name="TabControl1" ItemsSource="{Binding Tabs}" 
+                <TabControl Style="{StaticResource BasedTabControlStyle}" ItemsSource="{Binding Tabs}" 
                             SelectedItem="{Binding SelectedHeaderItem}">
 
                     <TabControl.Resources>
