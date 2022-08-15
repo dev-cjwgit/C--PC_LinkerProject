@@ -37,7 +37,7 @@ namespace PCLinker.ViewModel
 
 
             IconListSource = new ObservableCollection<IconEditListViewModel>();
-            string[] path = Directory.GetFiles(Environment.CurrentDirectory + @"\ICO\", "*.ico");
+            string[] path = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\", "*.ico");
 
             foreach(string item in path)
             {

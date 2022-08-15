@@ -18,7 +18,7 @@ namespace SQLiteComponent
         }
         public bool InitDB()
         {
-            sql = new SQLite(Environment.CurrentDirectory, "default");
+            sql = new SQLite(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\", "default");
             while (!sql.OpenDataBase())
             {
                 while (!sql.CreateDataBase()) ;

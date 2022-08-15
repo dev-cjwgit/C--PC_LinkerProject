@@ -15,7 +15,7 @@ namespace PCLinker.BusinessModel
                 string fileName = dir[dir.Length - 1];
                 try
                 {
-                    File.Copy(iconPath, Environment.CurrentDirectory + @"\ICO\" + fileName);
+                    File.Copy(iconPath, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + fileName);
 
                     return true;
                 }

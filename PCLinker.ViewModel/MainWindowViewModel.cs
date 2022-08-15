@@ -43,7 +43,7 @@ namespace PCLinker.ViewModel
                     {
                         Uid = contentItem.Uid,
                         ContentText = contentItem.Title,
-                        ContentIcon = Environment.CurrentDirectory + @"\ICO\" + contentItem.IconPath,
+                        ContentIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + contentItem.IconPath,
                         ProgramPath = contentItem.ShellPath,
                         Args = contentItem.Command
                     });
@@ -54,7 +54,7 @@ namespace PCLinker.ViewModel
 
                 Tabs.Add(new TabControlHeaderListViewModel()
                 {
-                    HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerItem.IconPath,
+                    HeaderIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + headerItem.IconPath,
                     HeaderText = headerItem.Title,
                     Content = temp
                 });
@@ -73,7 +73,7 @@ namespace PCLinker.ViewModel
                 {
                     Tabs.Add(new TabControlHeaderListViewModel()
                     {
-                        HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerDTO.IconPath,
+                        HeaderIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + headerDTO.IconPath,
                         HeaderText = headerDTO.Title,
                         Content = new ObservableCollection<TabContentListViewModel>()
                     });
@@ -88,14 +88,14 @@ namespace PCLinker.ViewModel
             {
                 HeaderEditWindowDataContext.HeaderEditWindowVisibility = true;
 
-                HeaderEditWindowDataContext.IconPath = Environment.CurrentDirectory + @"\ICO\" + SelectedHeaderItem.HeaderIcon;
+                HeaderEditWindowDataContext.IconPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + SelectedHeaderItem.HeaderIcon;
                 HeaderEditWindowDataContext.Title = SelectedHeaderItem.HeaderText;
 
                 HeaderEditWindowDataContext.callBack = (headerDTO) =>
                 {
                     if (db.UpdateHeader(SelectedHeaderItem.HeaderText, headerDTO.Title, headerDTO.IconPath))
                     {
-                        SelectedHeaderItem.HeaderIcon = Environment.CurrentDirectory + @"\ICO\" + headerDTO.IconPath;
+                        SelectedHeaderItem.HeaderIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + headerDTO.IconPath;
                         SelectedHeaderItem.HeaderText = headerDTO.Title;
                     }
                     return 1;
@@ -123,7 +123,7 @@ namespace PCLinker.ViewModel
                     SelectedHeaderItem.Content.Add(new TabContentListViewModel()
                     {
                         Uid = 0,
-                        ContentIcon = Environment.CurrentDirectory + @"\ICO\" + contentDTO.IconPath,
+                        ContentIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + contentDTO.IconPath,
                         ContentText = contentDTO.Title,
                         ProgramPath = contentDTO.ShellPath,
                         Args = contentDTO.Command
@@ -141,7 +141,7 @@ namespace PCLinker.ViewModel
             {
                 ContentEditWindowDataContext.ContentEditWindowVisibility = true;
 
-                ContentEditWindowDataContext.IconPath = Environment.CurrentDirectory + @"\ICO\" + SelectedContentItem.ContentIcon;
+                ContentEditWindowDataContext.IconPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + SelectedContentItem.ContentIcon;
                 ContentEditWindowDataContext.Title = SelectedContentItem.ContentText;
                 ContentEditWindowDataContext.ShellPath = SelectedContentItem.ProgramPath;
                 ContentEditWindowDataContext.CommandText = SelectedContentItem.Args;
@@ -151,7 +151,7 @@ namespace PCLinker.ViewModel
 
                     if (db.UpdateContent(SelectedHeaderItem.HeaderText, SelectedContentItem.ContentText, contentDTO.Title, contentDTO.IconPath, contentDTO.ShellPath, contentDTO.Command))
                     {
-                        SelectedContentItem.ContentIcon = Environment.CurrentDirectory + @"\ICO\" + contentDTO.IconPath;
+                        SelectedContentItem.ContentIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + contentDTO.IconPath;
                         SelectedContentItem.ContentText = contentDTO.Title;
                         SelectedContentItem.ProgramPath = contentDTO.ShellPath;
                         SelectedContentItem.Args = contentDTO.Command;

@@ -75,12 +75,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_78749B872BE040949C29747FA32E9DDB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7F9D9B8F7E1DD62087CF03348ADC50BD"
         "OwnerKey" = "8:_C726718D37C74D84B1A6C33431ABD97D"
         "MsmSig" = "8:_UNDEFINED"
@@ -111,18 +105,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B58585997ADBD8A17DF5C721F484E82B"
-        "OwnerKey" = "8:_CA9C27AA94C397AFDB6E7637C62433F6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B58585997ADBD8A17DF5C721F484E82B"
-        "OwnerKey" = "8:_C726718D37C74D84B1A6C33431ABD97D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C726718D37C74D84B1A6C33431ABD97D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -143,6 +125,12 @@
         {
         "MsmKey" = "8:_CA9C27AA94C397AFDB6E7637C62433F6"
         "OwnerKey" = "8:_C726718D37C74D84B1A6C33431ABD97D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CDF888802B7E472291999E4680936CBB"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -203,12 +191,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_3EB28E0C4BDB4E389A34E874704A2DDE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B58585997ADBD8A17DF5C721F484E82B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -546,26 +528,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_78749B872BE040949C29747FA32E9DDB"
-            {
-            "SourcePath" = "8:C:\\Program Files\\CJW\\PCLinker\\ICO\\computer.ico"
-            "TargetName" = "8:computer.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_D8A09DF008044E14B57F5391DE1715F1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7F9D9B8F7E1DD62087CF03348ADC50BD"
             {
             "AssemblyRegister" = "3:1"
@@ -648,37 +610,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B58585997ADBD8A17DF5C721F484E82B"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_B58585997ADBD8A17DF5C721F484E82B"
-                    {
-                    "Name" = "8:System.Data.SQLite.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Data.SQLite.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D152A4E2492A4F848553BF638187942E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C988A09B1DF5B50173105B14CD2F10CC"
             {
             "AssemblyRegister" = "3:1"
@@ -739,6 +670,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CDF888802B7E472291999E4680936CBB"
+            {
+            "SourcePath" = "8:..\\..\\..\\Desktop\\ICOs\\computer.ico"
+            "TargetName" = "8:computer.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_9430D625DFD24866ABB7EE375E976D95"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CFC85286DAB11F0BCE798D973A118378"
@@ -893,6 +844,39 @@
                 {
                 }
             }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_BBF6459A721B437FBE8E8FC28C649813"
+            {
+            "Name" = "8:#1918"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:PersonalFolder"
+                "Folders"
+                {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_2AC73F43FB6E4775A54F01868ADB7CC6"
+                    {
+                    "Name" = "8:PCLinker"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_701FCC898B2D485FA7650E06CC10BC17"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_9430D625DFD24866ABB7EE375E976D95"
+                            {
+                            "Name" = "8:ICO"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_7203B84BCA4E431299A2A530DC98DA3D"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_D152A4E2492A4F848553BF638187942E"
             {
             "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
@@ -903,17 +887,6 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_D8A09DF008044E14B57F5391DE1715F1"
-                    {
-                    "Name" = "8:ICO"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_7203B84BCA4E431299A2A530DC98DA3D"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
         }
@@ -933,7 +906,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PCLinker"
         "ProductCode" = "8:{0A999D67-C3A0-409D-9E69-1DEE72F3A41A}"
-        "PackageCode" = "8:{D4FF9B8E-BD05-4268-B48C-E682CC08496B}"
+        "PackageCode" = "8:{8CA1A2D2-2859-4633-B1D9-8E88F213334C}"
         "UpgradeCode" = "8:{5DAF029C-5788-41B3-893F-B9CD1C351566}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
