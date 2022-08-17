@@ -102,7 +102,12 @@ namespace SQLiteComponent
             var data = sql.GetData();
             int header_cnt = int.Parse(data[0]["count(*)"].ToString());
             if (header_cnt > 1)
+            {
+                // TODO: CASCADE 가 적용이 안됨.
+                long header_uid = GetHeaderUidByTitle(title);
+                sql.ExecuteSQL("DELETE FROM content WHERE header_uid = " + header_uid);
                 return sql.ExecuteSQL("DELETE FROM header WHERE title = \'" + title + "\'");
+            }
             else
                 throw new Exception("삭제할 수 없습니다.");
         }
