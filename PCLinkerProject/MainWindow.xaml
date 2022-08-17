@@ -385,8 +385,8 @@
             </Grid>
 
             <Grid Grid.Row="1" Margin="8,0,8,8">
-                <TabControl Style="{StaticResource BasedTabControlStyle}" ItemsSource="{Binding Tabs}" 
-                            SelectedItem="{Binding SelectedHeaderItem}">
+                    <TabControl Style="{StaticResource BasedTabControlStyle}" ItemsSource="{Binding HeaderEditWindowDataContext.Tabs}" 
+                            SelectedItem="{Binding HeaderEditWindowDataContext.SelectedHeaderItem}">
 
                     <TabControl.Resources>
                         <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource {x:Type TabItem}}">
@@ -400,7 +400,7 @@
                         <!-- this is the header template-->
                         <DataTemplate>
                                 <Grid Height="64" Width="64"
-                                      Tag="{Binding DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}">
+                                      Tag="{Binding DataContext.HeaderEditWindowDataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}">
                                     <Grid.ContextMenu>
                                         <ContextMenu>
                                             <MenuItem Header="추가" Command="{Binding PlacementTarget.Tag.CreateHeaderCommand,
@@ -408,7 +408,7 @@
                                                 AncestorType=ContextMenu}}"/>
                                             <MenuItem Header="수정" Command="{Binding PlacementTarget.Tag.UpdateHeaderCommand,
                                                 RelativeSource={RelativeSource Mode=FindAncestor,
-                                                AncestorType=ContextMenu}}"/>
+                                                AncestorType=ContextMenu}}" CommandParameter="{Binding}"/>
                                             <MenuItem Header="삭제" Command="{Binding PlacementTarget.Tag.DeleteHeaderCommand,
                                                 RelativeSource={RelativeSource Mode=FindAncestor,
                                                 AncestorType=ContextMenu}}"/>
@@ -430,14 +430,14 @@
                         <!-- this is the body of the TabItem template-->
                         <DataTemplate>
                                 <ListBox x:Name="ContentListBox1"
-                                     SelectedItem="{Binding DataContext.SelectedContentItem, RelativeSource={RelativeSource Mode=FindAncestor,
+                                     SelectedItem="{Binding DataContext.ContentEditWindowDataContext.SelectedContentItem, RelativeSource={RelativeSource Mode=FindAncestor,
                                                 AncestorType=Window}}"
 
                                      ScrollViewer.CanContentScroll="True"
                                      dd:DragDrop.IsDragSource="True"
                                      dd:DragDrop.IsDropTarget="True"
                                      ScrollViewer.VerticalScrollBarVisibility="Visible"
-                                         Tag="{Binding DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                         Tag="{Binding DataContext.ContentEditWindowDataContext , RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                      ItemsSource="{Binding Content}">
                                 
                                 <ListBox.ContextMenu>
