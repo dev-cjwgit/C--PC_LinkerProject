@@ -102,7 +102,7 @@ namespace SQLiteComponent
             var data = sql.GetData();
             int header_cnt = int.Parse(data[0]["count(*)"].ToString());
             if (header_cnt > 1)
-                return sql.ExecuteSQL("DELETE FROM header WHERE title = \"" + title + "\"");
+                return sql.ExecuteSQL("DELETE FROM header WHERE title = \'" + title + "\'");
             else
                 throw new Exception("삭제할 수 없습니다.");
         }

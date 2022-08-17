@@ -411,7 +411,7 @@
                                                 AncestorType=ContextMenu}}" CommandParameter="{Binding}"/>
                                             <MenuItem Header="삭제" Command="{Binding PlacementTarget.Tag.DeleteHeaderCommand,
                                                 RelativeSource={RelativeSource Mode=FindAncestor,
-                                                AncestorType=ContextMenu}}"/>
+                                                AncestorType=ContextMenu}}" CommandParameter="{Binding}"/>
                                     </ContextMenu>
                                 </Grid.ContextMenu>
                                 <Grid.RowDefinitions>
@@ -473,7 +473,8 @@
                                         <Border x:Name="Border" Padding="8"  BorderThickness="0 0 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}">
                                                 <Border.InputBindings>
                                                     <MouseBinding MouseAction="LeftDoubleClick"
-                                                                      Command="{Binding DataContext.ContentStartCommand , RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                                                  CommandParameter="{Binding}"
+                                                                      Command="{Binding DataContext.ContentEditWindowDataContext.ContentStartCommand , RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                                                                       />
                                                 </Border.InputBindings>
                                                 <Grid Height="64" Width="96">

@@ -1,4 +1,5 @@
-﻿using PCLinker.BusinessModel.interfaces;
+﻿using PCLinker.BusinessModel;
+using PCLinker.BusinessModel.interfaces;
 using PCLinker.ViewModel.config;
 using PCLinker.ViewModel.controls;
 using ProgramCore.DAO;
@@ -18,6 +19,8 @@ namespace PCLinker.ViewModel
 
         public ContentEditWindowViewModel()
         {
+            db = new DatabaseManager();
+
             AcceptButtonCommand = new Command(AcceptButton, null);
 
             CreateContentCommand = new Command(CreateContent, null);
@@ -30,23 +33,22 @@ namespace PCLinker.ViewModel
         #region Command Method
         private void CreateContent(object obj)
         {
+            TabControlHeaderListViewModel header = obj as TabControlHeaderListViewModel;
             ContentEditWindowVisibility = true;
 
             callBack = (contentDTO) =>
             {
-                Console.WriteLine("");
-                //if (db.CreateContent(SelectedHeaderItem.HeaderText, contentDTO.Title, contentDTO.IconPath, contentDTO.ShellPath, contentDTO.Command))
-                //{
-                //    SelectedHeaderItem.Content.Add(new TabContentListViewModel()
-                //    {
-                //        Uid = 0,
-                //        ContentIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + contentDTO.IconPath,
-                //        ContentText = contentDTO.Title,
-                //        ProgramPath = contentDTO.ShellPath,
-                //        Args = contentDTO.Command
-                //    });
-
-                //}
+                if (db.CreateContent(header.HeaderText, contentDTO.Title, contentDTO.IconPath, contentDTO.ShellPath, contentDTO.Command))
+                {
+                    header.Content.Add(new TabContentListViewModel()
+                    {
+                        Uid = 0,
+                        ContentIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + contentDTO.IconPath,
+                        ContentText = contentDTO.Title,
+                        ProgramPath = contentDTO.ShellPath,
+                        Args = contentDTO.Command
+                    });
+                }
                 return 1;
             };
             Console.WriteLine("컨텐츠 생성");
@@ -54,6 +56,8 @@ namespace PCLinker.ViewModel
 
         private void UpdateContent(object obj)
         {
+            TabControlHeaderListViewModel header = obj as TabControlHeaderListViewModel;
+
             if (SelectedContentItem != null)
             {
                 ContentEditWindowVisibility = true;
@@ -63,37 +67,41 @@ namespace PCLinker.ViewModel
                 ShellPath = SelectedContentItem.ProgramPath;
                 CommandText = SelectedContentItem.Args;
 
-                //ContentEditWindowDataContext.callBack = (contentDTO) =>
-                //{
+                callBack = (contentDTO) =>
+                {
 
-                //    if (db.UpdateContent(SelectedHeaderItem.HeaderText, SelectedContentItem.ContentText, contentDTO.Title, contentDTO.IconPath, contentDTO.ShellPath, contentDTO.Command))
-                //    {
-                //        SelectedContentItem.ContentIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + contentDTO.IconPath;
-                //        SelectedContentItem.ContentText = contentDTO.Title;
-                //        SelectedContentItem.ProgramPath = contentDTO.ShellPath;
-                //        SelectedContentItem.Args = contentDTO.Command;
-                //    }
-                //    return 1;
-                //};
+                    if (db.UpdateContent(header.HeaderText, SelectedContentItem.ContentText, contentDTO.Title, contentDTO.IconPath, contentDTO.ShellPath, contentDTO.Command))
+                    {
+                        SelectedContentItem.ContentIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + contentDTO.IconPath;
+                        SelectedContentItem.ContentText = contentDTO.Title;
+                        SelectedContentItem.ProgramPath = contentDTO.ShellPath;
+                        SelectedContentItem.Args = contentDTO.Command;
+                    }
+                    return 1;
+                };
             }
             Console.WriteLine("컨텐츠 수정");
         }
 
         private void DeleteContent(object obj)
         {
-            //if (db.DeleteContent(SelectedHeaderItem.HeaderText, SelectedContentItem.ContentText))
-            //{
-            //    SelectedHeaderItem.Content.Remove(SelectedContentItem);
-            //}
+            TabControlHeaderListViewModel header = obj as TabControlHeaderListViewModel;
+
+            if (db.DeleteContent(header.HeaderText, SelectedContentItem.ContentText))
+            {
+                header.Content.Remove(SelectedContentItem);
+            }
         }
 
         private void ContentStart(object obj)
         {
+            TabControlHeaderListViewModel header = obj as TabControlHeaderListViewModel;
+
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = SelectedContentItem.ProgramPath;
             startInfo.Arguments = SelectedContentItem.Args;
             Process.Start(startInfo);
-            //db.CreateHistory(SelectedHeaderItem.HeaderText, SelectedContentItem.ContentText);
+            db.CreateHistory(header.HeaderText, SelectedContentItem.ContentText);
         }
         private void AcceptButton(object obj)
         {
@@ -117,6 +125,7 @@ namespace PCLinker.ViewModel
         #region VM Property
         public TabContentListViewModel SelectedContentItem { get; set; }
 
+        public TabControlHeaderListViewModel HeaderListViewModel { get; set; }
 
         private string _iconPath;
         public string IconPath

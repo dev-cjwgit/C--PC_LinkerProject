@@ -82,27 +82,31 @@ namespace PCLinker.ViewModel
         {
             TabControlHeaderListViewModel header = obj as TabControlHeaderListViewModel;
             //if (SelectedHeaderItem != null)
-            {
-                HeaderEditWindowVisibility = true;
-                SelectedHeaderItem = header;
-                IconPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + SelectedHeaderItem.HeaderIcon;
-                Title = SelectedHeaderItem.HeaderText;
 
-                callBack = (headerDTO) =>
+            HeaderEditWindowVisibility = true;
+            SelectedHeaderItem = header;
+            IconPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + SelectedHeaderItem.HeaderIcon;
+            Title = SelectedHeaderItem.HeaderText;
+
+            callBack = (headerDTO) =>
+            {
+                if (db.UpdateHeader(SelectedHeaderItem.HeaderText, headerDTO.Title, headerDTO.IconPath))
                 {
-                    if (db.UpdateHeader(SelectedHeaderItem.HeaderText, headerDTO.Title, headerDTO.IconPath))
-                    {
-                        SelectedHeaderItem.HeaderIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + headerDTO.IconPath;
-                        SelectedHeaderItem.HeaderText = headerDTO.Title;
-                    }
-                    return 1;
-                };
-            }
+                    SelectedHeaderItem.HeaderIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + headerDTO.IconPath;
+                    SelectedHeaderItem.HeaderText = headerDTO.Title;
+                }
+                return 1;
+            };
+
             Console.WriteLine("헤더 수정");
         }
 
         private void DeleteHeader(object obj)
         {
+            TabControlHeaderListViewModel header = obj as TabControlHeaderListViewModel;
+
+            SelectedHeaderItem = header;
+
             if (db.DeleteHeader(SelectedHeaderItem.HeaderText))
             {
                 Tabs.Remove(SelectedHeaderItem);
