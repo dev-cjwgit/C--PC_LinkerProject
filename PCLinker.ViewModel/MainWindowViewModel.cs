@@ -12,21 +12,10 @@ namespace PCLinker.ViewModel
 {
     public class MainWindowViewModel : NotifyPropertyChanged
     {
-        // Commit Test 1
-        
-
         public MainWindowViewModel()
         {
-           
             SliderOpacity = 100;
-            
         }
-
-        #region VM Command Method
-
-       
-
-        #endregion
 
         #region VM Property
 
@@ -96,12 +85,5 @@ namespace PCLinker.ViewModel
         
 
         #endregion
-
-        #region VM ICommand
-
-
-
-        #endregion
-
     }
 }

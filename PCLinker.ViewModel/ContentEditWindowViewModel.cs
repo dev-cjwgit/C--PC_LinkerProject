@@ -32,22 +32,23 @@ namespace PCLinker.ViewModel
         {
             ContentEditWindowVisibility = true;
 
-            //ContentEditWindowDataContext.callBack = (contentDTO) =>
-            //{
-            //    if (db.CreateContent(SelectedHeaderItem.HeaderText, contentDTO.Title, contentDTO.IconPath, contentDTO.ShellPath, contentDTO.Command))
-            //    {
-            //        SelectedHeaderItem.Content.Add(new TabContentListViewModel()
-            //        {
-            //            Uid = 0,
-            //            ContentIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + contentDTO.IconPath,
-            //            ContentText = contentDTO.Title,
-            //            ProgramPath = contentDTO.ShellPath,
-            //            Args = contentDTO.Command
-            //        });
+            callBack = (contentDTO) =>
+            {
+                Console.WriteLine("");
+                //if (db.CreateContent(SelectedHeaderItem.HeaderText, contentDTO.Title, contentDTO.IconPath, contentDTO.ShellPath, contentDTO.Command))
+                //{
+                //    SelectedHeaderItem.Content.Add(new TabContentListViewModel()
+                //    {
+                //        Uid = 0,
+                //        ContentIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + contentDTO.IconPath,
+                //        ContentText = contentDTO.Title,
+                //        ProgramPath = contentDTO.ShellPath,
+                //        Args = contentDTO.Command
+                //    });
 
-            //    }
-            //    return 1;
-            //};
+                //}
+                return 1;
+            };
             Console.WriteLine("컨텐츠 생성");
         }
 

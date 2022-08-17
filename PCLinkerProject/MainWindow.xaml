@@ -444,13 +444,13 @@
                                         <ContextMenu >
                                             <MenuItem Header="추가" Command="{Binding PlacementTarget.Tag.CreateContentCommand,
                                                 RelativeSource={RelativeSource Mode=FindAncestor,
-                                                AncestorType=ContextMenu}}"/>
+                                                AncestorType=ContextMenu}}" CommandParameter="{Binding}"/>
                                             <MenuItem Header="수정"  Command="{Binding PlacementTarget.Tag.UpdateContentCommand,
                                                 RelativeSource={RelativeSource Mode=FindAncestor,
-                                                AncestorType=ContextMenu}}"/>
+                                                AncestorType=ContextMenu}}" CommandParameter="{Binding}"/>
                                             <MenuItem Header="삭제" Command="{Binding PlacementTarget.Tag.DeleteContentCommand,
                                                 RelativeSource={RelativeSource Mode=FindAncestor,
-                                                AncestorType=ContextMenu}}"/>
+                                                AncestorType=ContextMenu}}" CommandParameter="{Binding}"/>
                                     </ContextMenu>
                                 </ListBox.ContextMenu>
                                 

@@ -45,9 +45,6 @@ namespace PCLinker.ViewModel
                     });
                 }
 
-
-
-
                 Tabs.Add(new TabControlHeaderListViewModel()
                 {
                     HeaderIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + headerItem.IconPath,
@@ -66,19 +63,19 @@ namespace PCLinker.ViewModel
         {
             HeaderEditWindowVisibility = true;
 
-            //HeaderEditWindowDataContext.callBack = (headerDTO) =>
-            //{
-            //    if (db.CreateHeader(headerDTO.Title, headerDTO.IconPath))
-            //    {
-            //        Tabs.Add(new TabControlHeaderListViewModel()
-            //        {
-            //            HeaderIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + headerDTO.IconPath,
-            //            HeaderText = headerDTO.Title,
-            //            Content = new ObservableCollection<TabContentListViewModel>()
-            //        });
-            //    }
-            //    return 1;
-            //};
+            callBack = (headerDTO) =>
+            {
+                if (db.CreateHeader(headerDTO.Title, headerDTO.IconPath))
+                {
+                    Tabs.Add(new TabControlHeaderListViewModel()
+                    {
+                        HeaderIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + headerDTO.IconPath,
+                        HeaderText = headerDTO.Title,
+                        Content = new ObservableCollection<TabContentListViewModel>()
+                    });
+                }
+                return 1;
+            };
         }
 
         private void UpdateHeader(object obj)
@@ -91,22 +88,22 @@ namespace PCLinker.ViewModel
                 IconPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + SelectedHeaderItem.HeaderIcon;
                 Title = SelectedHeaderItem.HeaderText;
 
-                //HeaderEditWindowDataContext.callBack = (headerDTO) =>
-                //{
-                //    if (db.UpdateHeader(SelectedHeaderItem.HeaderText, headerDTO.Title, headerDTO.IconPath))
-                //    {
-                //        SelectedHeaderItem.HeaderIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + headerDTO.IconPath;
-                //        SelectedHeaderItem.HeaderText = headerDTO.Title;
-                //    }
-                //    return 1;
-                //};
+                callBack = (headerDTO) =>
+                {
+                    if (db.UpdateHeader(SelectedHeaderItem.HeaderText, headerDTO.Title, headerDTO.IconPath))
+                    {
+                        SelectedHeaderItem.HeaderIcon = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PCLinker\ICO\" + headerDTO.IconPath;
+                        SelectedHeaderItem.HeaderText = headerDTO.Title;
+                    }
+                    return 1;
+                };
             }
             Console.WriteLine("헤더 수정");
         }
 
         private void DeleteHeader(object obj)
         {
-            //if (db.DeleteHeader(SelectedHeaderItem.HeaderText))
+            if (db.DeleteHeader(SelectedHeaderItem.HeaderText))
             {
                 Tabs.Remove(SelectedHeaderItem);
             }
